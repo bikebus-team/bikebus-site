@@ -1,7 +1,6 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import { Button, ComponentWrapper, TestButton } from "../Base/basecomponents"
 import {
   HeaderWrapper,
   HeaderLinkGroup,
