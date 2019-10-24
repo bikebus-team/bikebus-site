@@ -6,18 +6,17 @@ import {
   HeaderLinkGroup,
   HeaderLink,
   HeaderLogo,
-  HeaderButton
+  HeaderButton,
 } from "./headerstyles"
 
 const Header = ({ siteTitle }) => (
   <header>
     <HeaderWrapper>
-      <HeaderLogo src="static/img/bikebus_logo.png" />
+      <HeaderLogo to="/" src="/static/img/bikebus_logo.png" />
       <HeaderLinkGroup>
-        <HeaderLink href="">Test Link 1</HeaderLink>
-        <HeaderLink href="">Test Link 2</HeaderLink>
-        <HeaderLink href="">Test Link 3</HeaderLink>
-        <HeaderLink href="">Test Link 4</HeaderLink>
+        <HeaderLink to="/experience/">The Experience</HeaderLink>
+        <HeaderLink to="/story/">The Rides</HeaderLink>
+        <HeaderLink to="/story/">The Story</HeaderLink>
         <HeaderButton href="">TestButton</HeaderButton>
       </HeaderLinkGroup>
     </HeaderWrapper>

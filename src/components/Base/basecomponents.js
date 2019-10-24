@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { linkColor } from "./colors"
+import GatsbyLink from "gatsby-link";
 
 export const ComponentWrapper = styled.div`
   display: flex;
@@ -27,8 +28,8 @@ export const ComponentWrapper = styled.div`
    }
 
   font-family: 'Noto Sans', sans-serif;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 `
 
 export const Button = styled.button`
@@ -43,7 +44,7 @@ export const Button = styled.button`
   }
 `;
 
-export const Link = styled.a `
+export const Link = styled(GatsbyLink) `
 color: ${linkColor};
 `;
 
