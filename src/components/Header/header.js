@@ -10,9 +10,10 @@ import {
 } from "./headerstyles"
 
 const Header = ({ siteTitle }) => (
-  <header>
     <HeaderWrapper>
-      <HeaderLogo to="/" src="/static/img/bikebus_logo.png" />
+      <Link to="/">
+        <HeaderLogo src="/static/img/bikebus_logo.png" />
+      </Link>
       <HeaderLinkGroup>
         <HeaderLink to="/experience/">The Experience</HeaderLink>
         <HeaderLink to="/story/">The Rides</HeaderLink>
@@ -20,7 +21,6 @@ const Header = ({ siteTitle }) => (
         <HeaderButton href="">TestButton</HeaderButton>
       </HeaderLinkGroup>
     </HeaderWrapper>
-  </header>
 )
 
 Header.propTypes = {
