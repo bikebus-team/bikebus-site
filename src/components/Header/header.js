@@ -8,11 +8,12 @@ import {
   HeaderLogo,
   HeaderButton,
 } from "./headerstyles"
+import * as logo from "../../images/bikebus_logo.png";
 
 const Header = ({ siteTitle }) => (
     <HeaderWrapper>
       <Link to="/">
-        <HeaderLogo src="/static/img/bikebus_logo.png" />
+        <HeaderLogo src={logo} />
       </Link>
       <HeaderLinkGroup>
         <HeaderLink to="/experience/">The Experience</HeaderLink>
