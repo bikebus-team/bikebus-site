@@ -11,6 +11,8 @@ const Story = () => (
     <SEO title="Story" />
     <h1>The Story</h1>
     <Checkerboard imageLeft={true}></Checkerboard>
+    <Checkerboard imageLeft={false}></Checkerboard>
+    <Checkerboard imageLeft={true}></Checkerboard>
     <Link to="/">Go back to the homepage</Link>
   </Layout>
 )

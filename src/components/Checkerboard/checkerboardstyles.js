@@ -3,9 +3,12 @@ import { ComponentWrapper } from "../Base/basecomponents";
 
 export const CheckerboardWrapper = styled(ComponentWrapper)`
 display: flex;
+flex-direction: ${props => props.imageLeft ? "row" : "row-reverse"};
+padding-left: 0px
+padding-right: 0px;
 `;
-
 export const TextWrapper = styled.div `
-padding: 10px;
 width: 60%;
+padding-left: 0px
+padding-right: 0px;
 `;
