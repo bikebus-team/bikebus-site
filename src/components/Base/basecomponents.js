@@ -23,8 +23,8 @@ export const ComponentWrapper = styled.div`
    }
 
   @media (min-width: 1200px) { 
-    padding-left: 150px
-    padding-right: 150px;
+    padding-left: 10px
+    padding-right: 10px;
    }
 
   font-family: 'Noto Sans', sans-serif;
