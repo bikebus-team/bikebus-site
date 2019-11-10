@@ -3,6 +3,8 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
+import Hero from "../components/Hero/Hero"
+import Sock from "../components/Sock/Sock"
 import SEO from "../components/seo"
 
 import { Button } from "../components/Base/basecomponents"
@@ -10,6 +12,7 @@ import { Button } from "../components/Base/basecomponents"
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
+<<<<<<< HEAD
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
@@ -20,6 +23,21 @@ const IndexPage = ({ data }) => (
     <Button>TestButton</Button>
     <Link to="/page-2/">Go to page 2</Link>
     {console.log(data)}
+=======
+    <Hero
+      tagline = {"This is the tagline "}
+      subtitle={"subtitle subtitle subtitle subtitle subtitle"}
+      ctaButtonLink={"/"}
+      ctaButtonText={"Click me!"}
+
+    />
+    <Sock
+      title={"This is a sock"}
+      text={"You should click the button below"}
+      buttonLink={"/"}
+      buttonText={"Click Me!"}
+    />
+>>>>>>> develop
   </Layout>
 )
 

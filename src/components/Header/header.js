@@ -19,7 +19,6 @@ const Header = ({ siteTitle }) => (
         <HeaderLink to="/experience/">The Experience</HeaderLink>
         <HeaderLink to="/story/">The Rides</HeaderLink>
         <HeaderLink to="/story/">The Story</HeaderLink>
-        <HeaderButton href="">TestButton</HeaderButton>
       </HeaderLinkGroup>
     </HeaderWrapper>
 )
