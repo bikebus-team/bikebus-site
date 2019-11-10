@@ -1,1 +1,5 @@
 export const linkColor = '#0F70E7';
+export const richBlack = '#030406';
+export const darkGreen = '#08494b';
+export const ruby = '#D81159';
+export const teal = '#38CEC2';
