@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { getImageUrl } from "takeshape-routing";
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -19,14 +20,9 @@ const IndexPage = ({ data }) => {
       tagline = {hpdata.hero.headline}
       subtitle={hpdata.hero.description}
       ctaButtonLink={"/"}
-<<<<<<< HEAD
-      ctaButtonText={"Book a bus"}
-
-=======
       ctaButtonText={"Click me!"}
->>>>>>> develop
     />
-    <img src={hpdata.hero.backgroundImage.path}></img>
+    <img src={getImageUrl(hpdata.hero.backgroundImage.path)}/>
     <Sock
       title={hpdata.sock.title}
       text={hpdata.sock.description}
