@@ -9,47 +9,38 @@ import SEO from "../components/seo"
 
 import { Button } from "../components/Base/basecomponents"
 
-const IndexPage = ({ data }) => (
+const IndexPage = ({ data }) => {
+  const hpdata = data.takeshape.getHomepage;
+  console.log(hpdata);
+  return (
   <Layout>
     <SEO title="Home" />
-<<<<<<< HEAD
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <p>{data.takeshape.getHomepage.hero.description}</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Button>TestButton</Button>
-    <Link to="/page-2/">Go to page 2</Link>
-    {console.log(data)}
-=======
     <Hero
-      tagline = {"This is the tagline "}
-      subtitle={"subtitle subtitle subtitle subtitle subtitle"}
+      tagline = {hpdata.hero.headline}
+      subtitle={hpdata.hero.description}
       ctaButtonLink={"/"}
-      ctaButtonText={"Click me!"}
+      ctaButtonText={"Book a bus"}
 
     />
+    <img src={hpdata.hero.backgroundImage.path}></img>
     <Sock
-      title={"This is a sock"}
-      text={"You should click the button below"}
-      buttonLink={"/"}
-      buttonText={"Click Me!"}
+      title={hpdata.sock.title}
+      text={hpdata.sock.description}
+      buttonLink={hpdata.sock.linkDestination}
+      buttonText={hpdata.sock.buttonTitle}
     />
->>>>>>> develop
-  </Layout>
-)
+  </Layout>)
+}
 
 export default IndexPage
 
 export const query = graphql`
   query {
     takeshape {
-      getHomepage(_id: "4f41b6ff-8b04-4e0f-8cc9-d5deaced26e4") {
+      getHomepage {
         _id
         checkerboard1 {
-          buttonLink
+          buttonLinkUrl
           buttonTitle
           description
           title
@@ -88,7 +79,9 @@ export const query = graphql`
           }
         }
         sock {
+          buttonTitle
           description
+          linkDestination
           title
         }
         specialEvent {
@@ -98,7 +91,7 @@ export const query = graphql`
           location
           title
         }
-      }    
+      }        
     }
   }
 `
