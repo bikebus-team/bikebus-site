@@ -7,12 +7,12 @@ import QuoteBlock from "../components/QuoteBlock/QuoteBlock"
 import Sock from "../components/Sock/Sock"
 import SEO from "../components/seo"
 
-const Experience = () => (
+const Corporate = () => (
   // The `what to expect` page
   <Layout>
-    <SEO title="Experience" />
+    <SEO title="Corporate" />
     <SplitHero
-      tagline= {"This is a split hero for experience"}
+      tagline= {"This is a split hero for Corporate"}
       subtitle={"This is the subtitle for the split hero"}
       ctaButtonLink={"/"}
       ctaButtonText={"Click me plzz"}
@@ -29,4 +29,4 @@ const Experience = () => (
   </Layout>
 )
 
-export default Experience
+export default Corporate

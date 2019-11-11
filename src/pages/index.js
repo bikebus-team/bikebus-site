@@ -19,8 +19,12 @@ const IndexPage = ({ data }) => {
       tagline = {hpdata.hero.headline}
       subtitle={hpdata.hero.description}
       ctaButtonLink={"/"}
+<<<<<<< HEAD
       ctaButtonText={"Book a bus"}
 
+=======
+      ctaButtonText={"Click me!"}
+>>>>>>> develop
     />
     <img src={hpdata.hero.backgroundImage.path}></img>
     <Sock

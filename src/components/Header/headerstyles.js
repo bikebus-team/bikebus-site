@@ -42,7 +42,7 @@ export const HeaderLink = styled(Link)`
 `
 
 export const HeaderLogo = styled.img`
-  width: 300px;
+  width: 170px;
 `
 
 export const HeaderButton = styled(Button)`

@@ -6,25 +6,25 @@ export const ComponentWrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  
-  @media (min-width: 0px) { 
+
+  @media (min-width: 0px) {
     padding-left: 30px
     padding-right: 30px;
    }
 
-  @media (min-width: 768px) { 
+  @media (min-width: 768px) {
     padding-left: 50px
     padding-right: 50px;
    }
 
-  @media (min-width: 992px) { 
+  @media (min-width: 992px) {
     padding-left: 100px
     padding-right: 100px;
    }
 
   @media (min-width: 1200px) { 
-    padding-left: 0px
-    padding-right: 0px;
+    padding-left: 150px
+    padding-right: 150px;
    }
 
   font-family: 'Noto Sans', sans-serif;
@@ -44,8 +44,35 @@ export const Button = styled.button`
   }
 `;
 
+export const PaddedComponentWrapper = styled.div`
+  display: flex;
+  box-sizing: content-box;
+  justify-content: space-between;
+  font-family: 'Noto Sans', sans-serif;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  @media (min-width: 0px) { 
+    padding-left: 30px
+    padding-right: 30px;
+   }
+
+  @media (min-width: 768px) { 
+    padding-left: 50px
+    padding-right: 50px;
+   }
+
+  @media (min-width: 992px) { 
+    padding-left: 100px
+    padding-right: 100px;
+   }
+
+  @media (min-width: 1200px) { 
+    padding-left: 150px
+    padding-right: 150px;
+   }
+`;
+
 export const Link = styled(GatsbyLink) `
 color: ${linkColor};
 `;
-
-
