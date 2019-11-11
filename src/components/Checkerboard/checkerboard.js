@@ -1,13 +1,13 @@
 import PropTypes from "prop-types"
 import React from "react"
-import { CheckerboardButton, CheckerboardLink, CheckerboardWrapper, RightCheckerboardWrapper, TextWrapper } from "./checkerboardstyles"
+import { CheckerboardButton, CheckerboardLink, CheckerboardWrapper, LeftCheckerboardWrapper, RightCheckerboardWrapper, TextWrapper } from "./checkerboardstyles"
 import Image from "../image"
 
 const Checkerboard = ({ imageLeft, title, text, hasButton, buttonText, buttonLink }) => (
     <CheckerboardWrapper imageLeft={imageLeft}>
-        <div style={{ width: `200%`, border: `1px solid #ddd` }}>
+        <LeftCheckerboardWrapper>
             <Image/>
-        </div>
+        </LeftCheckerboardWrapper>
         <RightCheckerboardWrapper imageLeft={imageLeft}>
             <TextWrapper>
                 <h2>{title}</h2>
