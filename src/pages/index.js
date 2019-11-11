@@ -19,7 +19,6 @@ const IndexPage = () => (
       subtitle={"subtitle subtitle subtitle subtitle subtitle"}
       ctaButtonLink={"/"}
       ctaButtonText={"Click me!"}
-
     />
     <Sock
       title={"This is a sock"}
