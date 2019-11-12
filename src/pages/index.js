@@ -19,16 +19,16 @@ const IndexPage = ({ data }) => {
     <Hero
       tagline = {hpdata.hero.headline}
       subtitle={hpdata.hero.description}
-      ctaButtonLink={"/"}
-      ctaButtonText={"Click me!"}
+      // ctaButtonLink={"/"}
+      // ctaButtonText={"Click me!"}
     />
     <img src={getImageUrl(hpdata.hero.backgroundImage.path)}/>
-    <Sock
+    {/* <Sock
       title={hpdata.sock.title}
       text={hpdata.sock.description}
       buttonLink={hpdata.sock.linkDestination}
       buttonText={hpdata.sock.buttonTitle}
-    />
+    /> */}
   </Layout>)
 }
 
@@ -40,8 +40,22 @@ export const query = graphql`
       getHomepage {
         _id
         checkerboard1 {
+          button {
+            _id
+            linkDestination
+            title
+          }
           buttonLinkUrl
           buttonTitle
+          description
+          title
+        }
+        checkerboard2 {
+          button {
+            _id
+            linkDestination
+            title
+          }
           description
           title
         }
@@ -58,8 +72,20 @@ export const query = graphql`
             title
             uploadStatus
           }
+          button {
+            _id
+            linkDestination
+            title
+          }
+          buttonTitle
           description
           headline
+          linkDestination
+          secondaryButton {
+            _id
+            linkDestination
+            title
+          }
         }
         quoteSection {
           quoteItem {
@@ -79,10 +105,16 @@ export const query = graphql`
           }
         }
         sock {
-          buttonTitle
-          description
-          linkDestination
-          title
+          _id
+          sock {
+            button {
+              _id
+              linkDestination
+              title
+            }
+            description
+            title
+          }
         }
         specialEvent {
           dateTime

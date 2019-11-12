@@ -8,53 +8,125 @@ import Sock from "../components/Sock/Sock"
 import Checkerboard from "../components/Checkerboard/checkerboard"
 import SEO from "../components/seo"
 
-const mockJSONData = {
-  data: {
-    pageTitle: "OUR STORY",
-    checkerboards: [
-      {
-        title: "Title1",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-      },
-      {
-        title: "Title2",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-      },
-      {
-        title: "Title3",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-      }
-    ]
-  }
+const Private = ({data}) => {
+  const pedata = data.takeshape.getPrivateEvents;
+  console.log(pedata)
+  // The `what to expect` page
+  return (
+    <Layout>
+      <SEO title="Private Groupds" />
+      <SplitHero
+        tagline={pedata.hero.title}
+        subtitle={pedata.hero.subtitle}
+        description={pedata.hero.description}
+        ctaButtonLink={pedata.hero.button.linkDestination}
+        ctaButtonText={pedata.hero.button.title}
+        imageUrl={pedata.hero.backgroundImage}
+      />
+      <QuoteBlock
+        quote={pedata.quote.content}
+      />
+      {pedata.checkerboardSection.map((cb, index) => (
+        <Checkerboard
+          key={index}
+          imageLeft={index % 2 == 1}
+          title={cb.checkerboard.title}
+          text={cb.checkerboard.description}
+          imageSrc={cb.checkerboard.image.path}
+          hasButton={false}
+        />
+      ))}
+      <Sock
+        title={pedata.sock.sock.title}
+        text={pedata.sock.sock.description}
+        buttonLink={pedata.sock.sock.button.linkDestination}
+        buttonText={pedata.sock.sock.button.title}
+      />
+    </Layout>
+  )
 }
 
-const Private = () => (
-  // The `what to expect` page
-  <Layout>
-    <SEO title="Private Groupds" />
-    <SplitHero
-      tagline= {"This is a split hero for private events"}
-      subtitle={"This is the subtitle for the split hero"}
-      ctaButtonLink={"/"}
-      ctaButtonText={"Click me plzz"}
-      />
-    <QuoteBlock
-      quote= {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna."}
-      />
-    {mockJSONData.data.checkerboards.map((cb, index) =>
-      <Checkerboard
-        key={index}
-        imageLeft={index % 2 == 1}
-        title={cb.title}
-        text={cb.text}
-        hasButton={false} />)}
-    <Sock
-      title={"This is a sock"}
-      text={"You should click the button below"}
-      buttonLink={"/"}
-      buttonText={"Click Me!"}
-    />
-  </Layout>
-)
+export default Private;
 
-export default Private
+export const query = graphql`
+  query {
+    takeshape {
+      getPrivateEvents {
+        _id
+        checkerboardSection {
+          checkerboard {
+            description
+            image {
+              _id
+              caption
+              credit
+              description
+              filename
+              mimeType
+              path
+              sourceUrl
+              title
+              uploadStatus
+            }
+            title
+          }
+        }
+        hero {
+          backgroundImage {
+            _id
+            caption
+            credit
+            description
+            filename
+            mimeType
+            path
+            sourceUrl
+            title
+            uploadStatus
+          }
+          button {
+            _id
+            linkDestination
+            title
+          }
+          description
+          subtitle
+          title
+        }
+        process {
+          step {
+            description
+            icon {
+              _id
+              caption
+              credit
+              description
+              filename
+              mimeType
+              path
+              sourceUrl
+              title
+              uploadStatus
+            }
+            title
+          }
+        }
+        quote {
+          content
+        }
+        sock {
+          _id
+          sock {
+            button {
+              _id
+              linkDestination
+              title
+            }
+            description
+            title
+          }
+        }
+      }
+    }
+  }
+`
