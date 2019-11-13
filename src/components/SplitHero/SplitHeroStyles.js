@@ -24,5 +24,4 @@ export const SplitHeroImageContainer = styled.div`
   float:right;
   width: 50%;
   height: inherit;
-
 `

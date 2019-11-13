@@ -7,26 +7,26 @@ export const HeaderWrapper = styled.header`
   justify-content: space-between;
 
   @media (min-width: 0px) {
-    padding-left: 30px
+    padding-left: 30px;
     padding-right: 30px;
-   }
+  }
 
   @media (min-width: 768px) {
-    padding-left: 50px
+    padding-left: 50px;
     padding-right: 50px;
-   }
+  }
 
   @media (min-width: 992px) {
-    padding-left: 100px
+    padding-left: 100px;
     padding-right: 100px;
-   }
+  }
 
   @media (min-width: 1200px) {
-    padding-left: 150px
+    padding-left: 150px;
     padding-right: 150px;
-   }
+  }
 
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   padding-top: 30px;
   padding-bottom: 30px;
 `

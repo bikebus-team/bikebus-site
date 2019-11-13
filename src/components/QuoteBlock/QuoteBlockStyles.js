@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { ComponentWrapper } from "../Base/basecomponents"
 
 export const QuoteBlockContentContainer = styled.div`
-  position: relative
+  position: relative;
 `
 export const QuoteBlockQuote = styled.h1`
   color: white;
@@ -23,7 +23,7 @@ export const QuoteBlockQuote = styled.h1`
 export const QuoteBlockContainer = styled.div`
   text-align: center;
   padding: 125px;
-  background-color:black;
+  background-color: black;
   width: inherit;
   height: inherit;
 `

@@ -12,5 +12,4 @@ export const SockContentContainer = styled.div`
   text-align: Center;
   width: inherit;
   margin: 10%;
-
 `

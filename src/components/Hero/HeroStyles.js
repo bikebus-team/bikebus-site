@@ -14,5 +14,4 @@ export const HeroContentContainer = styled.div`
   text-align: right;
   width: inherit;
   margin: 10%;
-
 `
