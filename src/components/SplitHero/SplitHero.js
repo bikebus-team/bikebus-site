@@ -16,6 +16,7 @@ const SplitHero = ({ tagline, subtitle, description, ctaButtonLink, ctaButtonTex
           <h1>{tagline}</h1>
           <h2>{subtitle}</h2>
           <p>{description}</p>
+          {/* TODO: have conditional for if there is no button added on CMS side */}
           <Link to={ctaButtonLink}>
             <Button>{ctaButtonText}</Button>
           </Link>

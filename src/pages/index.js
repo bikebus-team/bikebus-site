@@ -19,16 +19,16 @@ const IndexPage = ({ data }) => {
     <Hero
       tagline = {hpdata.hero.headline}
       subtitle={hpdata.hero.description}
-      // ctaButtonLink={"/"}
-      // ctaButtonText={"Click me!"}
+      ctaButtonLink={"/"}
+      ctaButtonText={"Click me!"}
     />
     <img src={getImageUrl(hpdata.hero.backgroundImage.path)}/>
-    {/* <Sock
-      title={hpdata.sock.title}
-      text={hpdata.sock.description}
-      buttonLink={hpdata.sock.linkDestination}
-      buttonText={hpdata.sock.buttonTitle}
-    /> */}
+    <Sock
+      title={hpdata.sock.sock.title}
+      text={hpdata.sock.sock.description}
+      buttonLink={hpdata.sock.sock.button.linkDestination}
+      buttonText={hpdata.sock.sock.button.title}
+    />
   </Layout>)
 }
 

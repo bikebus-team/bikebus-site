@@ -18,17 +18,17 @@ const Corporate = ({data}) => {
       tagline= {corpdata.hero.title}
       subtitle={corpdata.hero.subtitle}
       description={corpdata.hero.description}
-      ctaButtonLink={corpdata.hero.linkDestination}
-      ctaButtonText={corpdata.hero.buttonTitle}
+      ctaButtonLink={corpdata.hero.button.linkDestination}
+      ctaButtonText={corpdata.hero.button.title}
       />
     <QuoteBlock
       quote= {corpdata.quote.content}
       />
     <Sock
-      title={corpdata.sock.title}
-      text={corpdata.sock.description}
-      buttonLink={corpdata.sock.buttonLink}
-      buttonText={corpdata.sock.buttonTitle}
+      title={corpdata.sock.sock.title}
+      text={corpdata.sock.sock.description}
+      buttonLink={corpdata.sock.sock.button && corpdata.sock.sock.button.linkDestination}
+      buttonText={corpdata.sock.sock.button && corpdata.sock.sock.button.title}
     />
   </Layout>
   )
@@ -86,11 +86,14 @@ export const query = graphql`
             title
             uploadStatus
           }
+          button {
+            _id
+            linkDestination
+            title
+          }
           description
-          title
           subtitle
-          linkDestination
-          buttonTitle
+          title
         }
         pricing {
           description
@@ -108,10 +111,16 @@ export const query = graphql`
           content
         }
         sock {
-          buttonTitle
-          description
-          linkDestination
-          title
+          _id
+          sock {
+            button {
+              _id
+              linkDestination
+              title
+            }
+            description
+            title
+          }
         }
       }
     }

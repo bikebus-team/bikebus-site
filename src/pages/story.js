@@ -27,20 +27,92 @@ const mockJSONData = {
   }
 }
 
-const Story = () => (
+const Story = ({data}) => {
+  const storydata = data.takeshape.getStory;
+  console.log(storydata)
   // The `what to expect` page
+  return (
   <Layout>
-    <PageTitle title={mockJSONData.data.pageTitle} />
+    <PageTitle title={storydata.header.title} />
     <SEO title="Story" />
-    {mockJSONData.data.checkerboards.map((cb, index) => 
+    {storydata.checkerboardSection.map((cb, index) => 
       <Checkerboard 
         key={index} 
         imageLeft={index % 2 === 1} 
-        title={cb.title} 
-        text={cb.text} 
+        title={cb.checkerboard.title} 
+        text={cb.checkerboard.description} 
+        imageSrc={cb.checkerboard.image.path}
         hasButton={false} />)}
+        {/* TODO: pull from CMS instructor data
+        Use: storydata.instructorSection.instructor
+        You can pull normalHeadshot, funHeadshot, name, and title from ^that object */}
     <InstructorsPanel title={mockJSONData.data.instructorsTitle}/>
   </Layout>
-)
+  )
+}
 
 export default Story
+
+export const query = graphql`
+  query {
+    takeshape {
+      getStory {
+        _id
+        checkerboardSection {
+          checkerboard {
+            image {
+              _id
+              caption
+              credit
+              description
+              filename
+              mimeType
+              path
+              sourceUrl
+              title
+              uploadStatus
+            }
+            description
+            title
+          }
+        }
+        header {
+          title
+        }
+        instructorSection {
+          instructor {
+            funHeadShot {
+              _id
+              caption
+              credit
+              description
+              filename
+              mimeType
+              path
+              sourceUrl
+              title
+              uploadStatus
+            }
+            name
+            normalHeadShot {
+              _id
+              caption
+              credit
+              description
+              filename
+              mimeType
+              path
+              sourceUrl
+              title
+              uploadStatus
+            }
+            title
+          }
+        }
+        misison {
+          missionStatement
+        }
+      }
+    }
+  }
+`
