@@ -7,26 +7,57 @@ import QuoteBlock from "../components/QuoteBlock/QuoteBlock"
 import Sock from "../components/Sock/Sock"
 import SEO from "../components/seo"
 
-const Experience = () => (
+const Experience = ({data}) => {
   // The `what to expect` page
-  <Layout>
-    <SEO title="Experience" />
-    <SplitHero
-      tagline= {"This is a split hero for experience"}
-      subtitle={"This is the subtitle for the split hero"}
-      ctaButtonLink={"/"}
-      ctaButtonText={"Click me plzz"}
+  const expdata = data.takeshape.getExperience;
+  console.log(expdata)
+  return (
+    <Layout>
+      <SEO title="Experience" />
+      <SplitHero
+        tagline={expdata.hero.title}
+        subtitle={expdata.hero.description}
       />
-    <QuoteBlock
-      quote= {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna."}
-      />
-    <Sock
-      title={"This is a sock"}
-      text={"You should click the button below"}
-      buttonLink={"/"}
-      buttonText={"Click Me!"}
-    />
-  </Layout>
-)
+      {/* TODO: make image layout for Seema to update */}
+    </Layout>
+  )
+}
 
 export default Experience
+
+export const query = graphql`
+  query {
+    takeshape {
+      getExperience {
+        _id
+        checkerboardSection {
+          checkerboard {
+            description
+            title
+          }
+        }
+        community {
+          images {
+            image {
+              _id
+              caption
+              credit
+              description
+              filename
+              mimeType
+              path
+              sourceUrl
+              title
+              uploadStatus
+            }
+          }
+          title
+        }
+        hero {
+          description
+          title
+        }
+      }
+    }
+  }
+`
