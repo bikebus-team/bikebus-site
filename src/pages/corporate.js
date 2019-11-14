@@ -10,7 +10,6 @@ import SEO from "../components/seo"
 const Corporate = ({data}) => {
   // The `what to expect` page
   const corpdata = data.takeshape.getCorporate;
-  console.log(corpdata);
   return (
   <Layout>
     <SEO title="Corporate" />
@@ -40,54 +39,31 @@ export const query = graphql`
   query {
     takeshape {
       getCorporate {
-        _id
         companies {
           logo {
-            _id
-            caption
-            credit
             description
-            filename
-            mimeType
             path
             sourceUrl
-            title
-            uploadStatus
           }
         }
         differentiatorSection {
           differentiator {
             description
             icon {
-              _id
-              caption
-              credit
               description
-              filename
-              mimeType
               path
               sourceUrl
-              title
-              uploadStatus
             }
             title
           }
         }
         hero {
           backgroundImage {
-            _id
-            caption
-            credit
             description
-            filename
-            mimeType
             path
             sourceUrl
-            title
-            uploadStatus
           }
           button {
-            _id
             linkDestination
             title
           }
@@ -111,10 +87,8 @@ export const query = graphql`
           content
         }
         sock {
-          _id
           sock {
             button {
-              _id
               linkDestination
               title
             }

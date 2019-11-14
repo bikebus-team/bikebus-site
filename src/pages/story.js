@@ -29,7 +29,6 @@ const mockJSONData = {
 
 const Story = ({data}) => {
   const storydata = data.takeshape.getStory;
-  console.log(storydata)
   // The `what to expect` page
   return (
   <Layout>
@@ -57,20 +56,12 @@ export const query = graphql`
   query {
     takeshape {
       getStory {
-        _id
         checkerboardSection {
           checkerboard {
             image {
-              _id
-              caption
-              credit
               description
-              filename
-              mimeType
               path
               sourceUrl
-              title
-              uploadStatus
             }
             description
             title
@@ -82,29 +73,15 @@ export const query = graphql`
         instructorSection {
           instructor {
             funHeadShot {
-              _id
-              caption
-              credit
               description
-              filename
-              mimeType
               path
               sourceUrl
-              title
-              uploadStatus
             }
             name
             normalHeadShot {
-              _id
-              caption
-              credit
               description
-              filename
-              mimeType
               path
               sourceUrl
-              title
-              uploadStatus
             }
             title
           }

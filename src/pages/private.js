@@ -10,7 +10,6 @@ import SEO from "../components/seo"
 
 const Private = ({data}) => {
   const pedata = data.takeshape.getPrivateEvents;
-  console.log(pedata)
   // The `what to expect` page
   return (
     <Layout>
@@ -52,37 +51,22 @@ export const query = graphql`
   query {
     takeshape {
       getPrivateEvents {
-        _id
         checkerboardSection {
           checkerboard {
             description
             image {
-              _id
-              caption
-              credit
               description
-              filename
-              mimeType
               path
               sourceUrl
-              title
-              uploadStatus
             }
             title
           }
         }
         hero {
           backgroundImage {
-            _id
-            caption
-            credit
             description
-            filename
-            mimeType
             path
             sourceUrl
-            title
-            uploadStatus
           }
           button {
             _id
@@ -97,16 +81,9 @@ export const query = graphql`
           step {
             description
             icon {
-              _id
-              caption
-              credit
               description
-              filename
-              mimeType
               path
               sourceUrl
-              title
-              uploadStatus
             }
             title
           }
@@ -115,10 +92,8 @@ export const query = graphql`
           content
         }
         sock {
-          _id
           sock {
             button {
-              _id
               linkDestination
               title
             }
