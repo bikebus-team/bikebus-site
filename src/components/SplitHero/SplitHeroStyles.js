@@ -20,8 +20,8 @@ export const SplitHeroContent = styled.div`
 `
 
 export const SplitHeroImageContainer = styled.div`
-  background-color: blue;
-  float: right;
+  background-image: url(${(props)=>props.imgUrl});
+  float:right;
   width: 50%;
   height: inherit;
 `

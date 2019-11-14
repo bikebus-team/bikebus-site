@@ -7,26 +7,96 @@ import QuoteBlock from "../components/QuoteBlock/QuoteBlock"
 import Sock from "../components/Sock/Sock"
 import SEO from "../components/seo"
 
-const Corporate = () => (
+const Corporate = ({data}) => {
   // The `what to expect` page
+  const corpdata = data.takeshape.getCorporate;
+  return (
   <Layout>
     <SEO title="Corporate" />
     <SplitHero
-      tagline= {"This is a split hero for Corporate"}
-      subtitle={"This is the subtitle for the split hero"}
-      ctaButtonLink={"/"}
-      ctaButtonText={"Click me plzz"}
+      tagline= {corpdata.hero.title}
+      subtitle={corpdata.hero.subtitle}
+      description={corpdata.hero.description}
+      ctaButtonLink={corpdata.hero.button.linkDestination}
+      ctaButtonText={corpdata.hero.button.title}
       />
     <QuoteBlock
-      quote= {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget leo nunc, nec tempus mi? Curabitur id nisl mi, ut vulputate urna."}
+      quote= {corpdata.quote.content}
       />
     <Sock
-      title={"This is a sock"}
-      text={"You should click the button below"}
-      buttonLink={"/"}
-      buttonText={"Click Me!"}
+      title={corpdata.sock.sock.title}
+      text={corpdata.sock.sock.description}
+      buttonLink={corpdata.sock.sock.button && corpdata.sock.sock.button.linkDestination}
+      buttonText={corpdata.sock.sock.button && corpdata.sock.sock.button.title}
     />
   </Layout>
-)
+  )
+}
 
 export default Corporate
+
+export const query = graphql`
+  query {
+    takeshape {
+      getCorporate {
+        companies {
+          logo {
+            description
+            path
+            sourceUrl
+          }
+        }
+        differentiatorSection {
+          differentiator {
+            description
+            icon {
+              description
+              path
+              sourceUrl
+            }
+            title
+          }
+        }
+        hero {
+          backgroundImage {
+            description
+            path
+            sourceUrl
+          }
+          button {
+            linkDestination
+            title
+          }
+          description
+          subtitle
+          title
+        }
+        pricing {
+          description
+          options {
+            option {
+              busPrice
+              personPrice
+              subtitle
+              title
+            }
+          }
+          title
+        }
+        quote {
+          content
+        }
+        sock {
+          sock {
+            button {
+              linkDestination
+              title
+            }
+            description
+            title
+          }
+        }
+      }
+    }
+  }
+`
