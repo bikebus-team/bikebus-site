@@ -28,7 +28,7 @@ const Private = ({data}) => {
       {pedata.checkerboardSection.map((cb, index) => (
         <Checkerboard
           key={index}
-          imageLeft={index % 2 == 1}
+          imageLeft={index % 2 === 1}
           title={cb.checkerboard.title}
           text={cb.checkerboard.description}
           imageSrc={cb.checkerboard.image.path}

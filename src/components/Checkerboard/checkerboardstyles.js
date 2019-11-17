@@ -38,7 +38,7 @@ export const RightCheckerboardWrapper = styled.div`
 export const TextWrapper = styled.div``
 
 export const CheckerboardButton = styled(Button)`
-  display: ${props => (props.display ? "block" : "none")};
+  display: ${props => (props.displayVal ? "block" : "none")};
   background: ${darkGreen};
 `
 
