@@ -1,16 +1,19 @@
 import React from "react"
 import { Button, Link } from "../Base/basecomponents"
+import { getImageUrl } from "takeshape-routing"
 import {
   HeroContainer,
-  HeroContentContainer}
+  HeroContentContainer,
+  HeroTagline,
+  HeroSubtitle}
   from "./HeroStyles"
 
 
-const Hero = ({ tagline, subtitle, ctaButtonLink, ctaButtonText }) => (
-  <HeroContainer>
+const Hero = ({ tagline, subtitle, ctaButtonLink, ctaButtonText, imageSrc }) => (
+  <HeroContainer BackgroundImgSrc={getImageUrl(imageSrc)}>
     <HeroContentContainer>
-      <h1>{tagline}</h1>
-      <h2>{subtitle}</h2>
+      <HeroTagline>{tagline}</HeroTagline>
+      <HeroSubtitle>{subtitle}</HeroSubtitle>
       <Link to={ctaButtonLink}>
         <Button>{ctaButtonText}</Button>
       </Link>

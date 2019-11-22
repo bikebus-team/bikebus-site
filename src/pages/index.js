@@ -9,6 +9,7 @@ import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => {
   const hpdata = data.takeshape.getHomepage;
+  console.log(hpdata);
   return (
   <Layout>
     <SEO title="Home" />
@@ -17,6 +18,7 @@ const IndexPage = ({ data }) => {
       subtitle={hpdata.hero.description}
       ctaButtonLink={"/"}
       ctaButtonText={"Click me!"}
+      imageSrc={hpdata.hero.backgroundImage.path}
     />
     <img src={getImageUrl(hpdata.hero.backgroundImage.path)}/>
     <Sock

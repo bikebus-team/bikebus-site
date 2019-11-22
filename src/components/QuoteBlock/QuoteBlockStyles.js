@@ -1,10 +1,11 @@
 import styled from "styled-components"
 import { ComponentWrapper } from "../Base/basecomponents"
+import {BBh1} from "../Base/fonts"
 
 export const QuoteBlockContentContainer = styled.div`
   position: relative;
 `
-export const QuoteBlockQuote = styled.h1`
+export const QuoteBlockQuote = styled(BBh1)`
   color: white;
   text-align: left;
   display: inline-flex;
@@ -17,6 +18,7 @@ export const QuoteBlockQuote = styled.h1`
     top: -80px;
     left: -50px;
     color: white;
+    font-family: Times New Roman, Sans-serif
   }
 `
 
