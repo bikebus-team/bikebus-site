@@ -13,7 +13,7 @@ const Private = ({data}) => {
   // The `what to expect` page
   return (
     <Layout>
-      <SEO title="Private Groupds" />
+      <SEO title="Private Groups" />
       <SplitHero
         tagline={pedata.hero.title}
         subtitle={pedata.hero.subtitle}

@@ -6,30 +6,8 @@ import Checkerboard from "../components/Checkerboard/checkerboard"
 import PageTitle from "../components/PageTitle/pagetitle"
 import InstructorsPanel from "../components/InstructorsPanel/instructorspanel"
 
-const mockJSONData = {
-  data: {
-    pageTitle: "OUR STORY",
-    checkerboards: [
-      {
-        title: "Title1",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-      },
-      {
-        title: "Title2",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-      },
-      {
-        title: "Title3",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-      }
-    ],
-    instructorsTitle: "Meet our Instructors!"
-  }
-}
-
 const Story = ({data}) => {
   const storydata = data.takeshape.getStory;
-  console.log("STORYDATA: ", storydata.instructorSection.instructors);
   // The `what to expect` page
   return (
   <Layout>

@@ -39,31 +39,58 @@ export const query = graphql`
   query {
     takeshape {
       getCorporate {
+        _id
         companies {
           logo {
+            _id
+            caption
+            credit
             description
+            filename
+            mimeType
             path
             sourceUrl
+            title
+            uploadStatus
           }
         }
         differentiatorSection {
-          differentiator {
-            description
-            icon {
+          differentiatorRepeater {
+            differentiator {
               description
-              path
-              sourceUrl
+              icon {
+                _id
+                caption
+                credit
+                description
+                filename
+                mimeType
+                path
+                sourceUrl
+                title
+                uploadStatus
+              }
+              title
             }
-            title
           }
+          subtitle
+          title
         }
         hero {
           backgroundImage {
+            _id
+            caption
+            credit
             description
+            filename
+            mimeType
             path
             sourceUrl
+            title
+            uploadStatus
           }
           button {
+            _id
             linkDestination
             title
           }
@@ -72,10 +99,11 @@ export const query = graphql`
           title
         }
         pricing {
+          ctaText
           description
           options {
             option {
-              busPrice
+              finePrint
               personPrice
               subtitle
               title
@@ -87,8 +115,10 @@ export const query = graphql`
           content
         }
         sock {
+          _id
           sock {
             button {
+              _id
               linkDestination
               title
             }

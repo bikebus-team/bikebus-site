@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => {
     <Hero
       tagline = {hpdata.hero.headline}
       subtitle={hpdata.hero.description}
-      ctaButtonLink={"/"}
+      ctaButtonLink={"/form"}
       ctaButtonText={"Click me!"}
     />
     <img src={getImageUrl(hpdata.hero.backgroundImage.path)}/>
