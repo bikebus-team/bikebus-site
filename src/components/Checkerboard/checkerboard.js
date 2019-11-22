@@ -17,7 +17,7 @@ const Checkerboard = ({ imageLeft, title, text, imageSrc, hasButton, buttonText,
                 <p>{text}</p>
             </TextWrapper>
             <CheckerboardLink to={buttonLink}>
-                <CheckerboardButton display={hasButton}>{buttonText}</CheckerboardButton>
+                <CheckerboardButton displayVal={hasButton}>{buttonText}</CheckerboardButton>
             </CheckerboardLink>
         </RightCheckerboardWrapper>
     </CheckerboardWrapper>

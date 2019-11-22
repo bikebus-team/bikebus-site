@@ -29,7 +29,7 @@ const mockJSONData = {
 
 const Story = ({data}) => {
   const storydata = data.takeshape.getStory;
-  console.log(storydata)
+  console.log("STORYDATA: ", storydata.instructorSection.instructors);
   // The `what to expect` page
   return (
   <Layout>
@@ -46,7 +46,7 @@ const Story = ({data}) => {
         {/* TODO: pull from CMS instructor data
         Use: storydata.instructorSection.instructor
         You can pull normalHeadshot, funHeadshot, name, and title from ^that object */}
-    <InstructorsPanel title={mockJSONData.data.instructorsTitle}/>
+    <InstructorsPanel title={storydata.instructorSection.title} instructors={storydata.instructorSection.instructors}/>
   </Layout>
   )
 }
@@ -60,6 +60,7 @@ export const query = graphql`
         _id
         checkerboardSection {
           checkerboard {
+            description
             image {
               _id
               caption
@@ -72,7 +73,6 @@ export const query = graphql`
               title
               uploadStatus
             }
-            description
             title
           }
         }
@@ -80,36 +80,39 @@ export const query = graphql`
           title
         }
         instructorSection {
-          instructor {
-            funHeadShot {
-              _id
-              caption
-              credit
-              description
-              filename
-              mimeType
-              path
-              sourceUrl
+          instructors {
+            instructor {
+              funHeadShot {
+                _id
+                caption
+                credit
+                description
+                filename
+                mimeType
+                path
+                sourceUrl
+                title
+                uploadStatus
+              }
+              name
+              normalHeadShot {
+                _id
+                caption
+                credit
+                description
+                filename
+                mimeType
+                path
+                sourceUrl
+                title
+                uploadStatus
+              }
               title
-              uploadStatus
             }
-            name
-            normalHeadShot {
-              _id
-              caption
-              credit
-              description
-              filename
-              mimeType
-              path
-              sourceUrl
-              title
-              uploadStatus
-            }
-            title
           }
+          title
         }
-        misison {
+        mission {
           missionStatement
         }
       }

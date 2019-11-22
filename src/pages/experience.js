@@ -10,7 +10,6 @@ import SEO from "../components/seo"
 const Experience = ({data}) => {
   // The `what to expect` page
   const expdata = data.takeshape.getExperience;
-  console.log(expdata)
   return (
     <Layout>
       <SEO title="Experience" />
@@ -29,7 +28,6 @@ export const query = graphql`
   query {
     takeshape {
       getExperience {
-        _id
         checkerboardSection {
           checkerboard {
             description
@@ -39,16 +37,9 @@ export const query = graphql`
         community {
           images {
             image {
-              _id
-              caption
-              credit
               description
-              filename
-              mimeType
               path
               sourceUrl
-              title
-              uploadStatus
             }
           }
           title
