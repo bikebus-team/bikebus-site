@@ -1,28 +1,32 @@
 import PropTypes from "prop-types"
 import React from "react"
+import { getImageUrl } from "takeshape-routing";
 import { InstructorsPanelWrapper, InstructorsWrapper, SingleInstructorWrapper, TextWrapper } from "./instructorspanelstyles"
 import Image from "../image"
 
-const InstructorsPanel = ({ title }) => (
+const InstructorsPanel = ({ title, instructors }) => (
     <InstructorsPanelWrapper>
         <h1>{title}</h1>
         <InstructorsWrapper>
-            {singleInstructor()}
-            {singleInstructor()}
-            {singleInstructor()}
+            {instructors.map((instructor, index) => 
+                singleInstructor(instructor, index))}
         </InstructorsWrapper>
     </InstructorsPanelWrapper>
 );
 
-function singleInstructor() {
+function singleInstructor(instructor, index) {
+    const {name, title, normalHeadShot, funHeadShot} = instructor.instructor;
+    const normalHeadShotPath = normalHeadShot.path;
+    const funHeadShotPath = funHeadShot.path;
     return (
-        <SingleInstructorWrapper>
+        <SingleInstructorWrapper key={index}>
             <div style={{ width: `100%`, border: `1px solid #ddd` }}>
-                <Image/>
+                <img src={getImageUrl(normalHeadShotPath)} />
+                <img src={getImageUrl(funHeadShotPath)} />
             </div>
             <TextWrapper>
-                <h3>Name</h3>
-                <p>Some Fun Title</p>
+                <h3>{name}</h3>
+                <p>{title}</p>
             </TextWrapper>
         </SingleInstructorWrapper>
     );

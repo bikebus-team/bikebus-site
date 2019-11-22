@@ -2,14 +2,16 @@ import React from "react"
 import { Button, Link } from "../Base/basecomponents"
 import {
   SockContainer,
-  SockContentContainer}
+  SockContentContainer,
+  SockTitle,
+  SockText}
   from "./SockStyles"
 
 const Sock = ({ title, text, buttonText, buttonLink }) => (
   <SockContainer>
     <SockContentContainer>
-      <h2>{title}</h2>
-      <p>{text}</p>
+      <SockTitle>{title}</SockTitle>
+      <SockText>{text}</SockText>
       <Link to={buttonLink}>
         <Button>{buttonText}</Button>
       </Link>
