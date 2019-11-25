@@ -19,8 +19,6 @@ const formatDate = date => {
   let month = JSDate.toLocaleString('default', { month: 'long' });
   let time = JSDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
 
-
-  console.log(JSDate);
   let formatted = month + ' ' + day + ' ' + time;
   return (
   <HEDate>
