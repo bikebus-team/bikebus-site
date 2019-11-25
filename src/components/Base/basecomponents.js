@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { linkColor } from "./colors"
+import { linkColor, darkGreen } from "./colors"
 import GatsbyLink from "gatsby-link"
 
 export const ComponentWrapper = styled.div`
@@ -33,7 +33,7 @@ export const ComponentWrapper = styled.div`
 `
 
 export const Button = styled.button`
-  background-color: ${linkColor};
+  background-color: ${darkGreen};
   color: white;
   border-radius: 3px;
   border: none;

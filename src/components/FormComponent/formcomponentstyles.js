@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { offWhite } from '../Base/colors';
-import { PaddedComponentWrapper } from '../Base/basecomponents';
+import { darkGreen, offWhite } from '../Base/colors';
+import { Button, PaddedComponentWrapper } from '../Base/basecomponents';
 
 export const StepLine = styled.hr`
     height: 3px;
@@ -39,4 +39,24 @@ export const FormWrapper = styled(PaddedComponentWrapper)`
   width: inherit;
   flex-direction: column;
   align-items: center;
+`;
+
+export const ActiveButton = styled(Button)`
+    margin-top: 20px;
+    width: 15%;
+    text-tranformation: uppercase;
+    border: 2px solid ${darkGreen};
+`;
+
+export const BackButton = styled(Button)`
+    width: 15%;
+    margin-top: 20px;
+    text-tranformation: uppercase;
+    background: ${offWhite};
+    color: ${darkGreen};
+    border: 2px solid ${darkGreen};
+`;
+
+export const FormStepWrapper = styled.div`
+    width: 100%;
 `;

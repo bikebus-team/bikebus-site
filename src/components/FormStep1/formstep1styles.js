@@ -1,8 +1,10 @@
 import styled from "styled-components"
+import { darkGreen, offWhite } from "../Base/colors"
 
 export const FormStep1Wrapper = styled.div`
     display: flex;
     width: 100%;
+    flex-direction: column;
 `;
 export const TitleWrapper = styled.div`
     align-contents: start:
@@ -31,4 +33,12 @@ export const RadioButton = styled.li`
 `;
 
 export const RadioInput = styled.input`
+opacity: 0;
+    width:0;
+    height:0;
+`;
+
+export const RadioButtonLabel = styled.label`
+background: white;
+border: 1px solid #bebebe;
 `;

@@ -1,6 +1,8 @@
 import React from 'react';
 import FormStep1 from "../FormStep1/formstep1";
-import { FormTitle, FormWrapper, StepLine, StepTitleGroup, StepTitleWrapper, SubtitleWrapper } from './formcomponentstyles';
+import FormStep2 from "../FormStep2/formstep2";
+import FormStep3 from "../FormStep3/formstep3";
+import { ActiveButton, BackButton, FormStepWrapper, FormTitle, FormWrapper, StepLine, StepTitleGroup, StepTitleWrapper, SubtitleWrapper } from './formcomponentstyles';
 
 const StepTitle = ({ title }) => (
     <StepTitleWrapper>
@@ -9,14 +11,32 @@ const StepTitle = ({ title }) => (
     </StepTitleWrapper>
 );
 
-function renderStep(step) {
+function continueOnClick(step, setStep) {
+    setStep(step + 1);
+}
+
+function backOnClick(step, setStep) {
+    setStep(step - 1);
+}
+
+function renderStep(step, setStep) {
     switch(step) {
         case 1:
-            return <FormStep1 />
+            return <FormStepWrapper>
+                    <FormStep1 />
+                    <ActiveButton onClick={() => continueOnClick(step, setStep)}>CONTINUE</ActiveButton>
+                </FormStepWrapper>
         case 2:
-            return <h1>CASE 2</h1>
+            return <FormStepWrapper>
+                    <FormStep2 />
+                    <BackButton onClick={() => backOnClick(step, setStep)}>PREVIOUS</BackButton>
+                    <ActiveButton onClick={() => continueOnClick(step, setStep)}>CONTINUE</ActiveButton>
+                </FormStepWrapper>
         case 3:
-            return <h1>CASE 3</h1>
+            return <FormStepWrapper>
+                    <FormStep3 />
+                    <BackButton onClick={() => backOnClick(step, setStep)}>PREVIOUS</BackButton>
+                </FormStepWrapper>
         default:
             return <h1>DEFAULT</h1>
     }
@@ -36,7 +56,7 @@ const FormComponent = () => {
                 <StepTitle title="2. Personal Info"/>
                 <StepTitle title="3. Details & Scheduling"/>
             </StepTitleGroup>
-            {renderStep(step)}
+            {renderStep(step, setStep)}
       </FormWrapper>
 }
   
