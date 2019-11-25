@@ -109,9 +109,10 @@ export const HEImage = styled.img`
 export const HECta = styled(Button)`
   background-color: ${offWhite};
   color: ${darkGreen};
+  border: 1px solid ${offWhite};
+  cursor: pointer;
   &:hover {
     color: ${offWhite};
     background-color: ${darkGreen};
-    border: 1px solid ${offWhite};
   }
 `
