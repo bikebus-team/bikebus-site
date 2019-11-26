@@ -1,18 +1,31 @@
 import styled from "styled-components"
 import {BBh2, BBp} from "../Base/fonts"
+import { darkGreen } from "../Base/colors"
+import { Button } from "../Base/basecomponents"
 
 export const SockContainer = styled.div`
-  background-color: gray;
+  background-color: ${(darkGreen)};
   width: 100%;
-  height: 40vh;
+  height: 350px;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  align-items: center; 
+  text-align: center;
 `
 
 export const SockContentContainer = styled.div`
-  text-align: Center;
-  width: inherit;
-  margin: 10%;
+  width: 75%;
+  color: white;
+  overflow-wrap: break-word;
+  display: inline-block;
+  align-self: center;
+`
+
+export const SockButton = styled(Button)`
+  background-color: white;
+  color: ${(darkGreen)};
+  text-transform: uppercase;
+  margin: 20px;
 `
 
 export const SockTitle = styled(BBh2)`
@@ -21,5 +34,4 @@ export const SockTitle = styled(BBh2)`
 
 
 export const SockText = styled(BBp)`
-
 `

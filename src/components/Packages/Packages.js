@@ -23,6 +23,8 @@ import {
     RadioInput}
   from "./PackagesStyles"
 
+// useState + hooks
+
 const Packages = ({ heading, subtitle, packages}) => (
     <PackagesContainer>
         <PackagesHeadingContainer>
@@ -30,10 +32,12 @@ const Packages = ({ heading, subtitle, packages}) => (
             <PackagesSubtitle>{subtitle}</PackagesSubtitle>
         </PackagesHeadingContainer>
         <RadioContainer>
-            <RadioList>
-            {packages.map((packages, index) => 
-                radioPackage(packages, index))}
-            </RadioList>
+            <form>
+                <RadioList>
+                {packages.map((packages, index) => 
+                    radioPackage(packages, index))}
+                </RadioList>
+            </form>
         </RadioContainer>
         <PackagesContentContainer>
             {packages.map((packages, index) => 
@@ -43,14 +47,22 @@ const Packages = ({ heading, subtitle, packages}) => (
   
   )
 
+function handleChange(name) {
+    alert('Clicked' + name);
+}
+
 function radioPackage(packages, index) {
     const header = packages.option.title
     return (
         <RadioButton key={index}>
-            <RadioInput
-                type="radio" 
-                value={header} 
-                name={header}/> {header}
+            <label>
+                <RadioInput
+                    type="radio" 
+                    value={header} 
+                    name="packages"/> 
+                {header}
+            </label>
+                
         </RadioButton>
     );
 }

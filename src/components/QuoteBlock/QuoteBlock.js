@@ -10,7 +10,7 @@ import {
 const QuoteBlock = ({ quote }) => (
   <QuoteBlockContainer>
     <QuoteBlockContentContainer>
-      <QuoteBlockQuote>{quote}</QuoteBlockQuote>
+        <QuoteBlockQuote>{quote}</QuoteBlockQuote>
     </QuoteBlockContentContainer>
   </QuoteBlockContainer>
 

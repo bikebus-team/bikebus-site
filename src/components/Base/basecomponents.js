@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { linkColor } from "./colors"
 import GatsbyLink from "gatsby-link"
+import { darkGreen } from "./colors"
 
 export const ComponentWrapper = styled.div`
   display: flex;
@@ -33,12 +34,13 @@ export const ComponentWrapper = styled.div`
 `
 
 export const Button = styled.button`
-  background-color: ${linkColor};
+  background-color: ${(darkGreen)};
   color: white;
-  border-radius: 3px;
+  border-radius: 2px;
   border: none;
   padding: 10px 15px;
   font-size: 16px;
+  text-tranform: uppercase;
   &:hover {
     cursor: pointer;
   }

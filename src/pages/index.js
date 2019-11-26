@@ -41,8 +41,6 @@ export const query = graphql`
             linkDestination
             title
           }
-          buttonLinkUrl
-          buttonTitle
           description
           title
         }

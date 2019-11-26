@@ -6,6 +6,9 @@ import SplitHero from "../components/SplitHero/SplitHero"
 import QuoteBlock from "../components/QuoteBlock/QuoteBlock"
 import Sock from "../components/Sock/Sock"
 import Steps from "../components/Steps/Steps"
+import SectionHeader from "../components/SectionHeader/SectionHeader"
+import Companies from "../components/Companies/Companies"
+import Checkerboard from "../components/Checkerboard/checkerboard"
 import SEO from "../components/seo"
 import Packages from "../components/Packages/Packages"
 
@@ -23,20 +26,37 @@ const Corporate = ({data}) => {
       ctaButtonLink={corpdata.hero.button.linkDestination}
       ctaButtonText={corpdata.hero.button.title}
       />
-    <QuoteBlock
-      quote= {corpdata.quote.content}
+    <SectionHeader
+      title="Corporate Wellness Benefits"
+      description="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
       />
+    {corpdata.checkerboardSection && corpdata.checkerboardSection.map((cb, index) => (
+        <Checkerboard
+          key={index}
+          imageLeft={index % 2 === 1}
+          title={cb.checkerboard.title}
+          text={cb.checkerboard.description}
+          imageSrc={cb.checkerboard.image.path}
+          hasButton={false}
+        />
+      ))}
     <Packages
       heading={corpdata.pricing.title}
       subtitle={corpdata.pricing.description}
       packages={corpdata.pricing.options}
     />
     <Steps
-      // Need the option in takeshape for a header and subtitle for this section
       heading = {corpdata.differentiatorSection.title}
-      subtitle={corpdata.differentiatorSection.subtitle}
       steps={corpdata.differentiatorSection.differentiatorRepeater}
     />
+    <QuoteBlock
+      quote= {corpdata.quote.content}
+      />
+    <Companies
+      // needs a cms option for heading
+      heading= "Who we've worked with"
+      companyLogos={corpdata.companies}
+      />
     <Sock
       title={corpdata.sock.sock.title}
       text={corpdata.sock.sock.description}
