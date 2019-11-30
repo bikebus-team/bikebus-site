@@ -92,7 +92,7 @@ export const query = graphql`
           }
         }
         specialEvent {
-          dateTime
+          
           description
           link
           location
