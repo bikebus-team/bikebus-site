@@ -34,7 +34,7 @@ export const ComponentWrapper = styled.div`
 `
 
 export const Button = styled.button`
-  background-color: ${(darkGreen)};
+  background-color: ${darkGreen};
   color: white;
   border-radius: 2px;
   border: none;

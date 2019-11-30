@@ -13,7 +13,6 @@ const SectionHeader = ({ title, description}) => (
       <SectionHeaderDescription>{description}</SectionHeaderDescription>
     </SectionHeaderContentContainer>
   </SectionHeaderContainer>
-
 )
 
 export default SectionHeader

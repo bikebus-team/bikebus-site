@@ -8,7 +8,7 @@ export const SplitHeroContainer = styled.div`
   height: 600px;
   display: inline-flex;
   align-items: center;
-  background-color: ${(darkGreen)};
+  background-color: ${darkGreen};
 `
 
 export const SplitHeroContentContainer = styled.div`
@@ -45,7 +45,7 @@ export const SplitHeroTagline = styled(BBh1)`
 export const WhiteButton = styled(Button)`
   margin-top: 20px;
   background-color:white;
-  color: ${(darkGreen)};
+  color: ${darkGreen};
   text-transform: uppercase;
 `
 

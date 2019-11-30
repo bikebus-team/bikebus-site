@@ -4,7 +4,7 @@ import { darkGreen } from "../Base/colors"
 import { Button } from "../Base/basecomponents"
 
 export const SockContainer = styled.div`
-  background-color: ${(darkGreen)};
+  background-color: ${darkGreen};
   width: 100%;
   height: 350px;
   display: flex;
@@ -23,7 +23,7 @@ export const SockContentContainer = styled.div`
 
 export const SockButton = styled(Button)`
   background-color: white;
-  color: ${(darkGreen)};
+  color: ${darkGreen};
   text-transform: uppercase;
   margin: 20px;
 `

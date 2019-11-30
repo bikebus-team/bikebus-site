@@ -19,7 +19,7 @@ export const QuoteBlockQuote = styled(BBh1)`
     position: relative;
     top: -80px;
     left: -50px;
-    color: ${(teal)};
+    color: ${teal};
     font-family: Times New Roman, Sans-serif
   }
 `
