@@ -12,7 +12,6 @@ import ExperienceCommunity from "../components/ExperienceCommunity/ExperienceCom
 const Experience = ({data}) => {
   // The `what to expect` page
   const expdata = data.takeshape.getExperience;
-  console.log(expdata);
   return (
     <Layout>
       <SEO title="Experience" />

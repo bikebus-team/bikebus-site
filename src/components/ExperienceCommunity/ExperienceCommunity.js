@@ -26,7 +26,6 @@ const ExperienceCommunity = ({ title, photos }) => {
       </CommunityImageRow>
     )
   }
-  console.log(container);
   return (
     <CommunityWrapper>
       <CommunityTitle>{title}</CommunityTitle>
