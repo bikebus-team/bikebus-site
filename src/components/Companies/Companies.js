@@ -28,7 +28,7 @@ function singleCompany(companyLogo, index) {
     return (
         <SingleLogoWrapper key={index}>
             <LogoContainer>
-                <CompanyLogo src={getImageUrl(logoPath)} style={{ width: `100%`}} />
+                <CompanyLogo src={getImageUrl(logoPath)}/>
             </LogoContainer>
         </SingleLogoWrapper>
     );

@@ -43,6 +43,7 @@ export const LogoContainer = styled.div`
 export const CompanyLogo = styled.img`
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
+    width: 100%;
 
 `
 
