@@ -12,10 +12,15 @@ export const HighlightEventContainer = styled.div`
     height: auto;
     flex-direction: column;
   }
+
+  @media (min-width: 420px) {
+    padding: 0 32px 120px;
+  }
+  
   @media (min-width: 768px) {
     flex-direction: row;
     height: 400px;
-    padding: 0 50px 120px 50px;
+    padding: 0 50px 120px;
   }
 `
 
@@ -56,18 +61,23 @@ export const HELeftContentContainer = styled.div`
 
 export const HETitle = styled(BBh1)`
   text-transform: uppercase;
-  font-stretch: semi-condensed;
   color: ${offWhite};
+  margin: 0;
 `
-
-export const HEDate = styled(BBh2)`
-  color: ${offWhite};
-  font-weight: normal;
-`;
 
 export const HEDesc = styled(BBp)`
   color: ${onDark};
-  margin: 40px 0;
+  @media (min-width: 0px) {
+    margin: 24px 0 36px;
+  }
+
+  @media (min-width: 768px) {
+    margin: 24px 0 50px;
+  }
+
+  @media (min-width: 1280px) {
+    margin: 40px 0;
+  }
 `
 export const HEImageContainer = styled.div`
   overflow: hidden;
@@ -84,18 +94,12 @@ export const HEImageContainer = styled.div`
     display: block;
   }
 `
-export const HEImage = styled.img`
-  @media (min-width: 0px) {
-    max-height: initial;
-    max-width: 100%;
-    height: auto;
-  }
-
-  @media (min-width: 768px) {
-    max-height: 100%;
-    max-width: initial;
-    width: auto;
-  }
+export const HEImage = styled.div`
+  background-image: url('${(props)=>props.imgUrl}');
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 `
 
 export const HECta = styled(Button)`

@@ -34,6 +34,7 @@ export const ComponentWrapper = styled.div`
 
 export const Button = styled.button`
   background-color: ${darkGreen};
+  border: 1px solid ${darkGreen};
   color: ${offWhite};
   font-family: "Noto Sans", sans-serif;
   font-size: 16px;

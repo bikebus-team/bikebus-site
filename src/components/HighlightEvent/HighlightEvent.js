@@ -24,7 +24,7 @@ const HighlightEvent = ({ title, description, ctaLink, ctaText, imgSrc }) => (
       </HELeftContentContainer>
     </HELeftContainer>
     <HEImageContainer>
-      <HEImage src={getImageUrl(imgSrc)} />
+      <HEImage imgUrl={getImageUrl(imgSrc)} />
     </HEImageContainer>
   </HighlightEventContainer>
 )

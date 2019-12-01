@@ -207,7 +207,6 @@ export const HeroButtonContainer = styled.div`
 
 export const HeroTagline = styled(BBh1)`
   text-transform: uppercase;
-  font-stretch: semi-condensed;
   color: ${offWhite};
 `
 
