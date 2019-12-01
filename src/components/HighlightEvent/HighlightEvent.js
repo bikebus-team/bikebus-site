@@ -7,33 +7,18 @@ import {
   HELeftContentContainer,
   HETitle,
   HEDesc,
-  HEDate,
   HEImageContainer,
   HECta,
   HEImage,
 } from "./HighlightEventStyles"
 
-const formatDate = date => {
-  let JSDate = new Date(date);
-  let day = JSDate.getDate();
-  let month = JSDate.toLocaleString('default', { month: 'long' });
-  let time = JSDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-
-  let formatted = month + ' ' + day + ' ' + time;
-  return (
-  <HEDate>
-    {formatted}
-  </HEDate>);
-}
-
-const HighlightEvent = ({ title, description, ctaLink, ctaText, date, imgSrc }) => (
+const HighlightEvent = ({ title, description, ctaLink, ctaText, imgSrc }) => (
   <HighlightEventContainer>
     <HELeftContainer>
       <HELeftContentContainer>
         <HETitle>{title}</HETitle>
-        {formatDate(date)}
         <HEDesc>{description}</HEDesc>
-        <a href={ctaLink} target="_blank">
+        <a href={ctaLink} target="_blank" rel="noreferrer">
           <HECta>{ctaText}</HECta>
         </a>
       </HELeftContentContainer>

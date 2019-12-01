@@ -82,7 +82,7 @@ export const HeroContainer = styled.div`
       width: 500px;
       top: auto;
       bottom: -400px;
-      right: -125px;
+      right: -250px;
       left: auto;
     }
   }
@@ -95,19 +95,19 @@ export const HeroImageConatiner = styled.div`
 
   @media (min-width: 0px) {
     height: 100%;
-    background-size: 300px;
-    background-position: left bottom;
+    background-size: 420px;
+    background-position: center bottom;
     transform: scaleX(-1);
   }
 
   @media (min-width: 768px) {
-    background-size: 400px;
-    background-position: -10% 170%;
+    background-size: 450px;
+    background-position: -10% bottom;
   }
 
   @media (min-width: 1280px) { 
     background-size: contain;
-    background-position: left top;
+    background-position: -160px 0;
     transform: scaleX(1);
   }
 `
@@ -159,7 +159,7 @@ export const HeroButtonContainer = styled.div`
     flex-direction: column;
     align-items: stretch;
     & > a {
-      margin-top: 30px;
+      margin-top: 24px;
       margin-right: 0;
     }
     & button {
@@ -169,7 +169,7 @@ export const HeroButtonContainer = styled.div`
   @media (min-width: 768px) {
     flex-direction: row;
     & > a {
-      margin-right: 30px;
+      margin-right: 24px;
     }
   }
 `

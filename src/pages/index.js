@@ -139,7 +139,6 @@ export const query = graphql`
           }
         }
         specialEvent {
-          dateTime
           description
           image {
             caption
