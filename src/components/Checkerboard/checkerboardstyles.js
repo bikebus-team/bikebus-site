@@ -4,6 +4,8 @@ import { Button, Link, PaddedComponentWrapper } from "../Base/basecomponents"
 
 export const CheckerboardWrapper = styled(PaddedComponentWrapper)`
   display: inline-flex;
+  box-sizing: border-box;
+  width: 100%;
   flex-flow: row;
   flex-direction: ${props => (props.imageLeft ? "row" : "row-reverse")};
   align-items: center;
@@ -14,9 +16,21 @@ export const CheckerboardWrapper = styled(PaddedComponentWrapper)`
   }
 `
 
+export const CheckerImage = styled.div`
+background-image: url('${(props)=>props.imgUrl}');
+height: 100%;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: 50% 50%;
+`
 export const LeftCheckerboardWrapper = styled.div`
-  width: 35%;
+  width: 45%;
+  height: 400px;
   border: 1px solid #ddd;
+
+  @media (max-width: 420px) {
+    height: 200px;
+  }
 
   @media (max-width: 768px) {
     width: 100%;
