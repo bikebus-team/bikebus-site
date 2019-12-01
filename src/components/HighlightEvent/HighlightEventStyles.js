@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { Button } from "../Base/basecomponents"
 import { BBh1, BBh2, BBp } from "../Base/fonts"
-import { offWhite, darkGreen } from '../Base/colors';
+import { offWhite, darkGreen, onDark } from '../Base/colors';
 
 export const HighlightEventContainer = styled.div`
   padding: 0 50px 120px 50px;
@@ -76,7 +76,7 @@ export const HEDate = styled(BBh2)`
 `;
 
 export const HEDesc = styled(BBp)`
-  color: ${offWhite};
+  color: ${onDark};
   margin: 40px 0;
 `
 export const HEImageContainer = styled.div`
