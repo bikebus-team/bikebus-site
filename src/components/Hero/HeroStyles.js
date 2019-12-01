@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { BBh1, BBp } from "../Base/fonts"
-import { offWhite } from "../Base/colors"
+import { Button, Link } from "../Base/basecomponents"
+import { offWhite, onDark } from "../Base/colors"
 import * as circlesMagenta from "../../images/circlesMagenta.svg"
 import * as circlesTeal from "../../images/circlesTeal.svg"
 
@@ -15,6 +16,10 @@ export const HeroContainer = styled.div`
 
   @media (min-width: 0px) {
     height: 635px;
+  }
+
+  @media (min-width: 420px) {
+    height: 500px;
   }
 
   @media (min-width: 768px) {
@@ -41,12 +46,20 @@ export const HeroContainer = styled.div`
       right: -170px;
     }
 
+    @media (min-width: 420px) {
+      width: 500px;
+      top: 65px;
+      right: -200px;
+      left: auto;
+    }
+
     @media (min-width: 768px) {
       width: 500px;
       top: 80px;
       right: -120px;
       left: auto;
     }
+
     @media (min-width: 1280px) {
       width: 800px;
       top: auto;
@@ -100,6 +113,12 @@ export const HeroImageConatiner = styled.div`
     transform: scaleX(-1);
   }
 
+  @media (min-width: 420px) {
+    background-size: auto 380px;
+    background-position: -200px bottom;
+    transform: scaleX(-1);
+  }
+
   @media (min-width: 768px) {
     background-size: 450px;
     background-position: -10% bottom;
@@ -131,6 +150,12 @@ export const HeroContentContainer = styled.div`
     left: 0;
   }
 
+  @media (min-width: 420px) {
+    margin-left: 20px;
+    max-width: 280px;
+    justify-content: center;
+  }
+
   @media (min-width: 768px) {
     margin-left: 70px;
     max-width: 420px;
@@ -158,18 +183,18 @@ export const HeroButtonContainer = styled.div`
   @media (min-width: 0px) {
     flex-direction: column;
     align-items: stretch;
-    & > a {
+    & ${Link} {
       margin-top: 24px;
       margin-right: 0;
     }
-    & button {
+    & ${Button} {
       width: 100%;
     }
   }
   @media (min-width: 768px) {
     flex-direction: row;
-    & > a {
-      margin-right: 24px;
+    & ${Link} + ${Link} {
+      margin-left: 24px;
     }
   }
 `
@@ -181,5 +206,5 @@ export const HeroTagline = styled(BBh1)`
 `
 
 export const HeroSubtitle = styled(BBp)`
-  color: ${offWhite};
+  color: ${onDark};
 `
