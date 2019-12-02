@@ -6,8 +6,11 @@ import SplitHero from "../components/SplitHero/SplitHero"
 import QuoteBlock from "../components/QuoteBlock/QuoteBlock"
 import Sock from "../components/Sock/Sock"
 import Steps from "../components/Steps/Steps"
+import Companies from "../components/Companies/Companies"
+import Checkerboard from "../components/Checkerboard/checkerboard"
 import SEO from "../components/seo"
 import Packages from "../components/Packages/Packages"
+import Footer from "../components/Footer/Footer"
 
 const Corporate = ({data}) => {
   // The `what to expect` page
@@ -23,20 +26,33 @@ const Corporate = ({data}) => {
       ctaButtonLink={corpdata.hero.button.linkDestination}
       ctaButtonText={corpdata.hero.button.title}
       />
-    <QuoteBlock
-      quote= {corpdata.quote.content}
-      />
+    {corpdata.checkerboardSection && corpdata.checkerboardSection.map((cb, index) => (
+        <Checkerboard
+          key={index}
+          imageLeft={index % 2 === 1}
+          title={cb.checkerboard.title}
+          text={cb.checkerboard.description}
+          imageSrc={cb.checkerboard.image.path}
+          hasButton={false}
+        />
+      ))}
     <Packages
       heading={corpdata.pricing.title}
       subtitle={corpdata.pricing.description}
       packages={corpdata.pricing.options}
     />
     <Steps
-      // Need the option in takeshape for a header and subtitle for this section
       heading = {corpdata.differentiatorSection.title}
-      subtitle={corpdata.differentiatorSection.subtitle}
       steps={corpdata.differentiatorSection.differentiatorRepeater}
     />
+    <QuoteBlock
+      quote= {corpdata.quote.content}
+      />
+    <Companies
+      // needs a cms option for heading
+      heading= "Who we've worked with"
+      companyLogos={corpdata.companies}
+      />
     <Sock
       title={corpdata.sock.sock.title}
       text={corpdata.sock.sock.description}

@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { linkColor, offWhite, darkGreen, richBlack } from "./colors"
 import GatsbyLink from "gatsby-link"
+import { darkGreen } from "./colors"
 
 export const ComponentWrapper = styled.div`
   display: flex;
