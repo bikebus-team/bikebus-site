@@ -2,10 +2,8 @@ import styled from "styled-components"
 import { BBh1, BBh2, BBp } from "../Base/fonts"
 import { PaddedComponentWrapper} from "../Base/basecomponents"
 
-export const FooterContainer = styled.div`
-    width: 100%;
+export const FooterContainer = styled.footer`
     background-color: black;
-    display: flex;
 
 `
 

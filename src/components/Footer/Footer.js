@@ -17,17 +17,17 @@ import {
     }
   from "./FooterStyles"
 
-const Footer = ({  }) => (
+const Footer = ({ SocialList, AboutListItems, RideListItems, CompanyListItems }) => (
   <FooterContainer>
     <FooterContentContainer>
         <FooterCompanyInfoContainer>
             <FooterLogo></FooterLogo>
             <FooterCopyright>Copyright BikeBus, LLC 2018</FooterCopyright>
             <FooterSocialContainer>
-                <SocialLogo></SocialLogo>
-                <SocialLogo></SocialLogo>
-                <SocialLogo></SocialLogo>
-                <SocialLogo></SocialLogo>
+                {SocialList && 
+                    SocialList.map((SocialLogo, index) =>
+                        singleSocial(SocialLogo, index))
+                    }
             </FooterSocialContainer>
             <ScoutTag>Made with Love by Scout</ScoutTag>
         </FooterCompanyInfoContainer>
@@ -36,10 +36,10 @@ const Footer = ({  }) => (
                 <ListTitle>About BikeBus</ListTitle>
                 <FooterList>
                     <FooterItem><Item>The Experience</Item></FooterItem>
-                    <FooterItem><Item>FAQ</Item></FooterItem>
-                    <FooterItem><Item>Safety</Item></FooterItem>
-                    <FooterItem><Item>Policies</Item></FooterItem>
-                    <FooterItem><Item>Terms and Conditions</Item></FooterItem>
+                    {AboutListItems && 
+                        AboutListItems.map((AboutListItem, index) =>
+                            singleItem(AboutListItem, index))
+                    }
                 </FooterList>
             </FooterListContainer>
             <FooterListContainer>
@@ -48,12 +48,20 @@ const Footer = ({  }) => (
                     <FooterItem><Item>Corporate</Item></FooterItem>
                     <FooterItem><Item>Private Events</Item></FooterItem>
                     <FooterItem><Item>Special Events</Item></FooterItem>
+                    {RideListItems && 
+                        RideListItems.map((RideListItem, index) =>
+                            singleItem(RideListItem, index))
+                    }
                 </FooterList>
             </FooterListContainer>
             <FooterListContainer>
                 <ListTitle>The Company</ListTitle>
                 <FooterList>
                     <FooterItem><Item>Our Story</Item></FooterItem>
+                    {CompanyListItems && 
+                        CompanyListItems.map((CompanyListItem, index) =>
+                            singleItem(CompanyListItem, index))
+                    }
                     <FooterItem><Item>Press Releases</Item></FooterItem>
                     <FooterItem><Item>Careers</Item></FooterItem>
                 </FooterList>
@@ -62,5 +70,17 @@ const Footer = ({  }) => (
     </FooterContentContainer>
   </FooterContainer>
 )
+
+function singleItem(ListItem, index) {
+    return (
+        <FooterItem key={index}><Item>{ListItem}</Item></FooterItem>
+    );
+}
+
+function singleSocial(SocialLogo, index) {
+    return (
+        <SocialLogo key={index}>{SocialLogo}</SocialLogo>
+    );
+}
 
 export default Footer

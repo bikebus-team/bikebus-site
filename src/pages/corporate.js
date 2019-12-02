@@ -59,7 +59,6 @@ const Corporate = ({data}) => {
       buttonLink={corpdata.sock.sock.button && corpdata.sock.sock.button.linkDestination}
       buttonText={corpdata.sock.sock.button && corpdata.sock.sock.button.title}
     />
-    <Footer/>
   </Layout>
   )
 }
