@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { linkColor } from "./colors"
+import { linkColor, offWhite, darkGreen, richBlack } from "./colors"
 import GatsbyLink from "gatsby-link"
 import { darkGreen } from "./colors"
 
@@ -35,16 +35,25 @@ export const ComponentWrapper = styled.div`
 
 export const Button = styled.button`
   background-color: ${darkGreen};
-  color: white;
-  border-radius: 2px;
-  border: none;
-  padding: 10px 15px;
+  border: 1px solid ${darkGreen};
+  color: ${offWhite};
+  font-family: "Noto Sans", sans-serif;
   font-size: 16px;
-  text-tranform: uppercase;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 3px;
+  border: none;
+  padding: 15px 25px;
   &:hover {
     cursor: pointer;
   }
 `
+
+export const ButtonSecondary = styled(Button)`
+  background-color: ${richBlack};
+  border: 1px solid ${offWhite};
+`
+
 
 export const PaddedComponentWrapper = styled.div`
   display: flex;
