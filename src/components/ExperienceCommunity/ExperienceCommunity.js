@@ -12,7 +12,6 @@ const ExperienceCommunity = ({ title, photos }) => {
   let container = []
 
   for (let ind = 0; ind < photos.length; ind += 2) {
-    console.log(ind)
     container.push(
       <CommunityImageRow key={ind / 2}>
         <CommunityImage
