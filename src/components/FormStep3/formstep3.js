@@ -4,6 +4,8 @@ import styled from "styled-components"
 import { 
     FormStep3Wrapper,
     SmallInput,
+    SmallInputWrapper,
+    TimesWrapper
 } from "./formstep3styles";
 import { ActiveButton, BackButton } from "../FormComponent/formcomponentstyles";
 import { FormField } from "../FormComponent/FormBaseComponents/formbasecomponents";
@@ -23,14 +25,17 @@ const FormStep3 = ({ user, setUser, continueOnClick, backOnClick }) => (
                     editFn={e => updateTentativeDate(user, setUser, e)} 
                     currVal={user.tentativeDate}
                     placeholderVal="MM / DD / YYYY" />
-                <SmallFormField title="Start Time" 
-                    editFn={e => updateStartTime(user, setUser, e)} 
-                    currVal={user.startTime} 
-                    placeholderVal="--:-- --"/>
-                <SmallFormField title="End Time" 
-                    editFn={e => updateEndTime(user, setUser, e)} 
-                    currVal={user.endTime}
-                    placeholderVal="--:-- --" />
+                
+                <TimesWrapper>
+                    <SmallFormField title="Start Time" 
+                        editFn={e => updateStartTime(user, setUser, e)} 
+                        currVal={user.startTime} 
+                        placeholderVal="--:-- --"/>
+                    <SmallFormField title="End Time" 
+                        editFn={e => updateEndTime(user, setUser, e)} 
+                        currVal={user.endTime}
+                        placeholderVal="--:-- --" />
+                </TimesWrapper>
             </FormContents>
         </Form>
         <SizeWrapper>
@@ -42,12 +47,11 @@ const FormStep3 = ({ user, setUser, continueOnClick, backOnClick }) => (
     </FormStep3Wrapper>
 );
 
-// need to wrap in a div so that they can be on the same row
 const SmallFormField = ({ title, editFn, currVal, placeholderVal }) => {
-    return <div>
+    return <SmallInputWrapper>
         <Label>{title}</Label>
         <SmallInput onChange = {editFn} value = {currVal} placeholder={placeholderVal} />
-    </div>
+    </SmallInputWrapper>
 }
 
 function updatePickup(user, setUser, event) {

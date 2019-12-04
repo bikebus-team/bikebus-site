@@ -10,6 +10,14 @@ export const FormStep3Wrapper = styled.div`
 `;
 
 export const SmallInput = styled(Input)`
-    width: 45%;
 `;
 
+export const SmallInputWrapper = styled.div`
+    width: 45%
+`;
+
+export const TimesWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+`;

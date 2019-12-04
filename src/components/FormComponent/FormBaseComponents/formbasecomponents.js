@@ -11,7 +11,7 @@ export const FormField = ({ title, editFn, currVal, placeholderVal }) => {
     return <div>
         <Label>{title}</Label>
         <InputWrapper>
-            <Input onChange = {editFn} value = {currVal} placeholder={placeholderVal} />
+            <Input onChange = {editFn} value = {currVal} placeholder={placeholderVal} required={true}/>
         </InputWrapper>
     </div>
 }
