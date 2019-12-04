@@ -8,7 +8,7 @@ export const FormStep1Wrapper = styled.div`
 `;
 
 export const RadioInput = styled.input`
-opacity: 0;
+    opacity: 0;
     width:0;
     height:0;
 `;

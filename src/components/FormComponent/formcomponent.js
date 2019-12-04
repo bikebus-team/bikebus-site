@@ -3,7 +3,7 @@ import FormStep1 from "../FormStep1/formstep1";
 import FormStep2 from "../FormStep2/formstep2";
 import FormStep3 from "../FormStep3/formstep3";
 import FormFinal from "../FormFinal/formfinal";
-import { ActiveButton, BackButton, FormStepWrapper, FormTitle, FormWrapper, StepLine, StepH, StepTitleGroup, StepTitleWrapper, SubtitleWrapper } from './formcomponentstyles';
+import { ActiveButton, FormStepWrapper, FormTitle, FormWrapper, StepLine, StepH, StepTitleGroup, StepTitleWrapper, SubtitleWrapper } from './formcomponentstyles';
 
 const StepTitle = ({ title, fullOpacity }) => (
     <StepTitleWrapper fullOpacity={fullOpacity}>
@@ -87,31 +87,5 @@ const FormComponent = () => {
             {renderStep(step, setStep, user, setUser)}
       </FormWrapper>
 }
-
-
-// class FormComponent extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             step: 1,
-//             user: {
-//                 numRides: 1,
-//                 name: "",
-//                 emailAddress: "",
-//                 phoneNum: "",
-//                 message: "",
-//                 pickUpAddress: "",
-//                 dropOffAddress: "",
-//                 tentativeDate: "",
-//                 start: "",
-//                 end: ""
-//             }
-//         };
-//     }
-
-//     render() {
-
-//     }
-// }
 
 export default FormComponent
