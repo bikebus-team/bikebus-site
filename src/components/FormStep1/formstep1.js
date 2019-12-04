@@ -1,11 +1,10 @@
-import PropTypes from "prop-types"
-import React from "react"
-import styled from "styled-components"
+import PropTypes from "prop-types";
+import React from "react";
+import styled from "styled-components";
 import { 
     FormStep1Wrapper, 
-    TitleWrapper,
-    RadioInput } from "./formstep1styles"
-import { darkGreen, offWhite } from "../Base/colors"
+    RadioInput } from "./formstep1styles";
+import { darkGreen, offWhite } from "../Base/colors";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -80,11 +79,8 @@ function handleSelectChange(event) {
     console.log("clicked", event);
 }
 
-const FormStep1 = ({}) => (
+const FormStep1 = ({ user, setUser }) => (
     <FormStep1Wrapper>
-        <TitleWrapper>
-            <h5>Amount of Rides</h5>
-        </TitleWrapper>
         
             
         <Wrapper>

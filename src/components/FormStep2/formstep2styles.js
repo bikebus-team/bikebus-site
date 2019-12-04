@@ -3,18 +3,16 @@ import { darkGreen, offWhite, richBlack } from "../Base/colors"
 
 export const FormStep2Wrapper = styled.div`
     display: flex;
-    width: 100%;
     flex-direction: column;
-`;
-export const TitleWrapper = styled.div`
-    align-contents: start:
+    align-items: center;
+    justify-content: center;
 `;
 
-export const Input = styled.input`
-	padding: 0.5em;
-	color: ${richBlack};
-	background: white
-	border: 2px solid ${darkGreen};
-	border-radius: 5px;
-	width: 100%;
+export const SizeWrapper = styled.div`
+    width: 50%;
+`;
+export const ButtonWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 `;

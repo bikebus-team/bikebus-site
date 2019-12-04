@@ -1,11 +1,15 @@
 import styled from "styled-components"
 import { darkGreen, offWhite } from "../Base/colors"
+import { Input } from "../FormComponent/FormBaseComponents/formbasecomponentsstyles";
 
 export const FormStep3Wrapper = styled.div`
     display: flex;
-    width: 100%;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `;
-export const TitleWrapper = styled.div`
-    align-contents: start:
+
+export const SmallInput = styled(Input)`
+    width: 45%;
 `;
+
