@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { getImageUrl } from "takeshape-routing";
-import { CheckerboardButton, CheckerboardLink, CheckerboardWrapper, LeftCheckerboardWrapper, RightCheckerboardWrapper, TextWrapper } from "./checkerboardstyles"
+import { CheckerImage, CheckerboardButton, CheckerboardLink, CheckerboardWrapper, LeftCheckerboardWrapper, RightCheckerboardWrapper, TextWrapper } from "./checkerboardstyles"
 // import Image from "../image"
 
 const Checkerboard = ({ imageLeft, title, text, imageSrc, hasButton, buttonText, buttonLink }) => {
@@ -9,7 +9,7 @@ const Checkerboard = ({ imageLeft, title, text, imageSrc, hasButton, buttonText,
     return (
     <CheckerboardWrapper imageLeft={imageLeft}>
         <LeftCheckerboardWrapper>
-            <img src={getImageUrl(imageSrc)} />
+            <CheckerImage imgUrl={getImageUrl(imageSrc)} />
         </LeftCheckerboardWrapper>
         <RightCheckerboardWrapper imageLeft={imageLeft}>
             <TextWrapper>

@@ -8,7 +8,8 @@ import {
   SplitHeroContent,
   SplitHeroTagline,
   SplitHeroSubtitle,
-  SplitHeroDescription}
+  SplitHeroDescription,
+  WhiteButton}
   from "./SplitHeroStyles"
 
 
@@ -19,10 +20,7 @@ const SplitHero = ({ tagline, subtitle, description, ctaButtonLink, ctaButtonTex
           <SplitHeroTagline>{tagline}</SplitHeroTagline>
           <SplitHeroSubtitle>{subtitle}</SplitHeroSubtitle>
           <SplitHeroDescription>{description}</SplitHeroDescription>
-          {/* TODO: have conditional for if there is no button added on CMS side */}
-          <Link to={ctaButtonLink}>
-            <Button>{ctaButtonText}</Button>
-          </Link>
+          {ctaButtonLink && <Link to={ctaButtonLink}><WhiteButton>{ctaButtonText}</WhiteButton></Link>}
         </SplitHeroContent>
       </SplitHeroContentContainer>
       <SplitHeroImageContainer

@@ -5,7 +5,7 @@ import { PaddedComponentWrapper } from "../Base/basecomponents"
 export const StepsContainer = styled(PaddedComponentWrapper)`
     text-align: center;
     display: block;
-    margin-bottom: 50px;
+    margin: 25px 0 50px 0;
 `
 
 export const StepsHeadingContainer = styled.div`
@@ -28,7 +28,7 @@ export const StepsContentContainer = styled.div`
 export const SingleStepWrapper = styled.div`
     margin: 0 20px 0 20px;
     @media (max-width: 768px) {
-        margin-bottom: 0 0 50px 0;
+        margin-bottom: 50px;
         align-self:center;
     }
 

@@ -1,20 +1,21 @@
 import React from "react"
-import { Button, Link } from "../Base/basecomponents"
+import { Link } from "../Base/basecomponents"
 import {
   SockContainer,
   SockContentContainer,
   SockTitle,
-  SockText}
+  SockText,
+  SockButton}
   from "./SockStyles"
 
 const Sock = ({ title, text, buttonText, buttonLink }) => (
   <SockContainer>
     <SockContentContainer>
       <SockTitle>{title}</SockTitle>
-      <SockText>{text}</SockText>
-      <Link to={buttonLink}>
-        <Button>{buttonText}</Button>
-      </Link>
+      { text && <SockText>{text}</SockText>}
+      { buttonText && <Link to={buttonLink}>
+        <SockButton>{buttonText}</SockButton>
+      </Link>}
     </SockContentContainer>
   </SockContainer>
 

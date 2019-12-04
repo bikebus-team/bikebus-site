@@ -7,21 +7,26 @@ import {
   HeaderLink,
   HeaderLogo,
   HeaderButton,
+  HeaderContainer,
+  HeaderPage,
 } from "./headerstyles"
 import * as logo from "../../images/bikebus_logo.png";
 
 const Header = ({ siteTitle }) => (
+  <HeaderContainer>
     <HeaderWrapper>
       <Link to="/" style={{lineHeight: 0}}>
         <HeaderLogo src={logo} />
       </Link>
       <HeaderLinkGroup>
-        <HeaderLink to="/experience/">The Experience</HeaderLink>
-        <HeaderLink to="/corporate/">Corporate</HeaderLink>
-        <HeaderLink to="/private/">Private Groups</HeaderLink>
-        <HeaderLink to="/story/">Our Story</HeaderLink>
+        <HeaderLink to="/experience/"><HeaderPage>The Experience</HeaderPage></HeaderLink>
+        <HeaderLink to="/corporate/"><HeaderPage>Corporate</HeaderPage></HeaderLink>
+        <HeaderLink to="/private/"><HeaderPage>Private Groups</HeaderPage></HeaderLink>
+        <HeaderLink to="/story/"><HeaderPage>Our Story</HeaderPage></HeaderLink>
+        <HeaderButton to="/">Request a Quote</HeaderButton>
       </HeaderLinkGroup>
     </HeaderWrapper>
+  </HeaderContainer>
 )
 
 Header.propTypes = {

@@ -4,7 +4,6 @@ import {
     StepsContainer,
     StepsHeadingContainer,
     StepsHeading,
-    StepsSubtitle,
     StepsContentContainer,
     SingleStepWrapper,
     StepIconContainer,
@@ -13,11 +12,10 @@ import {
     StepDescription}
   from "./StepsStyles"
 
-const Steps = ({ heading, subtitle, steps}) => (
+const Steps = ({ heading, steps}) => (
     <StepsContainer>
         <StepsHeadingContainer>
             <StepsHeading>{heading}</StepsHeading>
-            <StepsSubtitle>{subtitle}</StepsSubtitle>
         </StepsHeadingContainer>
         <StepsContentContainer>
             {steps.map((step, index) => 

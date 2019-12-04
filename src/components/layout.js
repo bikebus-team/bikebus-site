@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Footer from "../components/Footer/Footer"
 
 import Header from "../components/Header/header"
 import "./layout.css"
@@ -34,11 +35,17 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
+        <Footer
+          SocialList={null}
+          AboutListItems={null}
+          CompanyListItems={null}
+          RideListItems={null}
+        />
+        {/* <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        </footer> */}
       </div>
     </>
   )
