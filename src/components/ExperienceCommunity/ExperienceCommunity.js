@@ -5,24 +5,28 @@ import {
   CommunityImageContainer,
   CommunityImageRow,
   CommunityImage,
-  CommunityTitle
+  CommunityTitle,
 } from "./ExperienceCommunityStyles"
 
 const ExperienceCommunity = ({ title, photos }) => {
   let container = []
+
   for (let ind = 0; ind < photos.length; ind += 2) {
     container.push(
-      <CommunityImageRow key={(ind/2)}>
+      <CommunityImageRow key={ind / 2}>
         <CommunityImage
           key={ind}
           isLarge={ind % 4 === 0 || ind % 4 === 3}
           imgSrc={getImageUrl(photos[ind].image.path)}
         />
-        <CommunityImage
-          key={ind + 1}
-          isLarge={ind + 1 % 4 === 0 || ind + 1 % 4 === 3}
-          imgSrc={getImageUrl(photos[ind + 1].image.path)}
-        />
+        {/* If there is an odd number of photos */}
+        {photos.length !== ind + 1 && (
+          <CommunityImage
+            key={ind + 1}
+            isLarge={ind + (1 % 4) === 0 || ind + (1 % 4) === 3}
+            imgSrc={getImageUrl(photos[ind + 1].image.path)}
+          />
+        )}
       </CommunityImageRow>
     )
   }
