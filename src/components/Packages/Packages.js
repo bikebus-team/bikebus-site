@@ -1,5 +1,6 @@
 import React from "react"
 import { getImageUrl } from "takeshape-routing"
+import { darkGreen, offWhite } from "../Base/colors"
 import { Button, Link } from "../Base/basecomponents"
 import {
     PackagesContainer,
@@ -17,62 +18,72 @@ import {
     PackageFinePrint,
     PackagesHeading,
     PackagesSubtitle,
-    RadioContainer,
-    RadioList,
-    RadioButton,
-    RadioInput}
+    ButtonTabContainer, 
+    ButtonTabs,
+    PackageButton,
+    TogglePackageContainer}
   from "./PackagesStyles"
 
-// useState + hooks
 
-const Packages = ({ heading, subtitle, packages}) => (
-    <PackagesContainer>
+const Packages = ({ heading, subtitle, packages}) => {
+    const [step, setStep] = React.useState(1);
+    return <PackagesContainer>
         <PackagesHeadingContainer>
             <PackagesHeading>{heading}</PackagesHeading>
             <PackagesSubtitle>{subtitle}</PackagesSubtitle>
         </PackagesHeadingContainer>
-        <RadioContainer>
-            <form>
-                <RadioList>
+        <ButtonTabContainer>
+            <ButtonTabs>
                 {packages.map((packages, index) => 
-                    radioPackage(packages, index))}
-                </RadioList>
-            </form>
-        </RadioContainer>
+                    tabPackage(packages, index, setStep))}
+            </ButtonTabs>
+        </ButtonTabContainer>
+        <TogglePackageContainer>
+            {renderStep(step, packages)}
+        </TogglePackageContainer>
         <PackagesContentContainer>
             {packages.map((packages, index) => 
-                singlePackage(packages, index))}
+                singlePackage(packages, index, false))}
         </PackagesContentContainer>
     </PackagesContainer>
   
-  )
+    }
 
-function handleChange(name) {
-    alert('Clicked' + name);
-}
-
-function radioPackage(packages, index) {
+function tabPackage(packages, index, setStep) {
     const header = packages.option.title
     return (
-        <RadioButton key={index}>
-            <label>
-                <RadioInput
-                    type="radio" 
-                    value={header} 
-                    name="packages"/> 
-                {header}
-            </label>
-                
-        </RadioButton>
+        <PackageButton key={index} onClick={() => setStep(index)}>
+            {header}
+        </PackageButton>
     );
 }
 
-function singlePackage(packages, index) {
+
+function renderStep(step, packages) {
+    switch(step) {
+        case 0:
+            return singlePackage(packages[step], step, true)
+        case 1:
+            return singlePackage(packages[step], step, true)
+        case 2:
+            return singlePackage(packages[step], step, true)
+        default:
+            return singlePackage(packages[0], 0)
+    }
+}
+
+function singlePackage(packages, index, isHighlighted) {
     const price = packages.option.personPrice;
     const subtitle = packages.option.subtitle;
     const header = packages.option.title;
+    const fineprint = packages.option.finePrint;
+    
+    if (index === 1) {
+        isHighlighted = true;
+    }
+
     return (
-        <SinglePackageWrapper key={index}>
+        <SinglePackageWrapper key={index} style={ isHighlighted ? { backgroundColor: darkGreen, color: 'white'} : null }  >
             <SinglePackageContentContainer>
                 <PackageHeaderContainer>
                     <PackageHeader>{header}</PackageHeader>
@@ -83,11 +94,11 @@ function singlePackage(packages, index) {
                     <PackagePrice>${price}</PackagePrice>
                     <PackageText>Per person</PackageText> 
                 </PackagePriceContainer>
-                <Link to={"/form"}>
-                    <Button>Request a Quote</Button>
+                <Link to={"/"}>
+                    <Button style={ isHighlighted ? { backgroundColor: 'white', color: darkGreen} : null }>Request a Quote</Button>
                 </Link>
                 <PackageFinePrintContainer>
-                    <PackageFinePrint>*must book entire bus up to 8 persons.</PackageFinePrint>
+                    <PackageFinePrint>{fineprint}</PackageFinePrint>
                 </PackageFinePrintContainer>
             </SinglePackageContentContainer>
         </SinglePackageWrapper>

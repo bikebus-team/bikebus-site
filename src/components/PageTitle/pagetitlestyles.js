@@ -12,6 +12,11 @@ export const PageTitleWrapper = styled(ComponentWrapper)`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-top: 97px;
+  
+  @media (max-width: 975px) {
+    margin-top: 76px;
+  }
 `
 
 export const TextWrapper = styled.div`

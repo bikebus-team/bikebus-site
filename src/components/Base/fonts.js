@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const BBh1 = styled.h1`
   font-family: "Noto Sans", sans-serif;
   font-size: 2em; 
+  font-stretch: semi-condensed;
 `
 
 export const BBh2 = styled.h2`

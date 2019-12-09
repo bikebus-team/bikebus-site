@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { darkGreen } from "../Base/colors"
 import { Button, Link, PaddedComponentWrapper } from "../Base/basecomponents"
+import * as circlesMagenta from "../../images/circlesMagenta.svg"
 
 export const CheckerboardWrapper = styled(PaddedComponentWrapper)`
   display: inline-flex;
@@ -14,6 +15,7 @@ export const CheckerboardWrapper = styled(PaddedComponentWrapper)`
   @media (max-width: 768px) {
     flex-direction: column;
   }
+
 `
 
 export const CheckerImage = styled.div`

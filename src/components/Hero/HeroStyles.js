@@ -13,6 +13,11 @@ export const HeroContainer = styled.div`
   background-color: black;
   position: relative;
   overflow: hidden;
+  margin-top: 97px;
+  
+  @media (max-width: 975px) {
+    margin-top: 76px;
+  }
 
   @media (min-width: 0px) {
     height: 635px;
@@ -67,6 +72,7 @@ export const HeroContainer = styled.div`
       left: -200px;
     }
   }
+  
   &:after {
     content: "";
     background: url('${circlesMagenta}');
