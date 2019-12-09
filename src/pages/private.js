@@ -48,60 +48,60 @@ const Private = ({data}) => {
 export default Private;
 
 export const query = graphql`
-  query {
-    takeshape {
-      getPrivateEvents {
-        checkerboardSection {
-          checkerboard {
-            description
-            image {
-              description
-              path
-              sourceUrl
-            }
-            title
-          }
-        }
-        hero {
-          backgroundImage {
+query {
+  takeshape {
+    getPrivateEvents {
+      checkerboardSection {
+        checkerboard {
+          description
+          image {
             description
             path
             sourceUrl
           }
+          title
+        }
+      }
+      hero {
+        backgroundImage {
+          description
+          path
+          sourceUrl
+        }
+        button {
+          _id
+          linkDestination
+          title
+        }
+        description
+        subtitle
+        title
+      }
+      process {
+        step {
+          description
+          icon {
+            description
+            path
+            sourceUrl
+          }
+          title
+        }
+      }
+      quote {
+        content
+      }
+      sock {
+        sock {
           button {
-            _id
             linkDestination
             title
           }
           description
-          subtitle
           title
-        }
-        process {
-          step {
-            description
-            icon {
-              description
-              path
-              sourceUrl
-            }
-            title
-          }
-        }
-        quote {
-          content
-        }
-        sock {
-          sock {
-            button {
-              linkDestination
-              title
-            }
-            description
-            title
-          }
         }
       }
     }
   }
+}
 `

@@ -32,14 +32,48 @@ const Story = ({data}) => {
 export default Story
 
 export const query = graphql`
-  query {
-    takeshape {
-      getStory {
-        _id
-        checkerboardSection {
-          checkerboard {
+query {
+  takeshape {
+    getStory {
+      _id
+      checkerboardSection {
+        checkerboard {
+          description
+          image {
+            _id
+            caption
+            credit
             description
-            image {
+            filename
+            mimeType
+            path
+            sourceUrl
+            title
+            uploadStatus
+          }
+          title
+        }
+      }
+      header {
+        title
+      }
+      instructorSection {
+        instructors {
+          instructor {
+            funHeadShot {
+              _id
+              caption
+              credit
+              description
+              filename
+              mimeType
+              path
+              sourceUrl
+              title
+              uploadStatus
+            }
+            name
+            normalHeadShot {
               _id
               caption
               credit
@@ -54,46 +88,12 @@ export const query = graphql`
             title
           }
         }
-        header {
-          title
-        }
-        instructorSection {
-          instructors {
-            instructor {
-              funHeadShot {
-                _id
-                caption
-                credit
-                description
-                filename
-                mimeType
-                path
-                sourceUrl
-                title
-                uploadStatus
-              }
-              name
-              normalHeadShot {
-                _id
-                caption
-                credit
-                description
-                filename
-                mimeType
-                path
-                sourceUrl
-                title
-                uploadStatus
-              }
-              title
-            }
-          }
-          title
-        }
-        mission {
-          missionStatement
-        }
+        title
+      }
+      mission {
+        missionStatement
       }
     }
   }
+}
 `
