@@ -45,6 +45,10 @@ export const FormWrapper = styled(PaddedComponentWrapper)`
   width: inherit;
   flex-direction: column;
   align-items: center;
+  margin-top: 97px;
+  @media (max-width: 975px) {
+    margin-top: 76px;
+  }
 `;
 
 export const ActiveButton = styled(Button)`
