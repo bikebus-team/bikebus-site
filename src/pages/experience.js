@@ -44,36 +44,36 @@ const Experience = ({data}) => {
 export default Experience
 
 export const query = graphql`
-  query {
-    takeshape {
-      getExperience {
-        _id
-        checkerboardSection {
-          checkerboard {
-            description
-            image {
-              path
-              sourceUrl
-              title
-            }
+query {
+  takeshape {
+    getExperience {
+      _id
+      checkerboardSection {
+        checkerboard {
+          description
+          image {
+            path
+            sourceUrl
             title
           }
-        }
-        community {
-          images {
-            image {
-              path
-              sourceUrl
-              title
-            }
-          }
-          title
-        }
-        hero {
-          description
           title
         }
       }
+      community {
+        images {
+          image {
+            path
+            sourceUrl
+            title
+          }
+        }
+        title
+      }
+      hero {
+        description
+        title
+      }
     }
   }
+}
 `

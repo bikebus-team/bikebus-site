@@ -69,86 +69,86 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 
 export const query = graphql`
-  query {
-    takeshape {
-      getHomepage {
-        checkerboard1 {
-          button {
-            linkDestination
-            title
-          }
-          description
-          image {
-            description
-            path
-            sourceUrl
-          }
+query {
+  takeshape {
+    getHomepage {
+      checkerboard1 {
+        button {
+          linkDestination
           title
         }
-        checkerboard2 {
-          button {
-            linkDestination
-            title
-          }
+        description
+        image {
           description
-          image {
-            description
-            path
-            sourceUrl
-          }
+          path
+          sourceUrl
+        }
+        title
+      }
+      checkerboard2 {
+        button {
+          linkDestination
           title
         }
-        hero {
+        description
+        image {
+          description
+          path
+          sourceUrl
+        }
+        title
+      }
+      hero {
+        backgroundImage {
+          description
+          path
+          sourceUrl
+        }
+        button {
+          linkDestination
+          title
+        }
+        buttonTitle
+        description
+        headline
+        linkDestination
+        secondaryButton {
+          linkDestination
+          title
+        }
+      }
+      quoteSection {
+        quoteItem {
           backgroundImage {
             description
             path
             sourceUrl
           }
+          quote
+        }
+      }
+      sock {
+        sock {
           button {
             linkDestination
             title
           }
-          buttonTitle
           description
-          headline
-          linkDestination
-          secondaryButton {
-            linkDestination
-            title
-          }
-        }
-        quoteSection {
-          quoteItem {
-            backgroundImage {
-              description
-              path
-              sourceUrl
-            }
-            quote
-          }
-        }
-        sock {
-          sock {
-            button {
-              linkDestination
-              title
-            }
-            description
-            title
-          }
-        }
-        specialEvent {
-          description
-          image {
-            caption
-            path
-          }
-          link
-          linkTitle
-          location
           title
         }
       }
+      specialEvent {
+        description
+        image {
+          caption
+          path
+        }
+        link
+        linkTitle
+        location
+        title
+      }
     }
   }
+}
 `
