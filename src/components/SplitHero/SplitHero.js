@@ -5,6 +5,7 @@ import {
   SplitHeroContainer,
   SplitHeroContentContainer,
   SplitHeroImageContainer,
+  SplitHeroImage,
   SplitHeroContent,
   SplitHeroTagline,
   SplitHeroSubtitle,
@@ -23,9 +24,10 @@ const SplitHero = ({ tagline, subtitle, description, ctaButtonLink, ctaButtonTex
           {ctaButtonLink && <Link to={ctaButtonLink}><WhiteButton>{ctaButtonText}</WhiteButton></Link>}
         </SplitHeroContent>
       </SplitHeroContentContainer>
-      <SplitHeroImageContainer
-      imgUrl={getImageUrl(imgSrc)}
-      >
+      <SplitHeroImageContainer>
+        <SplitHeroImage
+        imgUrl={getImageUrl(imgSrc)}
+        />
       </SplitHeroImageContainer>
     </SplitHeroContainer>
 

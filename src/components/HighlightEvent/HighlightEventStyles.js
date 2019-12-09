@@ -2,12 +2,14 @@ import styled from "styled-components"
 import { Button } from "../Base/basecomponents"
 import { BBh1, BBh2, BBp } from "../Base/fonts"
 import { offWhite, darkGreen, onDark } from '../Base/colors';
+import * as circlesTeal from "../../images/circlesTeal.svg"
 
 export const HighlightEventContainer = styled.div`
   padding: 0 0 120px 0;
   display: flex;
   align-items: center;
   position: relative;
+
   @media (min-width: 0px) {
     height: auto;
     flex-direction: column;
@@ -22,6 +24,7 @@ export const HighlightEventContainer = styled.div`
     height: 400px;
     padding: 0 50px 120px;
   }
+
 `
 
 export const HELeftContainer = styled.div`
@@ -31,6 +34,8 @@ export const HELeftContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: vertical;
+  position: relative;
+  overflow: hidden;
 
   @media (min-width: 0px) {
     width: 100%;
@@ -41,12 +46,40 @@ export const HELeftContainer = styled.div`
     width: 50%;
     padding-bottom: 0;
   }
+
+  &:before {
+    content: "";
+    background: url('${circlesTeal}');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    height: 100%;
+    position: absolute;
+    width: 300px;
+    top: 250px;
+    left: -150px;
+
+    @media (max-width: 768px) {
+      top: 150px;
+    }
+  }
+  &:after {
+    content: "";
+    background: url('${circlesTeal}');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    height: 100%;
+    position: absolute;
+    width: 300px;
+    top: -150px;
+    right: -150px;
+  }
 `
 
 export const HELeftContentContainer = styled.div`
   text-align: left;
   max-width: 430px;
   width: 70%;
+  z-index: 100;
   
   @media (min-width: 0px) {
     padding: 40px 0;

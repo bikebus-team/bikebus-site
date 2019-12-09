@@ -17,6 +17,7 @@ const Private = ({data}) => {
       <SplitHero
         tagline={pedata.hero.title}
         subtitle={pedata.hero.subtitle}
+        imgSrc={pedata.hero.backgroundImage.path}
         description={pedata.hero.description}
         ctaButtonLink={pedata.hero.button.linkDestination}
         ctaButtonText={pedata.hero.button.title}
