@@ -19,14 +19,17 @@ const FormStep2 = ({ user, setUser, continueOnClick, backOnClick }) => (
             <FormContents>
                 <FormField title="Name" 
                     editFn={e => updateName(user, setUser, e)} 
-                    currVal={user.name} />
+                    currVal={user.name}
+                    inputType={"text"} />
                 <FormField title="Email Address" 
                     editFn={e => updateEmail(user, setUser, e)} 
-                    currVal={user.emailAddress} />
+                    currVal={user.emailAddress}
+                    inputType={"email"} />
                 <FormField title ="Phone Number"
                     editFn={e => updatePhoneNumber(user, setUser, e)} 
                     currVal={user.phoneNum} 
-                    placeholderVal="123-456-7890" />
+                    placeholderVal="123-456-7890"
+                    inputType={"tel"} />
                 <MessageField title="Message" 
                     editFn={e => updateMessage(user, setUser, e)} 
                     currVal={user.message} 

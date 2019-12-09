@@ -49,7 +49,7 @@ export const FormWrapper = styled(PaddedComponentWrapper)`
 
 export const ActiveButton = styled(Button)`
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 40px;
     width: auto;
     text-transform: uppercase;
     border: 2px solid ${darkGreen};
@@ -58,7 +58,7 @@ export const ActiveButton = styled(Button)`
 export const BackButton = styled(Button)`
     display: inline-block;
     width: auto;
-    margin-top: 20px;
+    margin-top: 40px;
     text-transform: uppercase;
     background: ${offWhite};
     color: ${darkGreen};

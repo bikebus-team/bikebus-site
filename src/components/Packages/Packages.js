@@ -83,7 +83,7 @@ function singlePackage(packages, index) {
                     <PackagePrice>${price}</PackagePrice>
                     <PackageText>Per person</PackageText> 
                 </PackagePriceContainer>
-                <Link to={"/"}>
+                <Link to={"/form"}>
                     <Button>Request a Quote</Button>
                 </Link>
                 <PackageFinePrintContainer>

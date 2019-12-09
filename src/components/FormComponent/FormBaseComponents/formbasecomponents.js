@@ -7,11 +7,11 @@ import {
 } from "./formbasecomponentsstyles";
 
 
-export const FormField = ({ title, editFn, currVal, placeholderVal }) => {
+export const FormField = ({ title, editFn, currVal, placeholderVal, inputType }) => {
     return <div>
         <Label>{title}</Label>
         <InputWrapper>
-            <Input onChange = {editFn} value = {currVal} placeholder={placeholderVal} required={true}/>
+            <Input onChange = {editFn} value = {currVal} placeholder={placeholderVal} required input={inputType}/>
         </InputWrapper>
     </div>
 }
