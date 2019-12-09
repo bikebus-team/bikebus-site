@@ -10,7 +10,6 @@ import Companies from "../components/Companies/Companies"
 import Checkerboard from "../components/Checkerboard/checkerboard"
 import SEO from "../components/seo"
 import Packages from "../components/Packages/Packages"
-import Footer from "../components/Footer/Footer"
 
 const Corporate = ({data}) => {
   // The `what to expect` page
@@ -22,6 +21,7 @@ const Corporate = ({data}) => {
     <SplitHero
       tagline= {corpdata.hero.title}
       subtitle={corpdata.hero.subtitle}
+      imgSrc={corpdata.hero.backgroundImage.path}
       description={corpdata.hero.description}
       ctaButtonLink={corpdata.hero.button.linkDestination}
       ctaButtonText={corpdata.hero.button.title}

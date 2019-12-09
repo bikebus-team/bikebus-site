@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { BBh1, BBh2, BBh3, BBh4, BBp, BBsmallp} from "../Base/fonts"
-import { PaddedComponentWrapper } from "../Base/basecomponents"
+import { PaddedComponentWrapper, Button } from "../Base/basecomponents"
+import { darkGreen } from "../Base/colors"
 
 export const PackagesContainer = styled(PaddedComponentWrapper)`
     text-align: center;
@@ -9,7 +10,27 @@ export const PackagesContainer = styled(PaddedComponentWrapper)`
 `
 
 export const PackagesHeadingContainer = styled.div`
-    margin-bottom: 75px;
+    margin-bottom: 50px;
+
+    @media (max-width: 1275px) {
+        margin-bottom: 15px;
+        align-self:center;
+    }
+`
+
+export const TogglePackageContainer = styled.div`
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    flex-direction: row;
+    width: 100%;
+    display:none;
+    
+    @media (max-width: 1275px) {
+        margin-bottom: 50px;
+        align-self:center;
+        display: flex;
+    }
 `
 
 export const PackagesContentContainer = styled.div`
@@ -19,9 +40,10 @@ export const PackagesContentContainer = styled.div`
     flex-direction: row;
     width: 100%;
     
-    @media (max-width: 1300px) {
+    @media (max-width: 1275px) {
         margin-bottom: 50px;
         align-self:center;
+        display: none;
     }
 `
 
@@ -36,10 +58,10 @@ export const SinglePackageWrapper = styled.div`
 `
 
 export const SinglePackageContentContainer = styled.div`
-    margin: 50px;
+    margin: 40px 65px 40px 65px;
     text-align: center;
     width: 220px;
-    @media (max-width: 1300px) {
+    @media (max-width: 1275px) {
         margin-bottom: 50px;
         align-self:center;
     }
@@ -53,36 +75,37 @@ export const SinglePackageContentContainer = styled.div`
 
 export const PackageHeaderContainer = styled.div`
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 `
-export const RadioContainer = styled.div`
+export const ButtonTabContainer = styled.div`
     display: none;
+    text-align: center;
 
     @media (max-width: 1275px) {
         display: block;
+        margin: 20px 0 20px 0;
+    }
+`
+
+export const ButtonTabs = styled.div`
+    display: inline-flex;
+`
+
+export const PackageButton = styled(Button)`
+    color: ${ darkGreen };
+    background-color: white;
+    border: 1px solid ${ darkGreen };
+    text-transform: none;
+
+    :focus {
+        background-color: ${darkGreen};
+        color: white;
+        outline: none;
     }
 
 `
 
-export const RadioList = styled.ul`
-    list-style-type: none;
-    padding: 0;
-`
 
-export const RadioButton = styled.li`
-    display: inline-block;
-    background-color: #ddd;
-    padding: 15px 25px 15px 25px;
-    cursor: pointer;
-    text-tranformation: uppercase;
-    border: 1px solid;
-    border-radius: 1px;
-`
-
-export const RadioInput = styled.input`
-    // opacity: 0;
-    // position: absolute;
-`
 
 export const PackageHeader = styled(BBh2)`
     text-transform: uppercase;
@@ -97,7 +120,7 @@ export const PackageSubtitle = styled(BBp)`
 
 export const PackagePriceContainer = styled.div`
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     
 `
 
@@ -110,7 +133,9 @@ export const PackagePrice = styled(BBh1)`
 `
 
 export const PackageFinePrintContainer = styled.div`
-
+    line-height: 15px;
+    margin-top: 10px;
+    text-align: left;
 `
 
 export const PackageFinePrint = styled(BBsmallp)`
