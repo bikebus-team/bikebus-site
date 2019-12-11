@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { 
+import {
+    DateText,
     FormStep3Wrapper,
     SmallInput,
     SmallInputWrapper,
@@ -8,13 +9,13 @@ import {
 } from "./formstep3styles";
 import { ActiveButton, BackButton } from "../FormComponent/formcomponentstyles";
 import { FormField } from "../FormComponent/FormBaseComponents/formbasecomponents";
-import { ButtonWrapper, Form, FormContents, Label, SizeWrapper, StepTitle, TitleWrapper } from "../FormComponent/FormBaseComponents/formbasecomponentsstyles";
+import { ButtonWrapper, Form, FormContents, Label, OptionalText, SizeWrapper, StepTitle, TitleWrapper, TextWrapper } from "../FormComponent/FormBaseComponents/formbasecomponentsstyles";
 
 const axios = require('axios');
 const emailEndpoint = "https://script.google.com/macros/s/AKfycbzZwq3K5OdJQzYozblCiZJI86eMfPycRn9Ejt9W-2ynqOCASA/exec";
 const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
-const FormStep3 = ({ user, setUser, continueOnClick, backOnClick, setRequestError }) => {
+const FormStep3 = ({ user, setUser, continueOnClick, backOnClick, setRequestError, stepData }) => {
     const [errors, setErrors] = React.useState({
         pickUpAddress: false
     });
@@ -42,6 +43,7 @@ const FormStep3 = ({ user, setUser, continueOnClick, backOnClick, setRequestErro
                     placeholderVal="MM / DD / YYYY"
                     isOptional={true}
                     />
+                    <DateText>{stepData.dateDisclaimer}</DateText>
                 
                 <TimesWrapper>
                     <SmallFormField title="Start Time" 
@@ -68,9 +70,12 @@ const FormStep3 = ({ user, setUser, continueOnClick, backOnClick, setRequestErro
     </FormStep3Wrapper>
 };
 
-const SmallFormField = ({ title, editFn, currVal, placeholderVal }) => {
+const SmallFormField = ({ title, editFn, currVal, placeholderVal, isOptional }) => {
     return <SmallInputWrapper>
-        <Label>{title}</Label>
+        <TextWrapper>
+            <Label>{title}</Label>
+            <OptionalText optional={isOptional} >(Optional)</OptionalText>
+        </TextWrapper>
         <SmallInput onChange = {editFn} value = {currVal} placeholder={placeholderVal} />
     </SmallInputWrapper>
 }
@@ -122,11 +127,13 @@ function submitRequest(user, continueOnClick, setRequestError) {
     const subject = `BikeBus Quote - ${name}`;
     const body = `Name: ${user.name}%0APhone Number: ${user.phoneNum}%0ANumber of Rides Requested: ${user.numRides}%0AFrequency: ${user.frequency}%0APickup Address: ${user.pickUpAddress}%0ADropoff Address: ${user.dropOffAddress}%0ATentative Date: ${user.tentativeDate}%0AStart Time: ${user.startTime}%0AEnd Time: ${user.endTime}%0A%0AMessage: ${user.message}%0A`;
     const request = `${emailEndpoint}?name=${name}&email=${email}&subject=${subject}&body=${body}`;
-    // axios.post(proxyurl + request).catch(error => {
-    //     console.log(error);
-    //     setRequestError(true);
-    // });
-    continueOnClick();
+    axios.post(proxyurl + request)
+    .then(response => {
+        continueOnClick();
+    }).catch(error => {
+        console.log(error);
+        setRequestError(true);
+    });
 }
 
 FormStep3.propTypes = {

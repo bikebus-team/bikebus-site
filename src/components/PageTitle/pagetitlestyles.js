@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { richBlack } from "../Base/colors"
 import { ComponentWrapper } from "../Base/basecomponents"
+import { BBh1 } from "../Base/fonts"
 
 export const PageTitleWrapper = styled(ComponentWrapper)`
   background-color: ${richBlack};
@@ -19,6 +20,6 @@ export const PageTitleWrapper = styled(ComponentWrapper)`
   }
 `
 
-export const TextWrapper = styled.div`
+export const Title = styled(BBh1)`
   color: white;
 `

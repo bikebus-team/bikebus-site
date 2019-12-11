@@ -11,7 +11,8 @@ import {
 } from "./formbasecomponentsstyles";
 
 
-export const FormField = ({ title, editFn, currVal, placeholderVal, inputType, isRed, isOptional }) => {
+export const FormField = ({ title, editFn, currVal, placeholderVal, inputType, isRed, isOptional, errorText }) => {
+    let error = errorText || "This field is required.";
     return <FieldWrapper>
         <TextWrapper>
             <Label>{title}</Label>
@@ -20,7 +21,7 @@ export const FormField = ({ title, editFn, currVal, placeholderVal, inputType, i
         <InputWrapper>
             <Input onChange = {editFn} value = {currVal} placeholder={placeholderVal} input={inputType} isRed={isRed} />
         </InputWrapper>
-        <ErrorText isRed={isRed}>This field is required.</ErrorText>
+        <ErrorText isRed={isRed}>{error}</ErrorText>
     </FieldWrapper>
 }
 

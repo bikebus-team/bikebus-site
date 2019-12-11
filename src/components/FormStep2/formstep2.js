@@ -13,7 +13,7 @@ import {
 const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 
-const FormStep2 = ({ user, setUser, continueOnClick, backOnClick }) => {
+const FormStep2 = ({ user, setUser, continueOnClick, backOnClick, stepData }) => {
     const [errors, setErrors] = React.useState({
         name: false,
         emailAddress: false,
@@ -22,7 +22,7 @@ const FormStep2 = ({ user, setUser, continueOnClick, backOnClick }) => {
     const [submitCount, setSubmitCount] = React.useState(0);
     return <FormStep2Wrapper>
         <TitleWrapper>
-            <StepTitle>Personal Info</StepTitle>
+            <StepTitle>{stepData.stepTitle}</StepTitle>
         </TitleWrapper>
         <Form>
             <FormContents>
@@ -37,7 +37,8 @@ const FormStep2 = ({ user, setUser, continueOnClick, backOnClick }) => {
                     currVal={user.emailAddress}
                     inputType={"email"}
                     isRed={errors.emailAddress}
-                    isOptional={false} />
+                    isOptional={false} 
+                    errorText={"A valid email address is required"} />
                 <FormField title ="Phone Number"
                     editFn={e => updatePhoneNumber(user, setUser, e)} 
                     currVal={user.phoneNum} 
@@ -48,7 +49,7 @@ const FormStep2 = ({ user, setUser, continueOnClick, backOnClick }) => {
                 <MessageField title="Message" 
                     editFn={e => updateMessage(user, setUser, e, submitCount, errors, setErrors)} 
                     currVal={user.message} 
-                    placeholderVal="You can specify details such as the occasion or ask any questions that you have." 
+                    placeholderVal={stepData.messageHelpText} 
                     isRed={errors.message}
                     isOptional={false} />
             </FormContents>

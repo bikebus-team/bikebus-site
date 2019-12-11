@@ -26,6 +26,7 @@ import {
  } from "./formstep1styles";
 import {
     TitleWrapper, StepTitle } from "../FormComponent/FormBaseComponents/formbasecomponentsstyles";
+import { BBh3 } from "../Base/fonts";
 
 function handleSelectChange(event, user, setUser, option, setOption) {
     const value = event.target.value;
@@ -69,14 +70,15 @@ function updateNumRides(newNum, user, setUser) {
     }
 }
 
-const FormStep1 = ({ continueOnClick, user, setUser, clickedOption }) => {
+const FormStep1 = ({ continueOnClick, user, setUser, clickedOption, stepData }) => {
     const index = clickedOption ? clickedOption + 1 : 1;
     const selectedOption = "option" + index;
     const [option, setOption] = React.useState(selectedOption);
+
     return <FormStep1Wrapper>
         <TitleWrapper>
-            <StepTitle>Choose Package</StepTitle>
-            <Subtitle >Amount of Rides</Subtitle>
+            <StepTitle>{stepData.stepTitle}</StepTitle>
+            <Subtitle >{stepData.title}</Subtitle>
         </TitleWrapper>
         <Wrapper>
             <Item>
@@ -89,8 +91,8 @@ const FormStep1 = ({ continueOnClick, user, setUser, clickedOption }) => {
                 />
                 <RadioButtonLabel />
                 <PackageSelection clicked={!option.localeCompare("option1")}>
-                    <h3>1 Ride</h3>
-                    <PriceText>Starting at $69 per person</PriceText>
+                    <BBh3>{stepData.rideOption1.title}</BBh3>
+                    <PriceText>{stepData.rideOption1.description}</PriceText>
                 </PackageSelection>
             </Item>
             <Item>
@@ -103,8 +105,8 @@ const FormStep1 = ({ continueOnClick, user, setUser, clickedOption }) => {
                 />
                 <RadioButtonLabel />
                 <PackageSelection clicked={!option.localeCompare("option2")}>
-                    <h3>2 Rides</h3>
-                    <PriceText>Starting at $59 per person</PriceText>
+                    <BBh3>{stepData.rideOption2.title}</BBh3>
+                    <PriceText>{stepData.rideOption2.description}</PriceText>
                 </PackageSelection>
             </Item>
             <Item>
@@ -117,8 +119,8 @@ const FormStep1 = ({ continueOnClick, user, setUser, clickedOption }) => {
                 />
                 <RadioButtonLabel />
                 <PackageSelection clicked={!option.localeCompare("option3")}>
-                    <h3>4 Rides</h3>
-                    <PriceText>Starting at $50 per person</PriceText>
+                    <BBh3>{stepData.rideOption3.title}</BBh3>
+                    <PriceText>{stepData.rideOption3.description}</PriceText>
                 </PackageSelection>
             </Item>
             <Item>
@@ -131,13 +133,13 @@ const FormStep1 = ({ continueOnClick, user, setUser, clickedOption }) => {
                 />
                 <RadioButtonLabel />
                 <PackageSelection clicked={!option.localeCompare("custom")}>
-                    <h3>Custom</h3>
-                    <PriceText>Price dependent on # of rides</PriceText>
+                    <BBh3>{stepData.customRides.title}</BBh3>
+                    <PriceText>{stepData.customRides.description}</PriceText>
                 </PackageSelection>
             </Item>
         </Wrapper>
         <CustomCounterWrapper show={!option.localeCompare("custom")}>
-            <Subtitle>Amount of Rides</Subtitle>
+            <Subtitle>{stepData.rideNumberTitle}</Subtitle>
             <CustomButtonWrapper>
                 <CustomButton onClick={e => updateNumRides(parseInt(user.numRides - 1), user, setUser)}>-</CustomButton>
             </CustomButtonWrapper>
@@ -147,7 +149,7 @@ const FormStep1 = ({ continueOnClick, user, setUser, clickedOption }) => {
             </CustomButtonWrapper>
         </CustomCounterWrapper>
         <ConditionWrapper>
-            <ConditionText>*Must book entire bus. Bus fits up to 8 riders. Prices shown are the price per individual rider. Prices reflect rides within a 25 mile radius, further requires additional surcharge.</ConditionText>
+            <ConditionText>{stepData.disclaimer}</ConditionText>
         </ConditionWrapper>
         <SwitchWrapper>
             <SwitchText>One-Time</SwitchText>
