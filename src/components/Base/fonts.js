@@ -2,9 +2,9 @@ import styled from "styled-components"
 import { richBlack, pureWhite } from "./colors"
 
 export const BBh1 = styled.h1`
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans Semicondensed", sans-serif;
   font-size: 2em;
-  font-stretch: semi-condensed;
+  text-transform: uppercase;
   color: ${({ isOnDark }) => (isOnDark ? pureWhite : richBlack)};
 `
 
