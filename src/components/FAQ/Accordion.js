@@ -1,6 +1,7 @@
 import React from "react"
 import styled, { css } from "styled-components"
-import { BBh3 } from "../Base/fonts"
+import AnimateHeight from "react-animate-height"
+import { BBh3, BBp } from "../Base/fonts"
 import { darkGreen } from "../Base/colors"
 import { SIZES } from "../../tokens"
 
@@ -25,8 +26,7 @@ const TitleButton = styled.button`
   cursor: pointer;
 `
 
-const Content = styled.div`
-  margin-top: 18px;
+const Content = styled(AnimateHeight)`
   & > p {
     margin: 0;
 
@@ -34,20 +34,11 @@ const Content = styled.div`
       margin-top: 20px;
     }
   }
-  opacity: 1;
-  height: 100%;
-  transition-timing-function: ease-in-out;
-  transition-duration: 250ms;
-  transition-property: all;
+`
 
-  ${({ open }) =>
-    open
-      ? ""
-      : css`
-          height: 0;
-          opacity: 0;
-          margin-top: 0px;
-        `};
+const AnswerPara = styled(BBp)`
+  margin: 0;
+  margin-top: 18px;
 `
 
 const Title = styled(BBh3)`
@@ -127,8 +118,16 @@ class Accordion extends React.Component {
           <Title>{question}</Title>
           <PlusMinus open={this.state.open} />
         </TitleButton>
-        <Content open={this.state.open} aria-hidden={!this.state.open} id={id}>
-          {answer}
+        <Content
+          duration={250}
+          height={this.state.open ? "auto" : 0}
+          animateOpacity={true}
+          open={this.state.open}
+          aria-hidden={!this.state.open}
+          id={id}
+          ease="ease-in-out"
+        >
+          <AnswerPara>{answer}</AnswerPara>
         </Content>
       </Wrapper>
     )
