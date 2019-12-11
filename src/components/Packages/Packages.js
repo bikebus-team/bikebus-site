@@ -35,7 +35,7 @@ const Packages = ({ heading, subtitle, packages}) => {
         <ButtonTabContainer>
             <ButtonTabs>
                 {packages.map((packages, index) => 
-                    tabPackage(packages, index, setStep))}
+                    tabPackage(packages, index, setStep, step))}
             </ButtonTabs>
         </ButtonTabContainer>
         <TogglePackageContainer>
@@ -49,10 +49,15 @@ const Packages = ({ heading, subtitle, packages}) => {
   
     }
 
-function tabPackage(packages, index, setStep) {
+function tabPackage(packages, index, setStep, step) {
     const header = packages.option.title
+    console.log(step===index)
     return (
-        <PackageButton key={index} onClick={() => setStep(index)}>
+        <PackageButton 
+        key={index} 
+        onClick={() => setStep(index)}
+        isCurrentStep={(step === index)}
+        >
             {header}
         </PackageButton>
     );

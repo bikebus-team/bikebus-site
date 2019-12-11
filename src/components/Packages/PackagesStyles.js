@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { BBh1, BBh2, BBh3, BBh4, BBp, BBsmallp} from "../Base/fonts"
 import { PaddedComponentWrapper, Button } from "../Base/basecomponents"
-import { darkGreen } from "../Base/colors"
+import { darkGreen, offWhite } from "../Base/colors"
 
 export const PackagesContainer = styled(PaddedComponentWrapper)`
     text-align: center;
@@ -92,8 +92,8 @@ export const ButtonTabs = styled.div`
 `
 
 export const PackageButton = styled(Button)`
-    color: ${ darkGreen };
-    background-color: white;
+    color: ${ props => (props.isCurrentStep ? 'white' : darkGreen) };
+    background-color: ${ props => (props.isCurrentStep ? darkGreen : 'white') };
     border: 1px solid ${ darkGreen };
     text-transform: none;
 
