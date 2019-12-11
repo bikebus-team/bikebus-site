@@ -54,7 +54,6 @@ const PoliciesPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Policies" />
-      Something
       <ExtraPageLayout header="Policies">
         <TEMP_CONTENT />
       </ExtraPageLayout>

@@ -49,6 +49,7 @@ const PaddedWrapper = styled(PaddedComponentWrapper)`
 const ContentWrapper = styled.div`
   max-width: 759px;
   margin: 100px auto;
+  width: 100%;
 
   @media (max-width: ${SIZES.BREAK_TABLET}) {
     max-width: 627px;
