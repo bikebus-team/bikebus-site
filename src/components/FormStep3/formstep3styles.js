@@ -9,6 +9,10 @@ export const FormStep3Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
+
+    @media (max-width: 768px) {
+        padding-bottom: 80px;
+    }
 `;
 
 export const SmallInput = styled(Input)`

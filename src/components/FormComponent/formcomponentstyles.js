@@ -124,7 +124,7 @@ export const FormWrapper = styled(PaddedComponentWrapper)`
   &:after {
     content: "";
     background: url('${circlesMagenta}');
-    background-position: 0 0;
+    background-position: bottom right;
     background-repeat: no-repeat;
     position: absolute;
     width: 500px;
@@ -132,25 +132,25 @@ export const FormWrapper = styled(PaddedComponentWrapper)`
     right: -125px;
     
     @media (min-width: 0px) {
-        width: 250px;
+        width: 300px;
         top: auto;
-        bottom: -1500px;
-        right: -120px;
+        bottom: -140px;
+        right: -140px;
         left: auto;
     }
 
     @media (min-width: 768px) {
         width: 250px;
         top: auto;
-        bottom: -1020px;
-        right: -150px;
+        bottom: -100px;
+        right: -90px;
         left: auto;
     }
     @media (min-width: 1280px) {
       position: absolute;
       width: 350px;
       top: auto;
-      bottom: -930px;
+      bottom: -200px;
       right: -170px;
       left: auto;
     }
@@ -238,7 +238,7 @@ export const CircleDiv = styled.div`
     &:after {
         content: "";
         background: url('${circlesMagenta}');
-        background-position: 0 0;
+        background-position: bottom left;
         background-repeat: no-repeat;
         position: absolute;
         width: 500px;
@@ -253,7 +253,7 @@ export const CircleDiv = styled.div`
         @media (min-width: 768px) {
             width: 400px;
             top: auto;
-            bottom: -1020px;
+            bottom: -120px;
             right: auto;
             left: -230px;
         }
@@ -261,9 +261,9 @@ export const CircleDiv = styled.div`
         @media (min-width: 1280px) {
             width: 600px;
             top: auto;
-            bottom: -930px;
+            bottom: -140px;
             right: auto;
-            left: -330px;
+            left: -200px;
         }
   }
 `;
@@ -297,6 +297,7 @@ export const FormStepWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 `;
 
 export const Subtitle = styled(BBp)`
