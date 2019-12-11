@@ -5,6 +5,7 @@ import {
     TextWrapper
 } from "./formfinalstyles";
 import { BackButton } from "../FormComponent/formcomponentstyles";
+import { BBp } from "../Base/fonts"
 
 const FormFinal = ({ requestError, backOnClick }) => {
     return <FormFinalWrapper>
@@ -17,16 +18,16 @@ function renderFinal(requestError, backOnClick) {
         return <div>
             <Title>Request Recieved!</Title>
             <TextWrapper>
-                <p>Thanks for taking the time to fill out the quote, now it's our turn! We'll look through your request and get back to you as quickly as possible.</p>
-                <p>Make sure to check your email for new messages from us - we are so excited to have you try the BikeBus experience!</p>
-                <p>For any further questions or concerns feel free to reach out to us at info@bikebus.com</p>
+                <BBp>Thanks for taking the time to fill out the quote, now it's our turn! We'll look through your request and get back to you as quickly as possible.</BBp>
+                <BBp>Make sure to check your email for new messages from us - we are so excited to have you try the BikeBus experience!</BBp>
+                <BBp>For any further questions or concerns feel free to reach out to us at info@bikebus.com</BBp>
             </TextWrapper>
         </div>
     } else {
         return <div>
             <Title>Request Error</Title>
             <TextWrapper>
-                <p>There seems to have been in error sending your request. Please double check your email and try again. If this problem persists, feel free to reach out to us at info@bikebus.com</p>
+                <BBp>There seems to have been in error sending your request. Please try again. If this problem persists, feel free to reach out to us at info@bikebus.com</BBp>
             </TextWrapper>
             <BackButton onClick={backOnClick}>Back to form</BackButton>
         </div>

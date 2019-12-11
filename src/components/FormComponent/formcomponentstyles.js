@@ -3,6 +3,11 @@ import { darkGreen, offWhite, teal } from '../Base/colors';
 import { Button, PaddedComponentWrapper } from '../Base/basecomponents';
 import * as circlesMagenta from "../../images/circlesMagenta.svg";
 import * as circlesTeal from "../../images/circlesTeal.svg";
+import { BBh1, BBh2, BBh5, BBp } from "../Base/fonts";
+
+export const FormTitle = styled(BBh1)`
+  text-transform: uppercase;
+`;
 
 export const StepLine = styled.hr`
     border: 3px solid ${darkGreen};
@@ -10,7 +15,7 @@ export const StepLine = styled.hr`
     opacity: ${props => (props.fullOpacity ? 1.0 : 0.3)};
 `;
 
-export const StepH = styled.h5`
+export const StepH = styled(BBh5)`
     color: ${darkGreen};
     opacity: ${props => (props.fullOpacity ? 1.0 : 0.3)};
     display: ${props => (props.isSmall ? "none": "block")};
@@ -37,7 +42,7 @@ export const StepTitleGroup = styled.div`
     }
 `;
 
-export const FormTitle = styled.div`
+export const FormTitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -219,6 +224,6 @@ export const FormStepWrapper = styled.div`
     justify-content: center;
 `;
 
-export const Subtitle = styled.p`
+export const Subtitle = styled(BBp)`
   font-size: 16px;
 `;

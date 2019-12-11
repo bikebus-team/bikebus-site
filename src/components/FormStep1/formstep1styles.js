@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { darkGreen, offWhite, teal } from "../Base/colors";
 import { ActiveButton } from "../FormComponent/formcomponentstyles";
 import { ButtonWrapper } from "../FormComponent/FormBaseComponents/formbasecomponentsstyles";
+import { BBh5, BBp } from "../Base/fonts";
+
 
 export const FormStep1Wrapper = styled.div`
     display: flex;
@@ -96,17 +98,17 @@ export const PackageSelection = styled.div`
   text-align: center;
 `;
 
-export const PriceText = styled.p`
+export const PriceText = styled(BBp)`
     font-size: 14px;
     margin-left: 20px;
     margin-right: 20px;
 `;
 
-export const ConditionText = styled.p`
+export const ConditionText = styled(BBp)`
     font-size: 10px;
 `;
 
-export const SwitchText = styled.p`
+export const SwitchText = styled(BBp)`
   font-size: 16px;
   color: ${darkGreen};
   margin-block-start: 0px;
@@ -212,7 +214,7 @@ export const ConditionWrapper = styled.div`
   max-width: 420px;
 `;
 
-export const Subtitle = styled.h5`
+export const Subtitle = styled(BBh5)`
   color: ${darkGreen};
 `;
 

@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { darkGreen, offWhite } from "../Base/colors"
 import { Input } from "../FormComponent/FormBaseComponents/formbasecomponentsstyles";
+import { BBp } from "../Base/fonts";
 
 export const FormStep3Wrapper = styled.div`
     display: flex;
@@ -21,4 +22,11 @@ export const TimesWrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+`;
+
+export const DateText = styled(BBp)`
+    color: ${darkGreen};
+    margin-block-end: 10px;
+    margin-block-start: 0px;
+    font-size: 12px;
 `;

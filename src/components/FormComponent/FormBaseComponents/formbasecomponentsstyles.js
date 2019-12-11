@@ -1,18 +1,19 @@
 import styled from "styled-components"
 import { darkGreen, errorRed, offWhite, richBlack, teal } from "../../Base/colors"
+import { BBh5, BBp } from "../../Base/fonts"
 
 export const FieldWrapper = styled.div`
     padding-top: 10px;
     padding-bottom: 10px;
 `;
 
-export const Label = styled.h5`
+export const Label = styled(BBh5)`
     color: ${darkGreen};
     margin-block-end: 10px;
     margin-block-start: 10px;
 `;
 
-export const OptionalText = styled.p`
+export const OptionalText = styled(BBp)`
     color: ${darkGreen};
     margin-block-end: 10px;
     font-size: 12px;
@@ -20,7 +21,7 @@ export const OptionalText = styled.p`
     display: ${props => (props.optional ? "block" : "none")}
 `;
 
-export const ErrorText = styled.p`
+export const ErrorText = styled(BBp)`
     color: ${errorRed};    
     font-size: 12px;
     display: ${props => (props.isRed ? "block" : "none")}
@@ -123,7 +124,7 @@ export const TitleWrapper = styled.div`
     align-self: baseline;
 `;
 
-export const StepTitle = styled.h4`
+export const StepTitle = styled(BBh5)`
   color: ${darkGreen};
   display: none;
   @media (max-width: 420px) {

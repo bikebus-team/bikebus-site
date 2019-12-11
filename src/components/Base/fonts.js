@@ -23,6 +23,11 @@ export const BBh4 = styled.h4`
   font-size: 1.12em;
 `
 
+export const BBh5 = styled.h5`
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1.00em;
+`
+
 export const BBp = styled.p`
   font-family: "Noto Sans", sans-serif;
   font-size: 0.83em;
