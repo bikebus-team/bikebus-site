@@ -99,7 +99,6 @@ class Accordion extends React.Component {
 
   toggleOpen() {
     const { open } = this.state
-    console.log(open)
     this.setState({ open: !open })
   }
 

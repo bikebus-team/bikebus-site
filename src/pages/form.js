@@ -5,7 +5,6 @@ import FormComponent from "../components/FormComponent/formcomponent";
 
 const Form = ({ data, location }) => {
     const formData = data.takeshape.getForm;
-    console.log(formData);
     let clickedOption = location.state ? location.state.option : 0;
     return <Layout>
       <SEO title="Form" />
