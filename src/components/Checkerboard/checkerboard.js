@@ -6,7 +6,6 @@ import { CheckerImage, CheckerboardButton, CheckerboardLink, CheckerboardWrapper
 
 const Checkerboard = ({ imageLeft, title, text, imageSrc, imageCaption, hasButton, buttonText, buttonLink }) => {
     //Pass in the URL for imageSrc NOT the getImageUrl
-    console.log(imageCaption);
     return (
     <CheckerboardWrapper imageLeft={imageLeft}>
         <LeftCheckerboardWrapper>
