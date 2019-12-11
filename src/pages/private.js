@@ -17,6 +17,7 @@ const Private = ({data}) => {
       <SplitHero
         tagline={pedata.hero.title}
         subtitle={pedata.hero.subtitle}
+        imgSrc={pedata.hero.backgroundImage.path}
         description={pedata.hero.description}
         ctaButtonLink={pedata.hero.button.linkDestination}
         ctaButtonText={pedata.hero.button.title}
@@ -56,9 +57,7 @@ export const query = graphql`
           checkerboard {
             description
             image {
-              description
               path
-              sourceUrl
               caption
             }
             title
@@ -70,40 +69,49 @@ export const query = graphql`
             path
             sourceUrl
           }
+          title
+        }
+      }
+      hero {
+        backgroundImage {
+          description
+          path
+          sourceUrl
+        }
+        button {
+          _id
+          linkDestination
+          title
+        }
+        description
+        subtitle
+        title
+      }
+      process {
+        step {
+          description
+          icon {
+            description
+            path
+            sourceUrl
+          }
+          title
+        }
+      }
+      quote {
+        content
+      }
+      sock {
+        sock {
           button {
-            _id
             linkDestination
             title
           }
           description
-          subtitle
           title
-        }
-        process {
-          step {
-            description
-            icon {
-              description
-              path
-              sourceUrl
-            }
-            title
-          }
-        }
-        quote {
-          content
-        }
-        sock {
-          sock {
-            button {
-              linkDestination
-              title
-            }
-            description
-            title
-          }
         }
       }
     }
   }
+}
 `

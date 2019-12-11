@@ -1,8 +1,11 @@
 import styled from "styled-components"
+import { richBlack, pureWhite } from "./colors"
 
 export const BBh1 = styled.h1`
-  font-family: "Noto Sans", sans-serif;
-  font-size: 2em; 
+  font-family: "Noto Sans Semicondensed", sans-serif;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: ${({ isOnDark }) => (isOnDark ? pureWhite : richBlack)};
 `
 
 export const BBh2 = styled.h2`
@@ -22,10 +25,10 @@ export const BBh4 = styled.h4`
 
 export const BBp = styled.p`
   font-family: "Noto Sans", sans-serif;
-  font-size: .83em; 
+  font-size: 0.83em;
 `
 
 export const BBsmallp = styled.small`
   font-family: "Noto Sans", sans-serif;
-  font-size: .60em;
+  font-size: 0.6em;
 `

@@ -71,10 +71,10 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 
 export const query = graphql`
-  query {
-    takeshape {
-      getHomepage {
-        checkerboard1 {
+query {
+  takeshape {
+    getHomepage {
+      checkerboard1 {
           button {
             linkDestination
             title
@@ -150,7 +150,7 @@ export const query = graphql`
           location
           title
         }
-      }
     }
   }
+}
 `

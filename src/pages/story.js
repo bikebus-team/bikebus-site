@@ -33,11 +33,11 @@ const Story = ({data}) => {
 export default Story
 
 export const query = graphql`
-  query {
-    takeshape {
-      getStory {
-        _id
-        checkerboardSection {
+query {
+  takeshape {
+    getStory {
+      _id
+      checkerboardSection {
           checkerboard {
             description
             image {
@@ -70,7 +70,7 @@ export const query = graphql`
         mission {
           missionStatement
         }
-      }
     }
   }
+}
 `

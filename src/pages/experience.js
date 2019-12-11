@@ -71,11 +71,22 @@ export const query = graphql`
           }
           title
         }
-        hero {
-          description
-          title
+      }
+      community {
+        images {
+          image {
+            path
+            sourceUrl
+            title
+          }
         }
+        title
+      }
+      hero {
+        description
+        title
       }
     }
   }
+}
 `
