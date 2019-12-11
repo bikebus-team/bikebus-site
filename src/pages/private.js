@@ -63,15 +63,6 @@ export const query = graphql`
             title
           }
         }
-        hero {
-          backgroundImage {
-            description
-            path
-            sourceUrl
-          }
-          title
-        }
-      }
       hero {
         backgroundImage {
           description
