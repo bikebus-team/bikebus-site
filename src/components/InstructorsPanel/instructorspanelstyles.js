@@ -25,3 +25,25 @@ export const SingleInstructorWrapper = styled.div`
 `
 
 export const TextWrapper = styled.div``
+
+export const FunImage = styled.img``;
+
+export const SeriousImage = styled.img``;
+
+export const InstructorImageWrapper = styled.div`
+  ${FunImage} {
+    display: none;
+  }
+  ${SeriousImage} {
+    display: inline;
+  }
+
+  &:hover {
+    ${FunImage} {
+      display: inline;
+    }
+    ${SeriousImage} {
+      display: none;
+    }
+  }
+`;

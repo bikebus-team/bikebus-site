@@ -1,9 +1,9 @@
-require('dotenv').config();
+require("dotenv").config()
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Bikebus`,
+    description: `Bikebus is a unique, high-energy fitness experience that offers indoor cycling sessions as you travel around the city.`,
+    author: `@ScoutNU`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -25,24 +25,24 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/bikebus_mark.png`, // This path is relative to the root of the site.
       },
     },
     {
       resolve: "gatsby-source-graphql",
       options: {
-          typeName: "TS",
-          fieldName: "takeshape",
-          // Url to query from
-          url: `https://api.takeshape.io/project/${process.env.TAKESHAPE_PROJECT}/graphql`,
-          // HTTP headers
-          headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${process.env.TAKESHAPE_TOKEN}`,
-          },
-          // Additional options to pass to node-fetch
-          fetchOptions: {},
-      }
+        typeName: "TS",
+        fieldName: "takeshape",
+        // Url to query from
+        url: `https://api.takeshape.io/project/${process.env.TAKESHAPE_PROJECT}/graphql`,
+        // HTTP headers
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.TAKESHAPE_TOKEN}`,
+        },
+        // Additional options to pass to node-fetch
+        fetchOptions: {},
+      },
     },
     {
       resolve: `gatsby-plugin-styled-components`,

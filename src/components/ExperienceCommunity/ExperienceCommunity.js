@@ -18,6 +18,7 @@ const ExperienceCommunity = ({ title, photos }) => {
           key={ind}
           isLarge={ind % 4 === 0 || ind % 4 === 3}
           imgSrc={getImageUrl(photos[ind].image.path)}
+          alt={photos[ind].image.caption.blocks[0].text}
         />
         {/* If there is an odd number of photos */}
         {photos.length !== ind + 1 && (
@@ -25,6 +26,7 @@ const ExperienceCommunity = ({ title, photos }) => {
             key={ind + 1}
             isLarge={ind + (1 % 4) === 0 || ind + (1 % 4) === 3}
             imgSrc={getImageUrl(photos[ind + 1].image.path)}
+            alt={photos[ind + 1].image.caption.blocks[0].text}
           />
         )}
       </CommunityImageRow>

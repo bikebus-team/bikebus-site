@@ -28,6 +28,7 @@ const Experience = ({data}) => {
           title={cb.checkerboard.title}
           text={cb.checkerboard.description}
           imageSrc={cb.checkerboard.image.path}
+          imageCaption={cb.checkerboard.image.caption.blocks[0].text}
           hasButton={false}
         />
       ))}
@@ -43,28 +44,35 @@ const Experience = ({data}) => {
 export default Experience
 
 export const query = graphql`
-query {
-  takeshape {
-    getExperience {
-      _id
-      checkerboardSection {
-        checkerboard {
-          description
-          image {
-            path
-            sourceUrl
+  query {
+    takeshape {
+      getExperience {
+        _id
+        checkerboardSection {
+          checkerboard {
+            description
+            image {
+              path
+              sourceUrl
+              title
+              caption
+            }
             title
+          }
+        }
+        community {
+          images {
+            image {
+              path
+              sourceUrl
+              caption
+            }
           }
           title
         }
-      }
-      community {
-        images {
-          image {
-            path
-            sourceUrl
-            title
-          }
+        hero {
+          description
+          title
         }
         title
       }
@@ -83,8 +91,8 @@ query {
         }
         description
         title
+
       }
-    }
   }
 }
 `

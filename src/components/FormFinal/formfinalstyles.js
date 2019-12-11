@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { darkGreen } from "../Base/colors"
+import { BBh3 } from "../Base/fonts";
 
 export const FormFinalWrapper = styled.div`
     display: flex;
@@ -9,7 +10,7 @@ export const FormFinalWrapper = styled.div`
     justify-content: center;
 `;
 
-export const Title = styled.h3`
+export const Title = styled(BBh3)`
     text-align: center;
     color: ${darkGreen};
 `;

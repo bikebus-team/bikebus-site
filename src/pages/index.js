@@ -36,6 +36,7 @@ const IndexPage = ({ data }) => {
         title={hpdata.checkerboard1.title}
         text={hpdata.checkerboard1.description}
         imageSrc={hpdata.checkerboard1.image.path}
+        imageCaption={hpdata.checkerboard1.image.caption.blocks[0].text}
         hasButton={true}
         buttonLink={hpdata.checkerboard1.button.linkDestination}
       />
@@ -44,6 +45,7 @@ const IndexPage = ({ data }) => {
         title={hpdata.checkerboard2.title}
         text={hpdata.checkerboard2.description}
         imageSrc={hpdata.checkerboard2.image.path}
+        imageCaption={hpdata.checkerboard1.image.caption.blocks[0].text}
         hasButton={true}
         buttonLink={hpdata.checkerboard2.button.linkDestination}
       />
@@ -74,81 +76,81 @@ query {
   takeshape {
     getHomepage {
       checkerboard1 {
-        button {
-          linkDestination
-          title
-        }
-        description
-        image {
-          description
-          path
-          sourceUrl
-        }
-        title
-      }
-      checkerboard2 {
-        button {
-          linkDestination
-          title
-        }
-        description
-        image {
-          description
-          path
-          sourceUrl
-        }
-        title
-      }
-      hero {
-        backgroundImage {
-          description
-          path
-          sourceUrl
-        }
-        button {
-          linkDestination
-          title
-        }
-        buttonTitle
-        description
-        headline
-        linkDestination
-        secondaryButton {
-          linkDestination
-          title
-        }
-      }
-      quoteSection {
-        quoteItem {
-          backgroundImage {
-            description
-            path
-            sourceUrl
-          }
-          quote
-        }
-      }
-      sock {
-        sock {
           button {
             linkDestination
             title
           }
           description
+          image {
+            caption
+            path
+            sourceUrl
+          }
           title
         }
-      }
-      specialEvent {
-        description
-        image {
-          caption
-          path
+        checkerboard2 {
+          button {
+            linkDestination
+            title
+          }
+          description
+          image {
+            caption
+            path
+            sourceUrl
+          }
+          title
         }
-        link
-        linkTitle
-        location
-        title
-      }
+        hero {
+          backgroundImage {
+            description
+            path
+            sourceUrl
+          }
+          button {
+            linkDestination
+            title
+          }
+          buttonTitle
+          description
+          headline
+          linkDestination
+          secondaryButton {
+            linkDestination
+            title
+          }
+        }
+        quoteSection {
+          quoteItem {
+            backgroundImage {
+              description
+              path
+              sourceUrl
+            }
+            quote
+          }
+        }
+        sock {
+          sock {
+            button {
+              linkDestination
+              title
+            }
+            description
+            title
+          }
+        }
+        specialEvent {
+          description
+          image {
+            caption
+            path
+          }
+          link
+          linkTitle
+          location
+          title
+        }
     }
   }
 }

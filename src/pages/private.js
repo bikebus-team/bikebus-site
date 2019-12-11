@@ -33,6 +33,7 @@ const Private = ({data}) => {
           title={cb.checkerboard.title}
           text={cb.checkerboard.description}
           imageSrc={cb.checkerboard.image.path}
+          imageCaption={cb.checkerboard.image.caption.blocks[0].text}
           hasButton={false}
         />
       ))}
@@ -49,20 +50,19 @@ const Private = ({data}) => {
 export default Private;
 
 export const query = graphql`
-query {
-  takeshape {
-    getPrivateEvents {
-      checkerboardSection {
-        checkerboard {
-          description
-          image {
+  query {
+    takeshape {
+      getPrivateEvents {
+        checkerboardSection {
+          checkerboard {
             description
-            path
-            sourceUrl
+            image {
+              path
+              caption
+            }
+            title
           }
-          title
         }
-      }
       hero {
         backgroundImage {
           description

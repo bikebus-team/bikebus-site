@@ -6,13 +6,5 @@ export const FormStep2Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-`;
-
-export const SizeWrapper = styled.div`
-    width: 50%;
-`;
-export const ButtonWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    width: 100%;
 `;

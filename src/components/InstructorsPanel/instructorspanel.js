@@ -1,12 +1,12 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { getImageUrl } from "takeshape-routing";
-import { InstructorsPanelWrapper, InstructorsWrapper, SingleInstructorWrapper, TextWrapper } from "./instructorspanelstyles"
-import Image from "../image"
+import { FunImage, InstructorImageWrapper, InstructorsPanelWrapper, InstructorsWrapper, SingleInstructorWrapper, TextWrapper, SeriousImage } from "./instructorspanelstyles"
+import { BBh1, BBh3, BBp } from "../Base/fonts";
 
 const InstructorsPanel = ({ title, instructors }) => (
     <InstructorsPanelWrapper>
-        <h1>{title}</h1>
+        <BBh1>{title}</BBh1>
         <InstructorsWrapper>
             {instructors.map((instructor, index) => 
                 singleInstructor(instructor, index))}
@@ -20,13 +20,13 @@ function singleInstructor(instructor, index) {
     const funHeadShotPath = funHeadShot.path;
     return (
         <SingleInstructorWrapper key={index}>
-            <div style={{ width: `100%`, border: `1px solid #ddd` }}>
-                <img src={getImageUrl(normalHeadShotPath)} />
-                <img src={getImageUrl(funHeadShotPath)} />
-            </div>
+            <InstructorImageWrapper>
+                <FunImage src={getImageUrl(funHeadShotPath)} alt={funHeadShot.caption.blocks[0].text} />
+                <SeriousImage src={getImageUrl(normalHeadShotPath)} alt={normalHeadShot.caption.blocks[0].text} />
+            </InstructorImageWrapper>
             <TextWrapper>
-                <h3>{name}</h3>
-                <p>{title}</p>
+                <BBh3>{name}</BBh3>
+                <BBp>{title}</BBp>
             </TextWrapper>
         </SingleInstructorWrapper>
     );

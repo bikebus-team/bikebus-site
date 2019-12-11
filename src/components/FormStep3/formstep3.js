@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { 
+import {
+    DateText,
     FormStep3Wrapper,
     SmallInput,
     SmallInputWrapper,
@@ -8,47 +9,73 @@ import {
 } from "./formstep3styles";
 import { ActiveButton, BackButton } from "../FormComponent/formcomponentstyles";
 import { FormField } from "../FormComponent/FormBaseComponents/formbasecomponents";
-import { ButtonWrapper, Form, FormContents, Label, SizeWrapper } from "../FormComponent/FormBaseComponents/formbasecomponentsstyles";
+import { ButtonWrapper, Form, FormContents, Label, OptionalText, SizeWrapper, StepTitle, TitleWrapper, TextWrapper } from "../FormComponent/FormBaseComponents/formbasecomponentsstyles";
 
-const FormStep3 = ({ user, setUser, continueOnClick, backOnClick }) => (
-    <FormStep3Wrapper>
+const axios = require('axios');
+const emailEndpoint = "https://script.google.com/macros/s/AKfycbzZwq3K5OdJQzYozblCiZJI86eMfPycRn9Ejt9W-2ynqOCASA/exec";
+const proxyurl = "https://cors-anywhere.herokuapp.com/";
+
+const FormStep3 = ({ user, setUser, continueOnClick, backOnClick, setRequestError, stepData }) => {
+    const [errors, setErrors] = React.useState({
+        pickUpAddress: false
+    });
+    const [submitCount, setSubmitCount] = React.useState(0);
+    return <FormStep3Wrapper>
+        <TitleWrapper>
+            <StepTitle>Details & Scheduling</StepTitle>
+        </TitleWrapper>
         <Form>
             <FormContents>
                 <FormField title="Pickup Address" 
                     editFn={e => updatePickup(user, setUser, e)} 
-                    currVal={user.pickUpAddress} />
+                    currVal={user.pickUpAddress} 
+                    isRed={errors.pickUpAddress} 
+                    isOptional={false}
+                    />
                 <FormField title="Dropoff Address" 
                     editFn={e => updateDropoff(user, setUser, e)} 
-                    currVal={user.dropOffAddress} />
+                    currVal={user.dropOffAddress}
+                    isOptional={true}
+                    />
                 <FormField title="Tentative Date" 
                     editFn={e => updateTentativeDate(user, setUser, e)} 
                     currVal={user.tentativeDate}
-                    placeholderVal="MM / DD / YYYY" />
+                    placeholderVal="MM / DD / YYYY"
+                    isOptional={true}
+                    />
+                    <DateText>{stepData.dateDisclaimer}</DateText>
                 
                 <TimesWrapper>
                     <SmallFormField title="Start Time" 
                         editFn={e => updateStartTime(user, setUser, e)} 
                         currVal={user.startTime} 
-                        placeholderVal="--:-- --"/>
+                        placeholderVal="--:-- --"
+                        isOptional={true}
+                        />
                     <SmallFormField title="End Time" 
                         editFn={e => updateEndTime(user, setUser, e)} 
                         currVal={user.endTime}
-                        placeholderVal="--:-- --" />
+                        placeholderVal="--:-- --" 
+                        isOptional={true}
+                        />
                 </TimesWrapper>
             </FormContents>
         </Form>
         <SizeWrapper>
             <ButtonWrapper>
                 <BackButton onClick={backOnClick}>Previous</BackButton>
-                <ActiveButton onClick={continueOnClick}>Request a Quote</ActiveButton>
+                <ActiveButton onClick={() => validateInput(user, errors, setErrors, continueOnClick, submitCount, setSubmitCount, setRequestError)}>Request a Quote</ActiveButton>
             </ButtonWrapper>
         </SizeWrapper>
     </FormStep3Wrapper>
-);
+};
 
-const SmallFormField = ({ title, editFn, currVal, placeholderVal }) => {
+const SmallFormField = ({ title, editFn, currVal, placeholderVal, isOptional }) => {
     return <SmallInputWrapper>
-        <Label>{title}</Label>
+        <TextWrapper>
+            <Label>{title}</Label>
+            <OptionalText optional={isOptional} >(Optional)</OptionalText>
+        </TextWrapper>
         <SmallInput onChange = {editFn} value = {currVal} placeholder={placeholderVal} />
     </SmallInputWrapper>
 }
@@ -81,6 +108,32 @@ function updateEndTime(user, setUser, event) {
     let newUser = {...user};
     newUser.endTime = event.target.value;
     setUser(newUser);
+}
+
+function validateInput(user, errors, setErrors, continueOnClick, submitCount, setSubmitCount, setRequestError) {
+    setSubmitCount(submitCount + 1);
+    let newErrors = {...errors};
+    newErrors.pickUpAddress = !user.pickUpAddress.localeCompare("");
+    
+    if (!newErrors.pickUpAddress) {
+        submitRequest(user, continueOnClick, setRequestError);
+    }
+    setErrors(newErrors);
+}
+
+function submitRequest(user, continueOnClick, setRequestError) {
+    const name = user.name;
+    const email = user.emailAddress;
+    const subject = `BikeBus Quote - ${name}`;
+    const body = `Name: ${user.name}%0APhone Number: ${user.phoneNum}%0ANumber of Rides Requested: ${user.numRides}%0AFrequency: ${user.frequency}%0APickup Address: ${user.pickUpAddress}%0ADropoff Address: ${user.dropOffAddress}%0ATentative Date: ${user.tentativeDate}%0AStart Time: ${user.startTime}%0AEnd Time: ${user.endTime}%0A%0AMessage: ${user.message}%0A`;
+    const request = `${emailEndpoint}?name=${name}&email=${email}&subject=${subject}&body=${body}`;
+    axios.post(proxyurl + request)
+    .then(response => {
+        continueOnClick();
+    }).catch(error => {
+        console.log(error);
+        setRequestError(true);
+    });
 }
 
 FormStep3.propTypes = {

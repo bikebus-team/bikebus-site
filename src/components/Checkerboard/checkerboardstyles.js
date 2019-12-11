@@ -56,6 +56,7 @@ export const TextWrapper = styled.div``
 export const CheckerboardButton = styled(Button)`
   display: ${props => (props.displayVal ? "block" : "none")};
   background: ${darkGreen};
+  border: 1px solid ${darkGreen};
 `
 
 export const CheckerboardLink = styled(Link)`
