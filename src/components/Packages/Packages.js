@@ -51,7 +51,6 @@ const Packages = ({ heading, subtitle, packages}) => {
 
 function tabPackage(packages, index, setStep, step) {
     const header = packages.option.title
-    console.log(step===index)
     return (
         <PackageButton 
         key={index} 

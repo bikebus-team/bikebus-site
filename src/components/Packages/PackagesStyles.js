@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { BBh1, BBh2, BBh3, BBh4, BBp, BBsmallp} from "../Base/fonts"
 import { PaddedComponentWrapper, Button } from "../Base/basecomponents"
-import { darkGreen, offWhite } from "../Base/colors"
+import { darkGreen } from "../Base/colors"
 
 export const PackagesContainer = styled(PaddedComponentWrapper)`
     text-align: center;
