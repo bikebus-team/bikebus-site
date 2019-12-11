@@ -22,7 +22,8 @@ export const Wrapper = styled.div`
 
 export const Item = styled.div`
     width: 245px;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
+    background: ${offWhite};
 
     @media (max-width: 420px) {
         width: 100%;
