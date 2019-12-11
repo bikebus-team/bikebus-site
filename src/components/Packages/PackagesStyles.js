@@ -103,6 +103,17 @@ export const PackageButton = styled(Button)`
         outline: none;
     }
 
+    ${PackageButton}:nth-child(1) {
+        border-radius: 3px 0 0 3px;
+    }
+
+    ${PackageButton}:nth-child(2) {
+        border-radius: 0;
+    }
+
+    ${PackageButton}:nth-child(3) {
+        border-radius: 0 3px 3px 0;
+    }
 `
 
 
@@ -130,6 +141,10 @@ export const PackageText = styled(BBp)`
 
 export const PackagePrice = styled(BBh1)`
     margin:0;
+    
+    @media (max-width: 1275px) {
+        color: white;
+    }
 `
 
 export const PackageFinePrintContainer = styled.div`
