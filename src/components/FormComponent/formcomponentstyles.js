@@ -64,7 +64,6 @@ export const FormWrapper = styled(PaddedComponentWrapper)`
   position: relative;
   height: inherit;
   width: inherit;
-  z-index: -10;
 
   @media (max-width: 975px) {
     margin-top: 76px;
@@ -156,7 +155,6 @@ export const FormWrapper = styled(PaddedComponentWrapper)`
 export const CircleDiv = styled.div`
     overflow: hidden;
     position: relative;
-    z-index: -10;
     &:after {
         content: "";
         background: url('${circlesMagenta}');
