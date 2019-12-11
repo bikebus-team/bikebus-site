@@ -164,8 +164,9 @@ export const CircleDiv = styled.div`
         width: 500px;
         height: 100%;
         right: -125px;
+        display: block;
     
-        @media (min-width: 0px) {
+        @media (max-width: 420px) {
             display: none;
         }
 
