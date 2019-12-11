@@ -32,6 +32,7 @@ const Private = ({data}) => {
           title={cb.checkerboard.title}
           text={cb.checkerboard.description}
           imageSrc={cb.checkerboard.image.path}
+          imageCaption={cb.checkerboard.image.caption.blocks[0].text}
           hasButton={false}
         />
       ))}
@@ -58,6 +59,7 @@ export const query = graphql`
               description
               path
               sourceUrl
+              caption
             }
             title
           }

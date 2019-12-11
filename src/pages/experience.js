@@ -29,6 +29,7 @@ const Experience = ({data}) => {
           title={cb.checkerboard.title}
           text={cb.checkerboard.description}
           imageSrc={cb.checkerboard.image.path}
+          imageCaption={cb.checkerboard.image.caption.blocks[0].text}
           hasButton={false}
         />
       ))}
@@ -55,6 +56,7 @@ export const query = graphql`
               path
               sourceUrl
               title
+              caption
             }
             title
           }
@@ -64,7 +66,7 @@ export const query = graphql`
             image {
               path
               sourceUrl
-              title
+              caption
             }
           }
           title

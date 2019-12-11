@@ -20,6 +20,7 @@ const Story = ({data}) => {
         title={cb.checkerboard.title} 
         text={cb.checkerboard.description} 
         imageSrc={cb.checkerboard.image.path}
+        imageCaption={cb.checkerboard.image.caption.blocks[0].text}
         hasButton={false} />)}
         {/* TODO: pull from CMS instructor data
         Use: storydata.instructorSection.instructor
@@ -40,16 +41,8 @@ export const query = graphql`
           checkerboard {
             description
             image {
-              _id
               caption
-              credit
-              description
-              filename
-              mimeType
               path
-              sourceUrl
-              title
-              uploadStatus
             }
             title
           }
@@ -61,29 +54,13 @@ export const query = graphql`
           instructors {
             instructor {
               funHeadShot {
-                _id
                 caption
-                credit
-                description
-                filename
-                mimeType
                 path
-                sourceUrl
-                title
-                uploadStatus
               }
               name
               normalHeadShot {
-                _id
                 caption
-                credit
-                description
-                filename
-                mimeType
                 path
-                sourceUrl
-                title
-                uploadStatus
               }
               title
             }

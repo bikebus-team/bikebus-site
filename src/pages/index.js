@@ -35,6 +35,7 @@ const IndexPage = ({ data }) => {
         title={hpdata.checkerboard1.title}
         text={hpdata.checkerboard1.description}
         imageSrc={hpdata.checkerboard1.image.path}
+        imageCaption={hpdata.checkerboard1.image.caption.blocks[0].text}
         hasButton={true}
         buttonLink={hpdata.checkerboard1.button.linkDestination}
       />
@@ -43,6 +44,7 @@ const IndexPage = ({ data }) => {
         title={hpdata.checkerboard2.title}
         text={hpdata.checkerboard2.description}
         imageSrc={hpdata.checkerboard2.image.path}
+        imageCaption={hpdata.checkerboard1.image.caption.blocks[0].text}
         hasButton={true}
         buttonLink={hpdata.checkerboard2.button.linkDestination}
       />
@@ -79,7 +81,7 @@ export const query = graphql`
           }
           description
           image {
-            description
+            caption
             path
             sourceUrl
           }
@@ -92,7 +94,7 @@ export const query = graphql`
           }
           description
           image {
-            description
+            caption
             path
             sourceUrl
           }

@@ -21,8 +21,8 @@ function singleInstructor(instructor, index) {
     return (
         <SingleInstructorWrapper key={index}>
             <div style={{ width: `100%`, border: `1px solid #ddd` }}>
-                <img src={getImageUrl(normalHeadShotPath)} />
-                <img src={getImageUrl(funHeadShotPath)} />
+                <img src={getImageUrl(normalHeadShotPath)} alt={normalHeadShot.caption.blocks[0].text} />
+                <img src={getImageUrl(funHeadShotPath)} alt={funHeadShot.caption.blocks[0].text} />
             </div>
             <TextWrapper>
                 <h3>{name}</h3>
