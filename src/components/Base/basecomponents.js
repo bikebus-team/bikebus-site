@@ -41,10 +41,11 @@ export const Button = styled.button`
   font-weight: bold;
   text-transform: uppercase;
   border-radius: 3px;
-  border: none;
   padding: 15px 25px;
   &:hover {
     cursor: pointer;
+    background-color: ${offWhite};
+    color: ${darkGreen};
   }
 `
 
