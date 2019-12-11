@@ -8,8 +8,8 @@ import Sock from "../components/Sock/Sock"
 import Checkerboard from "../components/Checkerboard/checkerboard"
 import SEO from "../components/seo"
 
-const Private = ({data}) => {
-  const pedata = data.takeshape.getPrivateEvents;
+const Private = ({ data }) => {
+  const pedata = data.takeshape.getPrivateEvents
   // The `what to expect` page
   return (
     <Layout>
@@ -23,17 +23,14 @@ const Private = ({data}) => {
         ctaButtonText={pedata.hero.button.title}
         imageUrl={pedata.hero.backgroundImage}
       />
-      <QuoteBlock
-        quote={pedata.quote.content}
-      />
+      <QuoteBlock quote={pedata.quote.content} />
       {pedata.checkerboardSection.map((cb, index) => (
         <Checkerboard
           key={index}
           imageLeft={index % 2 === 1}
           title={cb.checkerboard.title}
           text={cb.checkerboard.description}
-          imageSrc={cb.checkerboard.image.path}
-          imageCaption={cb.checkerboard.image.caption.blocks[0].text}
+          image={cb.checkerboard.image}
           hasButton={false}
         />
       ))}
@@ -47,7 +44,7 @@ const Private = ({data}) => {
   )
 }
 
-export default Private;
+export default Private
 
 export const query = graphql`
   query {
@@ -63,46 +60,46 @@ export const query = graphql`
             title
           }
         }
-      hero {
-        backgroundImage {
-          description
-          path
-          sourceUrl
-        }
-        button {
-          _id
-          linkDestination
-          title
-        }
-        description
-        subtitle
-        title
-      }
-      process {
-        step {
-          description
-          icon {
+        hero {
+          backgroundImage {
             description
             path
             sourceUrl
           }
-          title
-        }
-      }
-      quote {
-        content
-      }
-      sock {
-        sock {
           button {
+            _id
             linkDestination
             title
           }
           description
+          subtitle
           title
+        }
+        process {
+          step {
+            description
+            icon {
+              description
+              path
+              sourceUrl
+            }
+            title
+          }
+        }
+        quote {
+          content
+        }
+        sock {
+          sock {
+            button {
+              linkDestination
+              title
+            }
+            description
+            title
+          }
         }
       }
     }
   }
-}
 `

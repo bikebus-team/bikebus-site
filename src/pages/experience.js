@@ -7,11 +7,11 @@ import QuoteBlock from "../components/QuoteBlock/QuoteBlock"
 import Sock from "../components/Sock/Sock"
 import Checkerboard from "../components/Checkerboard/checkerboard"
 import SEO from "../components/seo"
-import ExperienceCommunity from "../components/ExperienceCommunity/ExperienceCommunity";
+import ExperienceCommunity from "../components/ExperienceCommunity/ExperienceCommunity"
 
-const Experience = ({data}) => {
+const Experience = ({ data }) => {
   // The `what to expect` page
-  const expdata = data.takeshape.getExperience;
+  const expdata = data.takeshape.getExperience
   return (
     <Layout>
       <SEO title="Experience" />
@@ -28,15 +28,14 @@ const Experience = ({data}) => {
           imageLeft={index % 2 === 1}
           title={cb.checkerboard.title}
           text={cb.checkerboard.description}
-          imageSrc={cb.checkerboard.image.path}
-          imageCaption={cb.checkerboard.image.caption.blocks[0].text}
+          image={cb.checkerboard.image}
           hasButton={false}
         />
       ))}
       {/* TODO: make image layout for Seema to update */}
       <ExperienceCommunity
-      title={expdata.community.title}
-      photos={expdata.community.images}
+        title={expdata.community.title}
+        photos={expdata.community.images}
       />
     </Layout>
   )
@@ -76,6 +75,6 @@ export const query = graphql`
           title
         }
       }
+    }
   }
-}
 `
