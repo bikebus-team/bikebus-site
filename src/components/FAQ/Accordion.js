@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { BBh3 } from "../Base/fonts"
 import { darkGreen } from "../Base/colors"
 import { SIZES } from "../../tokens"
@@ -22,6 +22,7 @@ const TitleButton = styled.button`
   align-items: center;
   width: 100%;
   padding: 0;
+  cursor: pointer;
 `
 
 const Content = styled.div`
@@ -33,7 +34,20 @@ const Content = styled.div`
       margin-top: 20px;
     }
   }
-  ${({ open }) => (open ? "" : "display: none")};
+  opacity: 1;
+  height: 100%;
+  transition-timing-function: ease-in-out;
+  transition-duration: 250ms;
+  transition-property: all;
+
+  ${({ open }) =>
+    open
+      ? ""
+      : css`
+          height: 0;
+          opacity: 0;
+          margin-top: 0px;
+        `};
 `
 
 const Title = styled(BBh3)`
