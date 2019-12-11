@@ -3,10 +3,10 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import FormComponent from "../components/FormComponent/formcomponent";
 
-const Form = () => {
+const Form = ({ location }) => {
     return <Layout>
       <SEO title="Form" />
-      <FormComponent />
+      <FormComponent clickedOption={location.state.option} />
     </Layout>
 }
   
