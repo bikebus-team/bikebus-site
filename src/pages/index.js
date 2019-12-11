@@ -18,6 +18,7 @@ import HighlightEvent from "../components/HighlightEvent/HighlightEvent"
 
 const IndexPage = ({ data }) => {
   const hpdata = data.takeshape.getHomepage
+  console.log(hpdata)
   return (
     <Layout>
       <SEO title="Home" />

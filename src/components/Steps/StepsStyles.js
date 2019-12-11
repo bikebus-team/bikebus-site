@@ -27,6 +27,7 @@ export const StepsContentContainer = styled.div`
 
 export const SingleStepWrapper = styled.div`
     margin: 0 20px 0 20px;
+
     @media (max-width: 768px) {
         margin-bottom: 50px;
         align-self:center;
@@ -35,9 +36,9 @@ export const SingleStepWrapper = styled.div`
 `
 
 export const StepIconContainer = styled.div`
-    width: 75px;
-    height: 75px;
-
+    width: fit-content;
+    height: 44px;
+    margin-bottom: 25px;
 `
 
 export const StepTextContainer = styled.div`

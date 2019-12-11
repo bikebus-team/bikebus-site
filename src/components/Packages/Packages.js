@@ -83,22 +83,22 @@ function singlePackage(packages, index, isHighlighted) {
     }
 
     return (
-        <SinglePackageWrapper key={index} style={ isHighlighted ? { backgroundColor: darkGreen, color: 'white'} : null }  >
+        <SinglePackageWrapper key={index} style={ isHighlighted ? { backgroundColor: darkGreen} : null }  >
             <SinglePackageContentContainer>
                 <PackageHeaderContainer>
-                    <PackageHeader>{header}</PackageHeader>
-                    <PackageSubtitle>{subtitle}</PackageSubtitle>
+                    <PackageHeader style={ isHighlighted ? {color: 'white'} : null }>{header}</PackageHeader>
+                    <PackageSubtitle style={ isHighlighted ? {color: 'white'} : null }>{subtitle}</PackageSubtitle>
                 </PackageHeaderContainer>
                 <PackagePriceContainer>
-                    <PackageText>Starting at</PackageText> 
-                    <PackagePrice>${price}</PackagePrice>
-                    <PackageText>Per person</PackageText> 
+                    <PackageText style={ isHighlighted ? {color: 'white'} : null }>Starting at</PackageText> 
+                    <PackagePrice style={ isHighlighted ? {color: 'white'} : null }>${price}</PackagePrice>
+                    <PackageText style={ isHighlighted ? {color: 'white'} : null }>Per person</PackageText> 
                 </PackagePriceContainer>
                 <Link to={"/"}>
                     <Button style={ isHighlighted ? { backgroundColor: 'white', color: darkGreen} : null }>Request a Quote</Button>
                 </Link>
                 <PackageFinePrintContainer>
-                    <PackageFinePrint>{fineprint}</PackageFinePrint>
+                    <PackageFinePrint style={ isHighlighted ? {color: 'white'} : null }>{fineprint}</PackageFinePrint>
                 </PackageFinePrintContainer>
             </SinglePackageContentContainer>
         </SinglePackageWrapper>

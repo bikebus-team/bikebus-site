@@ -12,16 +12,15 @@ import ExperienceCommunity from "../components/ExperienceCommunity/ExperienceCom
 const Experience = ({data}) => {
   // The `what to expect` page
   const expdata = data.takeshape.getExperience;
+  console.log(expdata)
   return (
     <Layout>
       <SEO title="Experience" />
       <SplitHero
-        tagline={expdata.hero.title}
-        subtitle={expdata.hero.description}
+        tagline= {expdata.hero.title}
+        imgSrc={expdata.hero.backgroundImage.path}
+        description={expdata.hero.description}
       />
-      {/* {expdata.checkerboardSection.map((cb, index) => (
-        <div>hello</div>
-      ))} */}
       {expdata.checkerboardSection.map((cb, index) => (
         <Checkerboard
           key={index}
@@ -70,6 +69,18 @@ query {
         title
       }
       hero {
+        backgroundImage {
+          _id
+          caption
+          credit
+          description
+          filename
+          mimeType
+          path
+          sourceUrl
+          title
+          uploadStatus
+        }
         description
         title
       }
