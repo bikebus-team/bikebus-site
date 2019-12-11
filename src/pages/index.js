@@ -52,7 +52,7 @@ const IndexPage = ({ data }) => {
         ctaLink={hpdata.specialEvent.link}
         ctaText={hpdata.specialEvent.linkTitle}
         date={hpdata.specialEvent.dateTime}
-        imgSrc={hpdata.specialEvent.image.path}
+        image={hpdata.specialEvent.image}
       />
       <QuoteBlock quote={hpdata.quoteSection[0].quoteItem.quote} />
       <Sock
