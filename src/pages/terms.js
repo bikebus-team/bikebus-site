@@ -4,24 +4,25 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ExtraPageLayout from "../components/ExtraPageLayout"
+import { BBh2, BBh3, BBp, BBstrong } from "../components/Base/fonts";
 
 const TEMP_CONTENT = () => (
   <>
-    <p>
-      <strong>Effective June 1, 2015</strong>
-    </p>
+    <BBp>
+      <BBstrong>Effective June 1, 2015</BBstrong>
+    </BBp>
 
-    <p>
+    <BBp>
       Please read these Terms and Conditions (“terms”) carefully, as they
       contain important information regarding your legal rights, remedies, and
       obligations when using the bikebus website. The terms include various
       limitations and exclusions, and a dispute resolution clause that governs
       how disputes will be resolved.
-    </p>
+    </BBp>
 
-    <h2>TERMS OF USE</h2>
-    <h3>ACCEPTANCE OF TERMS</h3>
-    <p>
+    <BBh2>TERMS OF USE</BBh2>
+    <BBh3>ACCEPTANCE OF TERMS</BBh3>
+    <BBp>
       As a user on the bikebus website, you signify your agreement to these
       terms, as well as to the bikebus privacy policy. If you do not agree to
       any of these terms or the privacy policy, please do not use the bikebus
@@ -31,11 +32,11 @@ const TEMP_CONTENT = () => (
       policies at any time, and you agree to be bound by such modifications or
       revisions. Nothing in these terms shall be deemed to confer any
       third-party rights or benefits.
-    </p>
+    </BBp>
 
-    <h2>TERMS OF USE</h2>
-    <h3>ACCEPTANCE OF TERMS</h3>
-    <p>
+    <BBh2>TERMS OF USE</BBh2>
+    <BBh3>ACCEPTANCE OF TERMS</BBh3>
+    <BBp>
       As a user on the bikebus website, you signify your agreement to these
       terms, as well as to the bikebus privacy policy. If you do not agree to
       any of these terms or the privacy policy, please do not use the bikebus
@@ -45,7 +46,7 @@ const TEMP_CONTENT = () => (
       policies at any time, and you agree to be bound by such modifications or
       revisions. Nothing in these terms shall be deemed to confer any
       third-party rights or benefits.
-    </p>
+    </BBp>
   </>
 )
 

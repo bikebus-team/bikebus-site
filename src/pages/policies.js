@@ -4,20 +4,21 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ExtraPageLayout from "../components/ExtraPageLayout"
+import { BBh2, BBh3, BBp } from "../components/Base/fonts";
 
 const TEMP_CONTENT = () => (
   <>
-    <h2>Policies for group sessions</h2>
+    <BBh2>Policies for group sessions</BBh2>
 
-    <p>
+    <BBp>
       Please read these Terms and Conditions (“terms”) carefully, as they
       contain important information regarding your legal rights, remedies, and
       obligations when using the bikebus website. The terms include various
       limitations and exclusions, and a dispute resolution clause that governs
       how disputes will be resolved.
-    </p>
+    </BBp>
 
-    <h3>Reservation Policy</h3>
+    <BBh3>Reservation Policy</BBh3>
     <ul>
       <li>
         Payment in full is required to hold a date and time for an event(s).
@@ -32,7 +33,7 @@ const TEMP_CONTENT = () => (
       </li>
     </ul>
 
-    <h3>Service Areas</h3>
+    <BBh3>Service Areas</BBh3>
     <ul>
       <li>
         Payment in full is required to hold a date and time for an event(s).

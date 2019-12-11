@@ -41,4 +41,7 @@ export const FunImage = styled.img`
 
 export const SeriousImage = styled.img`
   display: inline;
+  &:hover {
+    display: none;
+  }
 `;

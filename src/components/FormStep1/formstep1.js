@@ -26,6 +26,7 @@ import {
  } from "./formstep1styles";
 import {
     TitleWrapper, StepTitle } from "../FormComponent/FormBaseComponents/formbasecomponentsstyles";
+import { BBh3 } from "../Base/fonts";
 
 function handleSelectChange(event, user, setUser, option, setOption) {
     const value = event.target.value;
@@ -90,7 +91,7 @@ const FormStep1 = ({ continueOnClick, user, setUser, clickedOption, stepData }) 
                 />
                 <RadioButtonLabel />
                 <PackageSelection clicked={!option.localeCompare("option1")}>
-                    <h3>{stepData.rideOption1.title}</h3>
+                    <BBh3>{stepData.rideOption1.title}</BBh3>
                     <PriceText>{stepData.rideOption1.description}</PriceText>
                 </PackageSelection>
             </Item>
@@ -104,7 +105,7 @@ const FormStep1 = ({ continueOnClick, user, setUser, clickedOption, stepData }) 
                 />
                 <RadioButtonLabel />
                 <PackageSelection clicked={!option.localeCompare("option2")}>
-                    <h3>{stepData.rideOption2.title}</h3>
+                    <BBh3>{stepData.rideOption2.title}</BBh3>
                     <PriceText>{stepData.rideOption2.description}</PriceText>
                 </PackageSelection>
             </Item>
@@ -118,7 +119,7 @@ const FormStep1 = ({ continueOnClick, user, setUser, clickedOption, stepData }) 
                 />
                 <RadioButtonLabel />
                 <PackageSelection clicked={!option.localeCompare("option3")}>
-                    <h3>{stepData.rideOption3.title}</h3>
+                    <BBh3>{stepData.rideOption3.title}</BBh3>
                     <PriceText>{stepData.rideOption3.description}</PriceText>
                 </PackageSelection>
             </Item>
@@ -132,7 +133,7 @@ const FormStep1 = ({ continueOnClick, user, setUser, clickedOption, stepData }) 
                 />
                 <RadioButtonLabel />
                 <PackageSelection clicked={!option.localeCompare("custom")}>
-                    <h3>{stepData.customRides.title}</h3>
+                    <BBh3>{stepData.customRides.title}</BBh3>
                     <PriceText>{stepData.customRides.description}</PriceText>
                 </PackageSelection>
             </Item>

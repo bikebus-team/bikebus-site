@@ -33,6 +33,10 @@ export const BBp = styled.p`
   font-size: 0.83em;
 `
 
+export const BBstrong = styled.strong`
+  font-family: "Noto Sans", sans-serif;
+`;
+
 export const BBsmallp = styled.small`
   font-family: "Noto Sans", sans-serif;
   font-size: 0.6em;

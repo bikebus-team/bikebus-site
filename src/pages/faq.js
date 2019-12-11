@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 import ExtraPageLayout from "../components/ExtraPageLayout"
 
 import Accordion from "../components/FAQ/Accordion"
-import { BBh2 } from "../components/Base/fonts"
+import { BBh2, BBp } from "../components/Base/fonts"
 import { SIZES } from "../tokens"
 
 const FAQSection = styled.div`
@@ -37,13 +37,13 @@ const TEMP_CONTENT = () => (
         idKey="0"
         question="What exactly is BikeBus?"
         answer={
-          <p>
+          <BBp>
             As a user on the bikebus website, you signify your agreement to
             these terms, as well as to the bikebus privacy policy. If you do not
             agree to any of these terms or the privacy policy, please do not use
             the bikebus website. Periodically review these terms, as major
             changes may be made.
-          </p>
+          </BBp>
         }
       />
 
@@ -52,13 +52,13 @@ const TEMP_CONTENT = () => (
         idKey="1"
         question="What exactly is BikeBus?"
         answer={
-          <p>
+          <BBp>
             As a user on the bikebus website, you signify your agreement to
             these terms, as well as to the bikebus privacy policy. If you do not
             agree to any of these terms or the privacy policy, please do not use
             the bikebus website. Periodically review these terms, as major
             changes may be made.
-          </p>
+          </BBp>
         }
       />
     </FAQSection>
@@ -70,13 +70,13 @@ const TEMP_CONTENT = () => (
         idKey="2"
         question="What exactly is BikeBus?"
         answer={
-          <p>
+          <BBp>
             As a user on the bikebus website, you signify your agreement to
             these terms, as well as to the bikebus privacy policy. If you do not
             agree to any of these terms or the privacy policy, please do not use
             the bikebus website. Periodically review these terms, as major
             changes may be made.
-          </p>
+          </BBp>
         }
       />
 
@@ -85,13 +85,13 @@ const TEMP_CONTENT = () => (
         idKey="3"
         question="What exactly is BikeBus?"
         answer={
-          <p>
+          <BBp>
             As a user on the bikebus website, you signify your agreement to
             these terms, as well as to the bikebus privacy policy. If you do not
             agree to any of these terms or the privacy policy, please do not use
             the bikebus website. Periodically review these terms, as major
             changes may be made.
-          </p>
+          </BBp>
         }
       />
 
@@ -100,20 +100,20 @@ const TEMP_CONTENT = () => (
         question="What exactly is BikeBus?"
         answer={
           <>
-            <p>
+            <BBp>
               As a user on the bikebus website, you signify your agreement to
               these terms, as well as to the bikebus privacy policy. If you do
               not agree to any of these terms or the privacy policy, please do
               not use the bikebus website. Periodically review these terms, as
               major changes may be made.
-            </p>
-            <p>
+            </BBp>
+            <BBp>
               As a user on the bikebus website, you signify your agreement to
               these terms, as well as to the bikebus privacy policy. If you do
               not agree to any of these terms or the privacy policy, please do
               not use the bikebus website. Periodically review these terms, as
               major changes may be made.
-            </p>
+            </BBp>
           </>
         }
       />
