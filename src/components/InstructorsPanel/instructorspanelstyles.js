@@ -26,22 +26,24 @@ export const SingleInstructorWrapper = styled.div`
 
 export const TextWrapper = styled.div``
 
-export const InstructorImageWrapper = styled.div`
-    width: 100%;
-    border: 1px solid #ddd;
-`;
+export const FunImage = styled.img``;
 
-export const FunImage = styled.img`
-  display: none;
-  &:hover {
+export const SeriousImage = styled.img``;
+
+export const InstructorImageWrapper = styled.div`
+  ${FunImage} {
+    display: none;
+  }
+  ${SeriousImage} {
     display: inline;
   }
 
-`;
-
-export const SeriousImage = styled.img`
-  display: inline;
   &:hover {
-    display: none;
+    ${FunImage} {
+      display: inline;
+    }
+    ${SeriousImage} {
+      display: none;
+    }
   }
 `;
