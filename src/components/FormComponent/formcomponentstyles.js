@@ -142,8 +142,8 @@ export const FormWrapper = styled(PaddedComponentWrapper)`
     @media (min-width: 768px) {
         width: 250px;
         top: auto;
-        bottom: -100px;
-        right: -90px;
+        bottom: -120px;
+        right: -110px;
         left: auto;
     }
     @media (min-width: 1280px) {
@@ -155,81 +155,6 @@ export const FormWrapper = styled(PaddedComponentWrapper)`
       left: auto;
     }
   }
-`;
-
-export const CircleDiv1 = styled.div`
-&:before {
-  content: "";
-  background: url('${circlesTeal}');
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  height: 100%;
-  position: absolute;
-
-  @media (min-width: 0px) {
-      width: 250px;
-      top: -120px;
-      right: auto;
-      left: -50px;
-  }
-
-  @media (min-width: 420px) {
-      width: 250px;
-      top: -120px;
-      right: auto;
-      left: -50px;
-  }
-
-  @media (min-width: 768px) {
-      width: 250px;
-      top: -140px;
-      right: auto;
-      left: -50px;
-  }
-
-  @media (min-width: 1280px) {
-    width: 450px;
-    top: -240px;
-    right: auto;
-    left: -50px;
-  }
-}
-
-&:after {
-  content: "";
-  background: url('${circlesMagenta}');
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  position: absolute;
-  width: 500px;
-  height: 100%;
-  right: -125px;
-  
-  @media (min-width: 0px) {
-      width: 250px;
-      top: auto;
-      bottom: -1500px;
-      right: -120px;
-      left: auto;
-  }
-
-  @media (min-width: 768px) {
-      width: 250px;
-      top: auto;
-      bottom: -1020px;
-      right: -150px;
-      left: auto;
-  }
-  @media (min-width: 1280px) {
-    position: absolute;
-    width: 350px;
-    top: auto;
-    bottom: -930px;
-    right: -170px;
-    left: auto;
-  }
-}
-
 `;
 
 export const CircleDiv = styled.div`
@@ -253,7 +178,7 @@ export const CircleDiv = styled.div`
         @media (min-width: 768px) {
             width: 400px;
             top: auto;
-            bottom: -120px;
+            bottom: -250px;
             right: auto;
             left: -230px;
         }
@@ -261,9 +186,9 @@ export const CircleDiv = styled.div`
         @media (min-width: 1280px) {
             width: 600px;
             top: auto;
-            bottom: -140px;
+            bottom: -300px;
             right: auto;
-            left: -200px;
+            left: -300px;
         }
   }
 `;
