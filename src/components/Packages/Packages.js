@@ -94,7 +94,7 @@ function singlePackage(packages, index, isHighlighted) {
                     <PackagePrice>${price}</PackagePrice>
                     <PackageText>Per person</PackageText> 
                 </PackagePriceContainer>
-                <Link to={"/"}>
+                <Link to={"/form"} state={{ option: index }}>
                     <Button style={ isHighlighted ? { backgroundColor: 'white', color: darkGreen} : null }>Request a Quote</Button>
                 </Link>
                 <PackageFinePrintContainer>

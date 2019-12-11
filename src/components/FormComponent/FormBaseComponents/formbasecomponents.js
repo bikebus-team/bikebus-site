@@ -1,24 +1,33 @@
 import React from 'react';
 import { 
+    ErrorText,
+    FieldWrapper,
     Label,
     Input,
     InputWrapper,
-    TextArea
+    OptionalText,
+    TextArea,
+    TextWrapper
 } from "./formbasecomponentsstyles";
 
 
-export const FormField = ({ title, editFn, currVal, placeholderVal, inputType }) => {
-    return <div>
-        <Label>{title}</Label>
+export const FormField = ({ title, editFn, currVal, placeholderVal, inputType, isRed, isOptional }) => {
+    return <FieldWrapper>
+        <TextWrapper>
+            <Label>{title}</Label>
+            <OptionalText optional={isOptional} >(Optional)</OptionalText>
+        </TextWrapper>
         <InputWrapper>
-            <Input onChange = {editFn} value = {currVal} placeholder={placeholderVal} required input={inputType}/>
+            <Input onChange = {editFn} value = {currVal} placeholder={placeholderVal} input={inputType} isRed={isRed} />
         </InputWrapper>
-    </div>
+        <ErrorText isRed={isRed}>This field is required.</ErrorText>
+    </FieldWrapper>
 }
 
-export const MessageField = ({ title, editFn, currVal, placeholderVal }) => {
-    return <div>
+export const MessageField = ({ title, editFn, currVal, placeholderVal, isRed }) => {
+    return <FieldWrapper>
         <Label>{title}</Label>
-        <TextArea onChange = {editFn} value = {currVal} placeholder={placeholderVal} />
-    </div>
+        <TextArea onChange = {editFn} value = {currVal} placeholder={placeholderVal} isRed={isRed} />
+        <ErrorText isRed={isRed}>This field is required.</ErrorText>
+    </FieldWrapper>
 }
