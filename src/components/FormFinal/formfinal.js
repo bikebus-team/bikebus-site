@@ -20,14 +20,14 @@ function renderFinal(requestError, backOnClick) {
             <TextWrapper>
                 <BBp>Thanks for taking the time to fill out the quote, now it's our turn! We'll look through your request and get back to you as quickly as possible.</BBp>
                 <BBp>Make sure to check your email for new messages from us - we are so excited to have you try the BikeBus experience!</BBp>
-                <BBp>For any further questions or concerns feel free to reach out to us at info@bikebus.com</BBp>
+                <BBp>For any further questions or concerns feel free to reach out to us at <strong><u>info@bikebus.com</u></strong></BBp>
             </TextWrapper>
         </div>
     } else {
         return <div>
             <Title>Request Error</Title>
             <TextWrapper>
-                <BBp>There seems to have been in error sending your request. Please try again. If this problem persists, feel free to reach out to us at info@bikebus.com</BBp>
+                <BBp>There seems to have been in error sending your request. Please try again. If this problem persists, feel free to reach out to us at <strong><u>info@bikebus.com</u></strong></BBp>
             </TextWrapper>
             <BackButton onClick={backOnClick}>Back to form</BackButton>
         </div>
