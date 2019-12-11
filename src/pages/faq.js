@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-// import { graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -28,106 +28,28 @@ const SectionTitle = styled(BBh2)`
   margin-bottom: 40px;
 `
 
-const TEMP_CONTENT = () => (
-  <>
-    <FAQSection>
-      <SectionTitle>General</SectionTitle>
-      <Accordion
-        key="0"
-        idKey="0"
-        question="What exactly is BikeBus?"
-        answer={
-          <BBp>
-            As a user on the bikebus website, you signify your agreement to
-            these terms, as well as to the bikebus privacy policy. If you do not
-            agree to any of these terms or the privacy policy, please do not use
-            the bikebus website. Periodically review these terms, as major
-            changes may be made.
-          </BBp>
-        }
-      />
-
-      <Accordion
-        key="1"
-        idKey="1"
-        question="What exactly is BikeBus?"
-        answer={
-          <BBp>
-            As a user on the bikebus website, you signify your agreement to
-            these terms, as well as to the bikebus privacy policy. If you do not
-            agree to any of these terms or the privacy policy, please do not use
-            the bikebus website. Periodically review these terms, as major
-            changes may be made.
-          </BBp>
-        }
-      />
-    </FAQSection>
-
-    <FAQSection>
-      <SectionTitle>General</SectionTitle>
-      <Accordion
-        key="2"
-        idKey="2"
-        question="What exactly is BikeBus?"
-        answer={
-          <BBp>
-            As a user on the bikebus website, you signify your agreement to
-            these terms, as well as to the bikebus privacy policy. If you do not
-            agree to any of these terms or the privacy policy, please do not use
-            the bikebus website. Periodically review these terms, as major
-            changes may be made.
-          </BBp>
-        }
-      />
-
-      <Accordion
-        key="3"
-        idKey="3"
-        question="What exactly is BikeBus?"
-        answer={
-          <BBp>
-            As a user on the bikebus website, you signify your agreement to
-            these terms, as well as to the bikebus privacy policy. If you do not
-            agree to any of these terms or the privacy policy, please do not use
-            the bikebus website. Periodically review these terms, as major
-            changes may be made.
-          </BBp>
-        }
-      />
-
-      <Accordion
-        key="4"
-        question="What exactly is BikeBus?"
-        answer={
-          <>
-            <BBp>
-              As a user on the bikebus website, you signify your agreement to
-              these terms, as well as to the bikebus privacy policy. If you do
-              not agree to any of these terms or the privacy policy, please do
-              not use the bikebus website. Periodically review these terms, as
-              major changes may be made.
-            </BBp>
-            <BBp>
-              As a user on the bikebus website, you signify your agreement to
-              these terms, as well as to the bikebus privacy policy. If you do
-              not agree to any of these terms or the privacy policy, please do
-              not use the bikebus website. Periodically review these terms, as
-              major changes may be made.
-            </BBp>
-          </>
-        }
-      />
-    </FAQSection>
-  </>
-)
-
 const FAQPage = ({ data }) => {
-  // const pageData = data.takeshape
+  const { getFaq } = data.takeshape
+  const { sections } = getFaq
   return (
     <Layout>
       <SEO title="Frequently Asked Questions" />
       <ExtraPageLayout header="Frequently Asked Questions">
-        <TEMP_CONTENT />
+        {sections.map(({ section }, indexI) => {
+          return (
+            <FAQSection key={indexI}>
+              <SectionTitle>{section.title}</SectionTitle>
+              {section.questions.map(({ item }, indexJ) => (
+                <Accordion
+                  key={indexJ}
+                  idKey={`${indexI}-${indexJ}`}
+                  question={item.question}
+                  answer={item.answer}
+                />
+              ))}
+            </FAQSection>
+          )
+        })}
       </ExtraPageLayout>
     </Layout>
   )
@@ -135,10 +57,23 @@ const FAQPage = ({ data }) => {
 
 export default FAQPage
 
-// export const query = graphql`
-//   query {
-//     takeshape {
-//       ...
-//     }
-//   }
-// `
+export const query = graphql`
+  query {
+    takeshape {
+      getFaq {
+        _id
+        sections {
+          section {
+            questions {
+              item {
+                answer
+                question
+              }
+            }
+            title
+          }
+        }
+      }
+    }
+  }
+`
