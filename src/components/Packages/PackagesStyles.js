@@ -92,8 +92,8 @@ export const ButtonTabs = styled.div`
 `
 
 export const PackageButton = styled(Button)`
-    color: ${ darkGreen };
-    background-color: white;
+    color: ${ props => (props.isCurrentStep ? 'white' : darkGreen) };
+    background-color: ${ props => (props.isCurrentStep ? darkGreen : 'white') };
     border: 1px solid ${ darkGreen };
     text-transform: none;
 
@@ -103,6 +103,17 @@ export const PackageButton = styled(Button)`
         outline: none;
     }
 
+    &:nth-child(1) {
+        border-radius: 3px 0 0 3px;
+    }
+
+    &:nth-child(2) {
+        border-radius: 0;
+    }
+
+    &:nth-child(3) {
+        border-radius: 0 3px 3px 0;
+    }
 `
 
 
@@ -130,6 +141,10 @@ export const PackageText = styled(BBp)`
 
 export const PackagePrice = styled(BBh1)`
     margin:0;
+    
+    @media (max-width: 1275px) {
+        color: white;
+    }
 `
 
 export const PackageFinePrintContainer = styled.div`
