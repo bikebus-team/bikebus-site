@@ -103,15 +103,15 @@ export const PackageButton = styled(Button)`
         outline: none;
     }
 
-    ${PackageButton}:nth-child(1) {
+    &:nth-child(1) {
         border-radius: 3px 0 0 3px;
     }
 
-    ${PackageButton}:nth-child(2) {
+    &:nth-child(2) {
         border-radius: 0;
     }
 
-    ${PackageButton}:nth-child(3) {
+    &:nth-child(3) {
         border-radius: 0 3px 3px 0;
     }
 `
