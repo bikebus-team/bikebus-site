@@ -36,7 +36,7 @@ const Footer = ({ Info, AboutListItems, RideListItems, CompanyListItems }) => (
                 {Info.linkedinLink && <Link to={Info.linkedinLink}><SocialLogo src={linkedin} /></Link>}
                 {Info.facebookLink && <Link to={Info.facebookLink}><SocialLogo src={fb} /></Link>}
             </FooterSocialContainer>
-            <ScoutTag>Made with ♥ by Scout</ScoutTag>
+            <Link to="/"><ScoutTag>Made with ♥ by Scout</ScoutTag></Link>
         </FooterCompanyInfoContainer>
         <FooterNavContainer>
             <FooterListContainer>
