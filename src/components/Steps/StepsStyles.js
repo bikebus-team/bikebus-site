@@ -36,7 +36,7 @@ export const SingleStepWrapper = styled.div`
 `
 
 export const StepIconContainer = styled.div`
-    width: fit-content;
+    width: 44px;
     height: 44px;
     margin-bottom: 25px;
 `

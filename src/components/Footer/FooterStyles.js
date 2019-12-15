@@ -10,7 +10,7 @@ export const FooterContainer = styled.footer`
 `
 
 export const FooterContentContainer = styled(PaddedComponentWrapper)`
-    padding: 50px 150px 50px 150px;
+    padding: 75px 150px 75px 150px;
     display:flex;
     justify-content: space-between;
     width: inherit;
@@ -33,13 +33,12 @@ export const FooterCompanyInfoContainer = styled.div`
 export const FooterLogo = styled.img`
     height: 50px;
     width: 250px;
-    margin: 0 0 35px 0;
 
 `
 
 export const FooterCopyright = styled(BBp)`
     color: white;
-    margin: 35px 0 35px 0;
+    margin: 20px 0 20px 0;
 `
 
 export const FooterSocialContainer = styled.div`
@@ -50,7 +49,7 @@ export const FooterSocialContainer = styled.div`
 `
 
 export const SocialLogo = styled.img`
-    width: fit-content;
+    width: 25px;
     height: 25px;
 `
 
@@ -90,6 +89,10 @@ export const FooterItem = styled.li`
 `
 
 export const FooterLink = styled(Link)`
+    text-decoration: none;
+`
+
+export const ScoutLink = styled.a`
     text-decoration: none;
 `
 

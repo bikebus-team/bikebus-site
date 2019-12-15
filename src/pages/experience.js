@@ -12,7 +12,6 @@ import ExperienceCommunity from "../components/ExperienceCommunity/ExperienceCom
 const Experience = ({data}) => {
   // The `what to expect` page
   const expdata = data.takeshape.getExperience;
-  console.log(expdata)
   return (
     <Layout>
       <SEO title="Experience" />
@@ -52,10 +51,16 @@ export const query = graphql`
           checkerboard {
             description
             image {
+              _id
+              caption
+              credit
+              description
+              filename
+              mimeType
               path
               sourceUrl
               title
-              caption
+              uploadStatus
             }
             title
           }
@@ -63,35 +68,36 @@ export const query = graphql`
         community {
           images {
             image {
+              _id
+              caption
+              credit
+              description
+              filename
+              mimeType
               path
               sourceUrl
-              caption
+              title
+              uploadStatus
             }
           }
           title
         }
         hero {
+          backgroundImage {
+            _id
+            caption
+            credit
+            description
+            filename
+            mimeType
+            path
+            sourceUrl
+            title
+            uploadStatus
+          }
           description
           title
         }
-        title
-      }
-      hero {
-        backgroundImage {
-          _id
-          caption
-          credit
-          description
-          filename
-          mimeType
-          path
-          sourceUrl
-          title
-          uploadStatus
-        }
-        description
-        title
-
       }
   }
 }

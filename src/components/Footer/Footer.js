@@ -14,6 +14,7 @@ import {
     FooterList,
     FooterItem,
     FooterLink,
+    ScoutLink,
     Item
     }
   from "./FooterStyles"
@@ -36,7 +37,7 @@ const Footer = ({ Info, AboutListItems, RideListItems, CompanyListItems }) => (
                 {Info.linkedinLink && <Link to={Info.linkedinLink}><SocialLogo src={linkedin} /></Link>}
                 {Info.facebookLink && <Link to={Info.facebookLink}><SocialLogo src={fb} /></Link>}
             </FooterSocialContainer>
-            <Link to="/"><ScoutTag>Made with ♥ by Scout</ScoutTag></Link>
+            <ScoutLink href="https://web.northeastern.edu/scout/" target="_blank"><ScoutTag>Made with ♥ by Scout</ScoutTag></ScoutLink>
         </FooterCompanyInfoContainer>
         <FooterNavContainer>
             <FooterListContainer>
