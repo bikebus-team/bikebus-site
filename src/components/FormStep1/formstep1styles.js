@@ -123,6 +123,9 @@ export const PackageSelection = styled.div`
   justify-content: center;
   text-align: center;
   cursor: pointer;
+  &:focus {
+    outline-color: ${teal};
+  }
 `;
 
 export const PriceText = styled(BBp)`
@@ -172,6 +175,9 @@ export const SwitchLabel = styled.label`
   border-radius: 100px;
   position: relative;
   transition: background-color .15s;
+  &:focus {
+    outline-color: ${teal};
+  }
 `;
 export const SwitchSpan = styled.span`
   content: '';
