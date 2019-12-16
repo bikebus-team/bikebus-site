@@ -12,7 +12,7 @@ const NotFoundPage = () => (
       <FOFHero>404</FOFHero>
       <BBh2>This page was not found</BBh2>
       <BBp>
-        It looks like you took a wrong turn; this page does not exist yet! Would
+        It looks like you took a wrong turn; this page does not exist! Would
         you like to&nbsp;
         <FOFLink to={"./"}>return to the homepage</FOFLink>?
       </BBp>
