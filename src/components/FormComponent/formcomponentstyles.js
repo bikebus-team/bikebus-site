@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { darkGreen, offWhite, teal } from '../Base/colors';
-import { Button, PaddedComponentWrapper } from '../Base/basecomponents';
+import { PaddedComponentWrapper } from '../Base/basecomponents';
 import * as circlesMagenta from "../../images/circlesMagenta.svg";
 import * as circlesTeal from "../../images/circlesTeal.svg";
 import { BBh1, BBh5, BBp } from "../Base/fonts";
@@ -20,13 +20,14 @@ export const StepH = styled(BBh5)`
     opacity: ${props => (props.fullOpacity ? 1.0 : 0.3)};
     display: ${props => (props.isSmall ? "none" : "block")};
     
-    @media (max-width: 420px) {
+    @media (max-width: 975px) {
         display: ${props => (props.isSmall ? "block" : "none")};
     }
 `;
 
 export const StepTitleWrapper = styled.div`
     display: flex;
+    align-self: flex-end;
     flex-direction: column;
     align-items: center;
     width: 30%;
@@ -36,10 +37,7 @@ export const StepTitleGroup = styled.div`
     display: ${props => (props.shouldDisplay ? "flex" : "none")};
     flex-direction: row;
     justify-content: space-between;
-    width: 80%;
-    @media (max-width: 975px) {
-        width: 100%
-    }
+    width: 100%;
 `;
 
 export const FormTitleWrapper = styled.div`
@@ -60,7 +58,7 @@ export const SubtitleWrapper = styled.div`
 
 export const FormWrapper = styled(PaddedComponentWrapper)`
   background: ${offWhite};
-  width: inherit;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -193,28 +191,13 @@ export const CircleDiv = styled.div`
   }
 `;
 
-export const ActiveButton = styled(Button)`
-    display: inline-block;
-    margin-top: 40px;
-    width: auto;
-    text-transform: uppercase;
-    border: 2px solid ${darkGreen};
-    &:focus {
-        outline-color: ${teal};
-    }
-`;
-
-export const BackButton = styled(Button)`
-    display: inline-block;
-    width: auto;
-    margin-top: 40px;
-    text-transform: uppercase;
-    background: ${offWhite};
-    color: ${darkGreen};
-    border: 2px solid ${darkGreen};
-    &:focus {
-        outline-color: ${teal};
-    }
+export const FormContentWrapper = styled.div`
+  max-width: 1500px;
+  width: 100%;
+  background: ${offWhite};
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const FormStepWrapper = styled.div`

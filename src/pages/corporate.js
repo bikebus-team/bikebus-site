@@ -68,7 +68,7 @@ const Corporate = ({ data }) => {
 export default Corporate
 
 export const query = graphql`
-  query {
+query {
     takeshape {
       getCorporate {
         _id

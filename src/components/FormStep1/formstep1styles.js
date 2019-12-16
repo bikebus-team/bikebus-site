@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { darkGreen, offWhite, teal } from "../Base/colors";
-import { ActiveButton } from "../FormComponent/formcomponentstyles";
-import { ButtonWrapper } from "../FormComponent/FormBaseComponents/formbasecomponentsstyles";
+import { ActiveButton, ButtonWrapper } from "../FormComponent/FormBaseComponents/formbasecomponentsstyles";
 import { BBh5, BBp } from "../Base/fonts";
 
 
@@ -15,11 +14,35 @@ export const FormStep1Wrapper = styled.div`
 
 export const Wrapper = styled.div`
   width: 100%;
+  max-width: 1200px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 10px
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+
+  @media (min-width: 420px) {
+    width: inherit;
+    max-width: 650px;
+    justify-content: center;
+  };
+  @media (min-width: 768px) {
+    width: inherit;
+    max-width: 650px;
+    justify-content: space-between;
+  };
+
+  @media (min-width: 992px) {
+    width: inherit;
+    max-width: 650px;
+    justify-content: space-between;
+  }
+
+  @media(min-width: 1300px) {
+    max-width: 1200px;
+    justify-content: space-between;
+  }
 `;
 
 export const Item = styled.div`
@@ -31,7 +54,7 @@ export const Item = styled.div`
         width: 100%;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1300px) {
         width: 320px;
     }
 `;
@@ -44,6 +67,7 @@ export const RadioButtonLabel = styled.label`
   background: white;
   border: solid 2px #8b8b8b;
   margin: 10px;
+  cursor: pointer;
 `;
 
 export const RadioButton = styled.input`
@@ -52,12 +76,13 @@ export const RadioButton = styled.input`
   z-index: 1;
   width: 245px;
   height: 160px;
+  cursor: pointer;
   
   @media (max-width: 420px) {
     width: 100%;
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
     width: 320px;
   }
   
@@ -97,6 +122,10 @@ export const PackageSelection = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+  cursor: pointer;
+  &:focus {
+    outline-color: ${teal};
+  }
 `;
 
 export const PriceText = styled(BBp)`
@@ -146,6 +175,9 @@ export const SwitchLabel = styled.label`
   border-radius: 100px;
   position: relative;
   transition: background-color .15s;
+  &:focus {
+    outline-color: ${teal};
+  }
 `;
 export const SwitchSpan = styled.span`
   content: '';

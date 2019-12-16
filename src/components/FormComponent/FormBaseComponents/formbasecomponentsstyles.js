@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { darkGreen, errorRed, offWhite, richBlack, teal } from "../../Base/colors"
 import { BBh5, BBp } from "../../Base/fonts"
+import { Button } from "../../Base/basecomponents"
 
 export const FieldWrapper = styled.div`
     padding-top: 10px;
@@ -35,10 +36,12 @@ export const TextWrapper = styled.div`
 
 export const InputWrapper = styled.div `
     width: 100%;
+    position: relative;
 `;
 
 export const Input = styled.input`
-	padding: 16px;
+    padding: 16px;
+    padding-right: ${props => (props.isRed ? '50px' : '16px')};
 	color: ${richBlack};
 	background: white;
 	border: 2px solid ${props => (props.isRed ? errorRed : darkGreen)};
@@ -47,7 +50,7 @@ export const Input = styled.input`
     font-size: 16px;
     box-sizing: border-box;
     &:focus {
-        outline-color: ${teal};
+        outline-color: ${props => (props.isRed ? errorRed : teal)};
         border: 2px solid ${props => (props.isRed ? errorRed : darkGreen)};
     }
 `;
@@ -62,7 +65,7 @@ export const TextArea = styled.textarea`
     resize: none;
     box-sizing: border-box;
     &:focus {
-        outline-color: ${teal};
+        outline-color: ${props => (props.isRed ? errorRed : teal)};
     }
 `;
 
@@ -130,4 +133,40 @@ export const StepTitle = styled(BBh5)`
   @media (max-width: 420px) {
     display: block;
   }
+`;
+
+export const ErrorTriangle = styled.img`
+  display: ${props => (props.isRed ? "inline-block" : "none")};
+  position: absolute;
+  padding: 16px;
+  right: 0;
+`;
+
+export const ErrorTriangleTextArea = styled(ErrorTriangle)`
+  bottom: 0;
+  padding-bottom: 18px;
+`;
+
+export const ActiveButton = styled(Button)`
+    display: inline-block;
+    margin-top: 40px;
+    width: auto;
+    text-transform: uppercase;
+    border: 2px solid ${darkGreen};
+    &:focus {
+        outline-color: ${teal};
+    }
+`;
+
+export const BackButton = styled(Button)`
+    display: inline-block;
+    width: auto;
+    margin-top: 40px;
+    text-transform: uppercase;
+    background: ${offWhite};
+    color: ${darkGreen};
+    border: 2px solid ${darkGreen};
+    &:focus {
+        outline-color: ${teal};
+    }
 `;

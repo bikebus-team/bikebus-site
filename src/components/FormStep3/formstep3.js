@@ -7,12 +7,11 @@ import {
     SmallInputWrapper,
     TimesWrapper
 } from "./formstep3styles";
-import { ActiveButton, BackButton } from "../FormComponent/formcomponentstyles";
 import { FormField } from "../FormComponent/FormBaseComponents/formbasecomponents";
-import { ButtonWrapper, Form, FormContents, Label, OptionalText, SizeWrapper, StepTitle, TitleWrapper, TextWrapper } from "../FormComponent/FormBaseComponents/formbasecomponentsstyles";
+import { ActiveButton, BackButton, ButtonWrapper, Form, FormContents, Label, OptionalText, SizeWrapper, StepTitle, TitleWrapper, TextWrapper } from "../FormComponent/FormBaseComponents/formbasecomponentsstyles";
 
 const axios = require('axios');
-const emailEndpoint = "https://script.google.com/macros/s/AKfycbzZwq3K5OdJQzYozblCiZJI86eMfPycRn9Ejt9W-2ynqOCASA/exec";
+const emailEndpoint = "https://script.google.com/macros/s/AKfycbxyFxAwQw5okIJTpMbUhiB87emRCrsK1ju7MYwYvuy4xNy7Yeji/exec";
 const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
 const FormStep3 = ({ user, setUser, continueOnClick, backOnClick, setRequestError, stepData }) => {
@@ -22,23 +21,23 @@ const FormStep3 = ({ user, setUser, continueOnClick, backOnClick, setRequestErro
     const [submitCount, setSubmitCount] = React.useState(0);
     return <FormStep3Wrapper>
         <TitleWrapper>
-            <StepTitle>Details & Scheduling</StepTitle>
+            <StepTitle>{stepData.stepTitle}</StepTitle>
         </TitleWrapper>
         <Form>
             <FormContents>
                 <FormField title="Pickup Address" 
-                    editFn={e => updatePickup(user, setUser, e)} 
+                    editFn={e => updateUser(e, user, setUser, submitCount, errors, setErrors, "pickUpAddress")} 
                     currVal={user.pickUpAddress} 
                     isRed={errors.pickUpAddress} 
                     isOptional={false}
                     />
                 <FormField title="Dropoff Address" 
-                    editFn={e => updateDropoff(user, setUser, e)} 
+                    editFn={e => updateUser(e, user, setUser, submitCount, errors, setErrors, "dropOffAddress")} 
                     currVal={user.dropOffAddress}
                     isOptional={true}
                     />
                 <FormField title="Tentative Date" 
-                    editFn={e => updateTentativeDate(user, setUser, e)} 
+                    editFn={e => updateUser(e, user, setUser, submitCount, errors, setErrors, "tentativeDate")} 
                     currVal={user.tentativeDate}
                     placeholderVal="MM / DD / YYYY"
                     isOptional={true}
@@ -47,13 +46,13 @@ const FormStep3 = ({ user, setUser, continueOnClick, backOnClick, setRequestErro
                 
                 <TimesWrapper>
                     <SmallFormField title="Start Time" 
-                        editFn={e => updateStartTime(user, setUser, e)} 
+                        editFn={e => updateUser(e, user, setUser, submitCount, errors, setErrors, "startTime")} 
                         currVal={user.startTime} 
                         placeholderVal="--:-- --"
                         isOptional={true}
                         />
                     <SmallFormField title="End Time" 
-                        editFn={e => updateEndTime(user, setUser, e)} 
+                        editFn={e => updateUser(e, user, setUser, submitCount, errors, setErrors, "endTime")} 
                         currVal={user.endTime}
                         placeholderVal="--:-- --" 
                         isOptional={true}
@@ -64,7 +63,9 @@ const FormStep3 = ({ user, setUser, continueOnClick, backOnClick, setRequestErro
         <SizeWrapper>
             <ButtonWrapper>
                 <BackButton onClick={backOnClick}>Previous</BackButton>
-                <ActiveButton onClick={() => validateInput(user, errors, setErrors, continueOnClick, submitCount, setSubmitCount, setRequestError)}>Request a Quote</ActiveButton>
+                <ActiveButton onClick={() => submitFn(user, errors, setErrors, continueOnClick, submitCount, setSubmitCount, setRequestError)}>
+                    Request a Quote
+                </ActiveButton>
             </ButtonWrapper>
         </SizeWrapper>
     </FormStep3Wrapper>
@@ -80,45 +81,27 @@ const SmallFormField = ({ title, editFn, currVal, placeholderVal, isOptional }) 
     </SmallInputWrapper>
 }
 
-function updatePickup(user, setUser, event) {
+function updateUser(event, user, setUser, submitCount, errors, setErrors, field) {
     let newUser = {...user};
-    newUser.pickUpAddress = event.target.value;
+    newUser[field] = event.target.value.trim();
     setUser(newUser);
+    if (submitCount > 0) {
+        checkErrors(newUser, errors, setErrors);
+    }
 }
 
-function updateDropoff(user, setUser, event) {
-    let newUser = {...user};
-    newUser.dropOffAddress = event.target.value;
-    setUser(newUser);
-}
-
-function updateTentativeDate(user, setUser, event) {
-    let newUser = {...user};
-    newUser.tentativeDate = event.target.value;
-    setUser(newUser);
-}
-
-function updateStartTime(user, setUser, event) {
-    let newUser = {...user};
-    newUser.startTime = event.target.value;
-    setUser(newUser);
-}
-
-function updateEndTime(user, setUser, event) {
-    let newUser = {...user};
-    newUser.endTime = event.target.value;
-    setUser(newUser);
-}
-
-function validateInput(user, errors, setErrors, continueOnClick, submitCount, setSubmitCount, setRequestError) {
+function submitFn(user, errors, setErrors, continueOnClick, submitCount, setSubmitCount, setRequestError) {
     setSubmitCount(submitCount + 1);
-    let newErrors = {...errors};
-    newErrors.pickUpAddress = !user.pickUpAddress.localeCompare("");
-    
-    if (!newErrors.pickUpAddress) {
+    if (!checkErrors(user, errors, setErrors)) {
         submitRequest(user, continueOnClick, setRequestError);
     }
+}
+
+function checkErrors(user, errors, setErrors) {
+    let newErrors = {...errors};
+    newErrors.pickUpAddress = (user.pickUpAddress === "");
     setErrors(newErrors);
+    return newErrors.pickUpAddress;
 }
 
 function submitRequest(user, continueOnClick, setRequestError) {

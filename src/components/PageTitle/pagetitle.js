@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
-import { PageTitleWrapper, TextWrapper, Title } from "./pagetitlestyles";
+import { PageTitleWrapper, Title } from "./pagetitlestyles";
 
 const PageTitle = ({ title }) => (
     <PageTitleWrapper>
