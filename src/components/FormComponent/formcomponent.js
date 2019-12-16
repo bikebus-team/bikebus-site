@@ -3,7 +3,7 @@ import FormStep1 from "../FormStep1/formstep1";
 import FormStep2 from "../FormStep2/formstep2";
 import FormStep3 from "../FormStep3/formstep3";
 import FormFinal from "../FormFinal/formfinal";
-import { CircleDiv, FormStepWrapper, FormTitle, FormTitleWrapper, FormWrapper, StepLine, StepH, StepTitleGroup, StepTitleWrapper, Subtitle, SubtitleWrapper } from './formcomponentstyles';
+import { CircleDiv, FormStepWrapper, FormContentWrapper, FormTitle, FormTitleWrapper, FormWrapper, StepLine, StepH, StepTitleGroup, StepTitleWrapper, Subtitle, SubtitleWrapper } from './formcomponentstyles';
 import { BBh1 } from "../Base/fonts";
 
 const FormComponent = ({ clickedOption, formData }) => {
@@ -24,6 +24,7 @@ const FormComponent = ({ clickedOption, formData }) => {
     const [requestError, setRequestError] = React.useState(false);
     return <CircleDiv>
             <FormWrapper>
+                <FormContentWrapper>
                 <FormTitleWrapper>
                     <FormTitle>{formData.title}</FormTitle>
                     <SubtitleWrapper>
@@ -36,6 +37,7 @@ const FormComponent = ({ clickedOption, formData }) => {
                     <StepTitle title={"3. " + formData.step3.stepTitle} smallTitle="3" fullOpacity={step >= 3}/>
                 </StepTitleGroup>
                 {renderStep(formData, step, setStep, user, setUser, clickedOption, requestError, setRequestError)}  
+                </FormContentWrapper>
         </FormWrapper>
       </CircleDiv>
 }

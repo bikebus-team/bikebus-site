@@ -37,10 +37,7 @@ export const StepTitleGroup = styled.div`
     display: ${props => (props.shouldDisplay ? "flex" : "none")};
     flex-direction: row;
     justify-content: space-between;
-    width: 80%;
-    @media (max-width: 975px) {
-        width: 100%
-    }
+    width: 100%;
 `;
 
 export const FormTitleWrapper = styled.div`
@@ -61,7 +58,7 @@ export const SubtitleWrapper = styled.div`
 
 export const FormWrapper = styled(PaddedComponentWrapper)`
   background: ${offWhite};
-  width: inherit;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -192,6 +189,15 @@ export const CircleDiv = styled.div`
             left: -300px;
         }
   }
+`;
+
+export const FormContentWrapper = styled.div`
+  max-width: 1500px;
+  width: 100%;
+  background: ${offWhite};
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const FormStepWrapper = styled.div`

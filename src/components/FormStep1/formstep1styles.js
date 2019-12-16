@@ -14,12 +14,35 @@ export const FormStep1Wrapper = styled.div`
 
 export const Wrapper = styled.div`
   width: 100%;
+  max-width: 1200px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 10px;
+
+  @media (min-width: 420px) {
+    width: inherit;
+    max-width: 650px;
+    justify-content: center;
+  };
+  @media (min-width: 768px) {
+    width: inherit;
+    max-width: 650px;
+    justify-content: space-between;
+  };
+
+  @media (min-width: 992px) {
+    width: inherit;
+    max-width: 650px;
+    justify-content: space-between;
+  }
+
+  @media(min-width: 1300px) {
+    max-width: 1200px;
+    justify-content: space-between;
+  }
 `;
 
 export const Item = styled.div`
@@ -31,7 +54,7 @@ export const Item = styled.div`
         width: 100%;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1300px) {
         width: 320px;
     }
 `;
