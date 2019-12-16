@@ -82,7 +82,7 @@ export const RadioButton = styled.input`
     width: 100%;
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
     width: 320px;
   }
   
