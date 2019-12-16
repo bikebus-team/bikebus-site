@@ -46,7 +46,9 @@ const Corporate = ({ data }) => {
         heading={corpdata.howToBook.title}
         steps={corpdata.howToBook.bookingSteps}
       />
-      <QuoteBlock quote={corpdata.quote.content} />
+      <QuoteBlock 
+        quote={corpdata.quote.content}
+        speaker={corpdata.quote.speaker} />
       <Companies
         // needs a cms option for heading
         heading="Who we've worked with"
