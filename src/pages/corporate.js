@@ -42,8 +42,8 @@ const Corporate = ({ data }) => {
         packages={corpdata.pricing.options}
       />
       <Steps
-        heading={corpdata.differentiatorSection.title}
-        steps={corpdata.differentiatorSection.differentiatorRepeater}
+        heading={corpdata.howToBook.title}
+        steps={corpdata.howToBook.bookingSteps}
       />
       <QuoteBlock quote={corpdata.quote.content} />
       <Companies
@@ -97,21 +97,14 @@ export const query = graphql`
             title
           }
         }
-        differentiatorSection {
-          differentiatorRepeater {
-            differentiator {
+        howToBook {
+          bookingSteps {
+            step {
               description
               icon {
-                _id
                 caption
-                credit
-                description
-                filename
-                mimeType
                 path
                 sourceUrl
-                title
-                uploadStatus
               }
               title
             }
@@ -121,16 +114,9 @@ export const query = graphql`
         }
         hero {
           backgroundImage {
-            _id
             caption
-            credit
-            description
-            filename
-            mimeType
             path
             sourceUrl
-            title
-            uploadStatus
           }
           button {
             _id

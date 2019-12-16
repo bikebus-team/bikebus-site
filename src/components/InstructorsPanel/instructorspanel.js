@@ -21,8 +21,8 @@ function singleInstructor(instructor, index) {
     return (
         <SingleInstructorWrapper key={index}>
             <InstructorImageWrapper>
-                <FunImage src={getImageUrl(funHeadShotPath)} alt={funHeadShot.caption.blocks[0].text} />
-                <SeriousImage src={getImageUrl(normalHeadShotPath)} alt={normalHeadShot.caption.blocks[0].text} />
+                <FunImage src={getImageUrl(funHeadShotPath)} alt={funHeadShot.caption && funHeadShot.caption.blocks[0].text} />
+                <SeriousImage src={getImageUrl(normalHeadShotPath)} alt={normalHeadShot.caption && normalHeadShot.caption.blocks[0].text} />
             </InstructorImageWrapper>
             <TextWrapper>
                 <BBh3>{name}</BBh3>
@@ -32,10 +32,10 @@ function singleInstructor(instructor, index) {
     );
 }
 
-InstructorsPanel.propTypes = {
+/* InstructorsPanel.propTypes = {
 }
 
 InstructorsPanel.defaultProps = {
-}
+} */
 
 export default InstructorsPanel

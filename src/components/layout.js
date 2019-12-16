@@ -76,9 +76,10 @@ const Layout = ({ children }) => {
   `)
 
   console.log(data)
-
   return (
-    <>
+    (!data ? 
+      <p>Loading</p> :
+      <>
       <Header siteTitle={data.site.siteMetadata.title} />
 
       <div
@@ -100,7 +101,7 @@ const Layout = ({ children }) => {
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer> */}
       </div>
-    </>
+    </>)
   )
 }
 
