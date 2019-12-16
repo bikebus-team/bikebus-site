@@ -1,15 +1,18 @@
 import React from "react"
 import styled from "styled-components"
 
-import { BBh2, BBp } from "../Base/fonts"
+import { getImageUrl } from "takeshape-routing"
+import { BBp } from "../Base/fonts"
 import { darkGreen } from "../Base/colors"
 import { SIZES } from "../../tokens"
 
-const Wrapper = styled.div`
+const Wrapper = styled.a`
   width: 30%;
   box-sizing: border-box;
   border: 2px solid ${darkGreen};
   margin-bottom: 3.33%;
+  color: unset;
+  text-decoration: none;
 
   &:not(:nth-child(3n + 1)) {
     margin-left: 3.33%;
@@ -46,7 +49,7 @@ const LogoContainer = styled.div`
 
 const Logo = styled.img`
   height: 56px;
-  width: 80%;
+  max-width: 100%;
 `
 
 const PressCard_Content = styled.div`
@@ -73,9 +76,9 @@ const PressCard_Description = styled(BBp)`
 `
 
 const PressCard = ({ title, link, logo, date, body }) => (
-  <Wrapper>
+  <Wrapper href={link} target="_blank" rel="noopenner norefferer">
     <LogoContainer>
-      <Logo />
+      <Logo src={getImageUrl(logo.path)} />
     </LogoContainer>
     <PressCard_Content>
       <PressCard_Title>{title}</PressCard_Title>

@@ -1,13 +1,12 @@
 import React from "react"
 import styled from "styled-components"
-// import { graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ExtraPageLayout from "../components/ExtraPageLayout"
 
-import { BBh2, BBp } from "../components/Base/fonts"
-import { darkGreen } from "../components/Base/colors"
+import { BBh2 } from "../components/Base/fonts"
 import { SIZES } from "../tokens"
 import PressCard from "../components/Press/PressCard"
 
@@ -35,51 +34,36 @@ const PressCardContainer = styled.div`
   margin-bottom: -3.33%;
 `
 
-const TEMP_CONTENT = () => (
-  <>
-    <PressSection>
-      <SectionTitle>Featured Recently</SectionTitle>
-      <PressCardContainer>
-        {[0, 0, 0, 0, 0].map(() => (
-          <PressCard
-            link=""
-            logo=""
-            title="Biking On A Bus Is A Thing Now"
-            date="August 24th, 2017"
-            body="A brief excerpt from or description from the thing so there is
-            context. Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          />
-        ))}
-      </PressCardContainer>
-    </PressSection>
-
-    <PressSection>
-      <SectionTitle>Awards</SectionTitle>
-      <PressCardContainer>
-        {[0, 0].map(() => (
-          <PressCard
-            link=""
-            logo=""
-            title="Biking On A Bus Is A Thing Now"
-            date="August 24th, 2017"
-            body="A brief excerpt from or description from the thing so there is
-            context. Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          />
-        ))}
-      </PressCardContainer>
-    </PressSection>
-  </>
-)
-
 const PressPage = ({ data }) => {
-  // const { getFaq } = data.takeshape
+  const { getPressRelease } = data.takeshape
+  const { pressSection } = getPressRelease
   return (
     <Layout>
       <SEO title="Press Releases" />
       <ExtraPageLayout header="Press Releases" fullWidth={true}>
-        <TEMP_CONTENT />
+        {pressSection.map(({ title, list }, indexI) => {
+          return (
+            <PressSection key={indexI}>
+              <SectionTitle>{title}</SectionTitle>
+              <PressCardContainer>
+                {list.map(({ releaseItem }, indexJ) => {
+                  const { title, companyLogo, link, excerpt } = releaseItem
+                  const date = new Date(releaseItem.date)
+                  return (
+                    <PressCard
+                      key={indexJ}
+                      link={link}
+                      logo={companyLogo}
+                      title={title}
+                      date={`${date.toLocaleDateString("en")}`}
+                      body={excerpt}
+                    />
+                  )
+                })}
+              </PressCardContainer>
+            </PressSection>
+          )
+        })}
       </ExtraPageLayout>
     </Layout>
   )
@@ -87,23 +71,26 @@ const PressPage = ({ data }) => {
 
 export default PressPage
 
-// export const query = graphql`
-//   query {
-//     takeshape {
-//       getFaq {
-//         _id
-//         sections {
-//           section {
-//             questions {
-//               item {
-//                 answer
-//                 question
-//               }
-//             }
-//             title
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query {
+    takeshape {
+      getPressRelease {
+        pressSection {
+          title
+          list {
+            releaseItem {
+              title
+              excerpt
+              companyLogo {
+                path
+                caption
+              }
+              link
+              date
+            }
+          }
+        }
+      }
+    }
+  }
+`
