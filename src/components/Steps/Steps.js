@@ -26,7 +26,6 @@ const Steps = ({ heading, steps}) => (
   )
 
 function singleStep(step, index) {
-    console.log(step);
     const description = step.step.description;
     const iconPath = step.step.icon.path;
     const stepTitle = step.step.title

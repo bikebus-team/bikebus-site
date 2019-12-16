@@ -149,6 +149,21 @@ query {
           subtitle
           title
         }
+        hero {
+          backgroundImage {
+            caption
+            path
+            sourceUrl
+          }
+          button {
+            _id
+            linkDestination
+            title
+          }
+          description
+          subtitle
+          title
+        }
         pricing {
           ctaText
           description
