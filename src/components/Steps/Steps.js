@@ -26,9 +26,10 @@ const Steps = ({ heading, steps}) => (
   )
 
 function singleStep(step, index) {
-    const description = step.differentiator.description;
-    const iconPath = step.differentiator.icon.path;
-    const stepTitle = step.differentiator.title
+    console.log(step);
+    const description = step.step.description;
+    const iconPath = step.step.icon.path;
+    const stepTitle = step.step.title
     return (
         <SingleStepWrapper key={index}>
             <StepIconContainer>

@@ -14,6 +14,7 @@ import Packages from "../components/Packages/Packages"
 const Corporate = ({ data }) => {
   // The `what to expect` page
   const corpdata = data.takeshape.getCorporate
+  console.log(corpdata)
   return (
     <Layout>
       <SEO title="Corporate" />
@@ -42,8 +43,8 @@ const Corporate = ({ data }) => {
         packages={corpdata.pricing.options}
       />
       <Steps
-        heading={corpdata.differentiatorSection.title}
-        steps={corpdata.differentiatorSection.differentiatorRepeater}
+        heading={corpdata.howToBook.title}
+        steps={corpdata.howToBook.bookingSteps}
       />
       <QuoteBlock quote={corpdata.quote.content} />
       <Companies
@@ -72,6 +73,24 @@ query {
     takeshape {
       getCorporate {
         _id
+        checkerboardSection {
+          checkerboard {
+            description
+            image {
+              _id
+              caption
+              credit
+              description
+              filename
+              mimeType
+              path
+              sourceUrl
+              title
+              uploadStatus
+            }
+            title
+          }
+        }
         companies {
           logo {
             _id
@@ -86,37 +105,18 @@ query {
             uploadStatus
           }
         }
-        checkerboardSection {
-          checkerboard {
-            description
-            image {
-              path
-              sourceUrl
-              title
-            }
-            title
-          }
-        }
-        howToBook {
-          bookingSteps {
-            step {
-              description
-              icon {
-                caption
-                path
-                sourceUrl
-              }
-              title
-            }
-          }
-          subtitle
-          title
-        }
         hero {
           backgroundImage {
+            _id
             caption
+            credit
+            description
+            filename
+            mimeType
             path
             sourceUrl
+            title
+            uploadStatus
           }
           button {
             _id
@@ -124,6 +124,28 @@ query {
             title
           }
           description
+          subtitle
+          title
+        }
+        howToBook {
+          bookingSteps {
+            step {
+              description
+              icon {
+                _id
+                caption
+                credit
+                description
+                filename
+                mimeType
+                path
+                sourceUrl
+                title
+                uploadStatus
+              }
+              title
+            }
+          }
           subtitle
           title
         }
@@ -142,6 +164,7 @@ query {
         }
         quote {
           content
+          speaker
         }
         sock {
           _id
