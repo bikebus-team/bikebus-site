@@ -10,11 +10,6 @@ import Checkerboard from "../components/Checkerboard/checkerboard"
 import SEO from "../components/seo"
 import HighlightEvent from "../components/HighlightEvent/HighlightEvent"
 
-/* TODO:
-- Hero
-- Special highlight event
-- Multi-person quote (if we have time)
- */
 
 const IndexPage = ({ data }) => {
   const hpdata = data.takeshape.getHomepage
@@ -54,7 +49,7 @@ const IndexPage = ({ data }) => {
         date={hpdata.specialEvent.dateTime}
         image={hpdata.specialEvent.image}
       />
-      <QuoteBlock quote={hpdata.quoteSection[0].quoteItem.quote} />
+      <QuoteBlock quote={hpdata.quote.quote} />
       <Sock
         title={hpdata.sock.sock.title}
         text={hpdata.sock.sock.description}
@@ -116,15 +111,14 @@ export const query = graphql`
             title
           }
         }
-        quoteSection {
-          quoteItem {
-            backgroundImage {
-              description
-              path
-              sourceUrl
-            }
-            quote
+        quote {
+          backgroundImage {
+            description
+            path
+            sourceUrl
           }
+          quote
+          speaker
         }
         sock {
           sock {
