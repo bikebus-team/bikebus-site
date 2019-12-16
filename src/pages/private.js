@@ -24,7 +24,10 @@ const Private = ({ data }) => {
         ctaButtonText={pedata.hero.button.title}
         imageUrl={pedata.hero.backgroundImage}
       />
-      <QuoteBlock quote={pedata.quote.content} />
+      <QuoteBlock 
+        quote={pedata.quote.content} 
+        speaker={pedata.quote.speaker}
+      />
       {pedata.checkerboardSection.map((cb, index) => (
         <Checkerboard
           key={index}
@@ -96,6 +99,7 @@ export const query = graphql`
         }
         quote {
           content
+          speaker
         }
         sock {
           sock {
