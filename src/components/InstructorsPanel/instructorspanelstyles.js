@@ -26,21 +26,33 @@ export const SingleInstructorWrapper = styled.div`
 
 export const TextWrapper = styled.div``
 
-export const FunImage = styled.img``;
+export const FunImage = styled.img`
+  max-width: none;
+  max-height: 100%;
+  margin: auto;
+`;
 
-export const SeriousImage = styled.img``;
+export const SeriousImage = styled.img`
+max-width: none;
+max-height: 100%;
+margin: auto;
+`;
 
 export const InstructorImageWrapper = styled.div`
+  height: 400px;
+  object-fit: cover;
+  overflow: hidden;
+  margin: auto;
   ${FunImage} {
     display: none;
   }
   ${SeriousImage} {
-    display: inline;
+    display: block;
   }
 
   &:hover {
     ${FunImage} {
-      display: inline;
+      display: block;
     }
     ${SeriousImage} {
       display: none;

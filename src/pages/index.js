@@ -10,11 +10,6 @@ import Checkerboard from "../components/Checkerboard/checkerboard"
 import SEO from "../components/seo"
 import HighlightEvent from "../components/HighlightEvent/HighlightEvent"
 
-/* TODO:
-- Hero
-- Special highlight event
-- Multi-person quote (if we have time)
- */
 
 const IndexPage = ({ data }) => {
   const hpdata = data.takeshape.getHomepage

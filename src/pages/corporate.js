@@ -132,16 +132,9 @@ query {
             step {
               description
               icon {
-                _id
                 caption
-                credit
-                description
-                filename
-                mimeType
                 path
                 sourceUrl
-                title
-                uploadStatus
               }
               title
             }
