@@ -4,16 +4,17 @@ import {
   QuoteBlockContainer,
   QuoteBlockContentContainer,
   QuoteBlockQuote,
+  QuoteBlockName,
   TextContainer}
   from "./QuoteBlockStyles"
 
 
-const QuoteBlock = ({ quote }) => (
+const QuoteBlock = ({ quote, speaker }) => (
   <QuoteBlockContainer>
     <QuoteBlockContentContainer>
         <TextContainer>
         <QuoteBlockQuote>{quote}</QuoteBlockQuote>
-        <p style={{color:"white"}}>-jfds;lfasldf</p>
+        <QuoteBlockName>- {speaker}</QuoteBlockName>
         </TextContainer>
     </QuoteBlockContentContainer>
   </QuoteBlockContainer>

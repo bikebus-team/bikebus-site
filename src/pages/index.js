@@ -54,7 +54,9 @@ const IndexPage = ({ data }) => {
         date={hpdata.specialEvent.dateTime}
         image={hpdata.specialEvent.image}
       />
-      <QuoteBlock quote={hpdata.quoteSection[0].quoteItem.quote} />
+      <QuoteBlock 
+        quote={hpdata.quote.quote}
+        speaker={hpdata.quote.speaker} />
       <Sock
         title={hpdata.sock.sock.title}
         text={hpdata.sock.sock.description}
@@ -116,15 +118,14 @@ export const query = graphql`
             title
           }
         }
-        quoteSection {
-          quoteItem {
-            backgroundImage {
-              description
-              path
-              sourceUrl
-            }
-            quote
+        quote {
+          backgroundImage {
+            description
+            path
+            sourceUrl
           }
+          quote
+          speaker
         }
         sock {
           sock {

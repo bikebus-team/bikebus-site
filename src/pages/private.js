@@ -75,15 +75,18 @@ export const query = graphql`
           subtitle
           title
         }
-        process {
-          step {
-            description
-            icon {
+        howToBook {
+          title
+          bookingSteps {
+            step {
               description
-              path
-              sourceUrl
+              icon {
+                caption
+                path
+                sourceUrl
+              }
+              title
             }
-            title
           }
         }
         quote {
@@ -103,3 +106,4 @@ export const query = graphql`
     }
   }
 `
+

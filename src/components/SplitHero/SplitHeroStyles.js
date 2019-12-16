@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { BBh1, BBh2, BBh3, BBp } from "../Base/fonts"
-import { darkGreen, onDark } from "../Base/colors"
+import { darkGreen, onDark, offWhite } from "../Base/colors"
 import { Button, PaddedComponentWrapper } from "../Base/basecomponents"
 import * as circlesTeal from "../../images/circlesTeal.svg"
 
@@ -99,9 +99,15 @@ export const SplitHeroTagline = styled(BBh1)`
 
 export const WhiteButton = styled(Button)`
   margin-top: 20px;
-  background-color:white;
+
+  background-color: ${offWhite};
   color: ${darkGreen};
-  text-transform: uppercase;
+  border: 1px solid ${offWhite};
+  cursor: pointer;
+  &:hover {
+    color: ${offWhite};
+    background-color: ${darkGreen};
+  }
 `
 
 export const SplitHeroSubtitle = styled(BBh3)`
