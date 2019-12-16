@@ -10,7 +10,6 @@ export const HeaderWrapper = styled.header`
 
   font-family: "Noto Sans", sans-serif;
   padding-top: 15px;
-  padding-bottom: 15px;
   align-items: center;
 
   height: auto;
@@ -22,22 +21,7 @@ export const HeaderWrapper = styled.header`
 `
 
 export const LogoWrapper = styled.div`
-
-  @media (min-width: 0px) {
-    padding-left: 30px;
-  }
-
-  @media (min-width: 768px) {
-    padding-left: 50px;
-  }
-
-  @media (min-width: 992px) {
-    padding-left: 100px;
-  }
-
-  @media (min-width: 1200px) {
-    padding-left: 125px;
-  }
+  padding-left: 50px;
 `
 
 export const HamburgerMenuContainer = styled.div`
@@ -55,7 +39,7 @@ export const HeaderLinkGroup = styled.div`
   align-items: center;
   width: 55%;
   justify-content: space-between;
-  margin-right: 25px;
+  margin-right: 50px;
 
   @media (max-width: 975px) {
     display: none
@@ -72,6 +56,9 @@ export const HeaderLink = styled(Link)`
   color: ${richBlack};
   border-bottom: 4px solid rgba(56, 206, 194, 0);
   margin: 0 7px 0 7px;
+  padding-bottom: 15px;
+
+  
   
   :hover {
     border-bottom: 4px solid rgba(56, 206, 194, 1);
@@ -81,11 +68,17 @@ export const HeaderLink = styled(Link)`
 
 export const BtnHeaderLink = styled(Link)`
   text-decoration: none;
+  padding-bottom: 15px;
 
 `
 
 export const HeaderLogo = styled.img`
   width: 170px;
+  padding-bottom: 15px;
+  
+  @media (max-width: 975px) {
+    padding-bottom: 0;
+  }
 `
 export const HeaderPage = styled(BBh4)`
   font-size: 1em; 

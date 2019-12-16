@@ -49,7 +49,9 @@ const IndexPage = ({ data }) => {
         date={hpdata.specialEvent.dateTime}
         image={hpdata.specialEvent.image}
       />
-      <QuoteBlock quote={hpdata.quote.quote} />
+      <QuoteBlock 
+        quote={hpdata.quote.quote}
+        speaker={hpdata.quote.speaker} />
       <Sock
         title={hpdata.sock.sock.title}
         text={hpdata.sock.sock.description}

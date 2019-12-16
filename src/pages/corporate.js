@@ -14,6 +14,7 @@ import Packages from "../components/Packages/Packages"
 const Corporate = ({ data }) => {
   // The `what to expect` page
   const corpdata = data.takeshape.getCorporate
+  console.log(corpdata)
   return (
     <Layout>
       <SEO title="Corporate" />
@@ -72,6 +73,24 @@ query {
     takeshape {
       getCorporate {
         _id
+        checkerboardSection {
+          checkerboard {
+            description
+            image {
+              _id
+              caption
+              credit
+              description
+              filename
+              mimeType
+              path
+              sourceUrl
+              title
+              uploadStatus
+            }
+            title
+          }
+        }
         companies {
           logo {
             _id
@@ -86,16 +105,27 @@ query {
             uploadStatus
           }
         }
-        checkerboardSection {
-          checkerboard {
+        hero {
+          backgroundImage {
+            _id
+            caption
+            credit
             description
-            image {
-              path
-              sourceUrl
-              title
-            }
+            filename
+            mimeType
+            path
+            sourceUrl
+            title
+            uploadStatus
+          }
+          button {
+            _id
+            linkDestination
             title
           }
+          description
+          subtitle
+          title
         }
         howToBook {
           bookingSteps {
@@ -142,6 +172,7 @@ query {
         }
         quote {
           content
+          speaker
         }
         sock {
           _id

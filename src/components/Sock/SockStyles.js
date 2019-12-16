@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import {BBh2, BBp} from "../Base/fonts"
-import { darkGreen } from "../Base/colors"
+import { darkGreen, offWhite } from "../Base/colors"
 import { Button } from "../Base/basecomponents"
 import * as circlesTeal from "../../images/circlesTeal.svg"
 
@@ -49,10 +49,16 @@ export const SockContentContainer = styled.div`
 `
 
 export const SockButton = styled(Button)`
-  background-color: white;
-  color: ${darkGreen};
-  text-transform: uppercase;
   margin: 20px;
+
+  background-color: ${offWhite};
+  color: ${darkGreen};
+  border: 1px solid ${offWhite};
+  cursor: pointer;
+  &:hover {
+    color: ${offWhite};
+    background-color: ${darkGreen};
+  }
 `
 
 export const SockTitle = styled(BBh2)`
