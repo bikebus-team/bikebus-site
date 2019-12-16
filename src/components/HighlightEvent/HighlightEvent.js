@@ -12,7 +12,7 @@ import {
   HEImage,
 } from "./HighlightEventStyles"
 
-const HighlightEvent = ({ title, description, ctaLink, ctaText, imgSrc }) => (
+const HighlightEvent = ({ title, description, ctaLink, ctaText, image }) => (
   <HighlightEventContainer>
     <HELeftContainer>
       <HELeftContentContainer>
@@ -24,7 +24,11 @@ const HighlightEvent = ({ title, description, ctaLink, ctaText, imgSrc }) => (
       </HELeftContentContainer>
     </HELeftContainer>
     <HEImageContainer>
-      <HEImage imgUrl={getImageUrl(imgSrc)} />
+      <HEImage
+        imgUrl={getImageUrl(image.path)}
+        aria-label={image.caption && image.caption.blocks[0].text}
+        role="img"
+      />
     </HEImageContainer>
   </HighlightEventContainer>
 )

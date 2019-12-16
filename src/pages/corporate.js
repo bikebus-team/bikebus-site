@@ -11,54 +11,57 @@ import Checkerboard from "../components/Checkerboard/checkerboard"
 import SEO from "../components/seo"
 import Packages from "../components/Packages/Packages"
 
-const Corporate = ({data}) => {
+const Corporate = ({ data }) => {
   // The `what to expect` page
-  const corpdata = data.takeshape.getCorporate;
+  const corpdata = data.takeshape.getCorporate
   return (
-  <Layout>
-    <SEO title="Corporate" />
-    <SplitHero
-      tagline= {corpdata.hero.title}
-      subtitle={corpdata.hero.subtitle}
-      imgSrc={corpdata.hero.backgroundImage.path}
-      description={corpdata.hero.description}
-      ctaButtonLink={corpdata.hero.button.linkDestination}
-      ctaButtonText={corpdata.hero.button.title}
+    <Layout>
+      <SEO title="Corporate" />
+      <SplitHero
+        tagline={corpdata.hero.title}
+        subtitle={corpdata.hero.subtitle}
+        imgSrc={corpdata.hero.backgroundImage.path}
+        description={corpdata.hero.description}
+        ctaButtonLink={corpdata.hero.button.linkDestination}
+        ctaButtonText={corpdata.hero.button.title}
       />
-    {corpdata.checkerboardSection && corpdata.checkerboardSection.map((cb, index) => (
-        <Checkerboard
-          key={index}
-          imageLeft={index % 2 === 1}
-          title={cb.checkerboard.title}
-          text={cb.checkerboard.description}
-          imageSrc={cb.checkerboard.image.path}
-          hasButton={false}
-        />
-      ))}
-    <Packages
-      heading={corpdata.pricing.title}
-      subtitle={corpdata.pricing.description}
-      packages={corpdata.pricing.options}
-    />
-    <Steps
-      heading = {corpdata.differentiatorSection.title}
-      steps={corpdata.differentiatorSection.differentiatorRepeater}
-    />
-    <QuoteBlock
-      quote= {corpdata.quote.content}
+      {corpdata.checkerboardSection &&
+        corpdata.checkerboardSection.map((cb, index) => (
+          <Checkerboard
+            key={index}
+            imageLeft={index % 2 === 1}
+            title={cb.checkerboard.title}
+            text={cb.checkerboard.description}
+            image={cb.checkerboard.image}
+            hasButton={false}
+          />
+        ))}
+      <Packages
+        heading={corpdata.pricing.title}
+        subtitle={corpdata.pricing.description}
+        packages={corpdata.pricing.options}
       />
-    <Companies
-      // needs a cms option for heading
-      heading= "Who we've worked with"
-      companyLogos={corpdata.companies}
+      <Steps
+        heading={corpdata.differentiatorSection.title}
+        steps={corpdata.differentiatorSection.differentiatorRepeater}
       />
-    <Sock
-      title={corpdata.sock.sock.title}
-      text={corpdata.sock.sock.description}
-      buttonLink={corpdata.sock.sock.button && corpdata.sock.sock.button.linkDestination}
-      buttonText={corpdata.sock.sock.button && corpdata.sock.sock.button.title}
-    />
-  </Layout>
+      <QuoteBlock quote={corpdata.quote.content} />
+      <Companies
+        // needs a cms option for heading
+        heading="Who we've worked with"
+        companyLogos={corpdata.companies}
+      />
+      <Sock
+        title={corpdata.sock.sock.title}
+        text={corpdata.sock.sock.description}
+        buttonLink={
+          corpdata.sock.sock.button && corpdata.sock.sock.button.linkDestination
+        }
+        buttonText={
+          corpdata.sock.sock.button && corpdata.sock.sock.button.title
+        }
+      />
+    </Layout>
   )
 }
 
