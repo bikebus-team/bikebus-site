@@ -110,13 +110,13 @@ function submitRequest(user, continueOnClick, setRequestError) {
     const subject = `BikeBus Quote - ${name}`;
     const body = `Name: ${user.name}%0APhone Number: ${user.phoneNum}%0ANumber of Rides Requested: ${user.numRides}%0AFrequency: ${user.frequency}%0APickup Address: ${user.pickUpAddress}%0ADropoff Address: ${user.dropOffAddress}%0ATentative Date: ${user.tentativeDate}%0AStart Time: ${user.startTime}%0AEnd Time: ${user.endTime}%0A%0AMessage: ${user.message}%0A`;
     const request = `${emailEndpoint}?name=${name}&email=${email}&subject=${subject}&body=${body}`;
-    // axios.post(proxyurl + request)
-    // .then(response => {
-    //     continueOnClick();
-    // }).catch(error => {
-    //     console.log(error);
-    //     setRequestError(true);
-    // });
+    axios.post(proxyurl + request)
+    .then(response => {
+        continueOnClick();
+    }).catch(error => {
+        console.log(error);
+        setRequestError(true);
+    });
 }
 
 FormStep3.propTypes = {
