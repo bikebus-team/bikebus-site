@@ -1,4 +1,5 @@
 import styled from "styled-components"
+
 import { richBlack, pureWhite } from "./colors"
 
 export const BBh1 = styled.h1`
@@ -11,16 +12,19 @@ export const BBh1 = styled.h1`
 export const BBh2 = styled.h2`
   font-family: "Noto Sans", sans-serif;
   font-size: 1.5em;
+  color: ${richBlack};
 `
 
 export const BBh3 = styled.h3`
   font-family: "Noto Sans", sans-serif;
   font-size: 1.17em;
+  color: ${richBlack};
 `
 
 export const BBh4 = styled.h4`
   font-family: "Noto Sans", sans-serif;
   font-size: 1.12em;
+  color: ${richBlack};
 `
 
 export const BBh5 = styled.h5`
@@ -39,5 +43,7 @@ export const BBstrong = styled.strong`
 
 export const BBsmallp = styled.small`
   font-family: "Noto Sans", sans-serif;
+
   font-size: 0.6em;
 `
+

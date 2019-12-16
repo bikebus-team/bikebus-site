@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { ComponentWrapper, Link, Button, PaddedComponentWrapper } from "../Base/basecomponents"
 import { BBh2 } from "../Base/fonts"
-import { teal } from "../Base/colors"
+import { teal, richBlack } from "../Base/colors"
 
 export const HamburgerContainer = styled.div`
     display: inline-block;
@@ -13,7 +13,7 @@ export const HamburgerContainer = styled.div`
 export const Bar = styled.div`
     width: 50px;
     height: 3px;
-    background-color: black;
+    background-color: ${richBlack};
     margin: 8px 0;
     border-radius: 50px;
 `
@@ -129,4 +129,8 @@ export const HambHeaderLink = styled(Link)`
 
 export const HambHeaderPage = styled(BBh2)`
   // font-size: 1em; 
+  color: #8b8b8b;
+  :hover {
+    color: white;
+  }
 `

@@ -86,6 +86,17 @@ export const query = graphql`
             uploadStatus
           }
         }
+        checkerboardSection {
+          checkerboard {
+            description
+            image {
+              path
+              sourceUrl
+              title
+            }
+            title
+          }
+        }
         differentiatorSection {
           differentiatorRepeater {
             differentiator {

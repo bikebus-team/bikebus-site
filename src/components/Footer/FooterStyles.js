@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import { BBh1, BBh2, BBp } from "../Base/fonts"
 import { PaddedComponentWrapper} from "../Base/basecomponents"
+import { Link } from "gatsby";
+
 
 export const FooterContainer = styled.footer`
     background-color: black;
@@ -8,7 +10,7 @@ export const FooterContainer = styled.footer`
 `
 
 export const FooterContentContainer = styled(PaddedComponentWrapper)`
-    padding: 50px 150px 50px 150px;
+    padding: 75px 150px 75px 150px;
     display:flex;
     justify-content: space-between;
     width: inherit;
@@ -28,32 +30,27 @@ export const FooterCompanyInfoContainer = styled.div`
     }
 `
 
-export const FooterLogo = styled.div`
+export const FooterLogo = styled.img`
     height: 50px;
     width: 250px;
-    background-color: white;
-    margin: 0 0 35px 0;
 
 `
 
 export const FooterCopyright = styled(BBp)`
     color: white;
-    margin: 35px 0 35px 0;
+    margin: 20px 0 20px 0;
 `
 
 export const FooterSocialContainer = styled.div`
     display: flex;
     justify-content: space-between;
     margin: 35px 0 35px 0;
-    width: 250px;
-
-
+    width: 200px;
 `
 
-export const SocialLogo = styled.div`
-    width: 15px;
-    height: 15px;
-    background-color: white;
+export const SocialLogo = styled.img`
+    width: 25px;
+    height: 25px;
 `
 
 export const ScoutTag = styled(BBp)`
@@ -89,6 +86,14 @@ export const FooterList = styled.ul`
 
 export const FooterItem = styled.li`
     
+`
+
+export const FooterLink = styled(Link)`
+    text-decoration: none;
+`
+
+export const ScoutLink = styled.a`
+    text-decoration: none;
 `
 
 export const Item = styled(BBp)`

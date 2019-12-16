@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { ComponentWrapper } from "../Base/basecomponents"
 import {BBh1, BBp} from "../Base/fonts"
-import {teal} from "../Base/colors"
+import {teal, richBlack} from "../Base/colors"
 
 export const QuoteBlockContentContainer = styled.div`
   position: relative;
@@ -38,7 +38,7 @@ export const QuoteBlockQuote = styled(BBh1)`
 export const QuoteBlockContainer = styled.div`
   text-align: center;
   padding: 125px;
-  background-color: black;
+  background-color: ${richBlack};
   width: inherit;
   height: inherit;
 `

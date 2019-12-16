@@ -94,6 +94,7 @@ export const SplitHeroImage = styled.div`
 
 export const SplitHeroTagline = styled(BBh1)`
   text-transform: uppercase;
+  color: white;
 `
 
 export const WhiteButton = styled(Button)`
@@ -104,6 +105,7 @@ export const WhiteButton = styled(Button)`
 `
 
 export const SplitHeroSubtitle = styled(BBh3)`
+  color: white;
 
 `
 
