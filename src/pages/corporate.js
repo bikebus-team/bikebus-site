@@ -68,7 +68,7 @@ const Corporate = ({ data }) => {
 export default Corporate
 
 export const query = graphql`
-  query {
+query {
     takeshape {
       getCorporate {
         _id
@@ -86,21 +86,25 @@ export const query = graphql`
             uploadStatus
           }
         }
-        differentiatorSection {
-          differentiatorRepeater {
-            differentiator {
+        checkerboardSection {
+          checkerboard {
+            description
+            image {
+              path
+              sourceUrl
+              title
+            }
+            title
+          }
+        }
+        howToBook {
+          bookingSteps {
+            step {
               description
               icon {
-                _id
                 caption
-                credit
-                description
-                filename
-                mimeType
                 path
                 sourceUrl
-                title
-                uploadStatus
               }
               title
             }
@@ -110,16 +114,9 @@ export const query = graphql`
         }
         hero {
           backgroundImage {
-            _id
             caption
-            credit
-            description
-            filename
-            mimeType
             path
             sourceUrl
-            title
-            uploadStatus
           }
           button {
             _id
