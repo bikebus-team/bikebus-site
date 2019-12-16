@@ -6,20 +6,38 @@ import FormFinal from "../FormFinal/formfinal";
 import { CircleDiv, FormStepWrapper, FormTitle, FormTitleWrapper, FormWrapper, StepLine, StepH, StepTitleGroup, StepTitleWrapper, Subtitle, SubtitleWrapper } from './formcomponentstyles';
 import { BBh1 } from "../Base/fonts";
 
-const StepTitle = ({ title, smallTitle, fullOpacity }) => (
-    <StepTitleWrapper fullOpacity={fullOpacity}>
-        <StepH fullOpacity={fullOpacity} isSmall={false} >{title}</StepH>
-        <StepH fullOpacity={fullOpacity} isSmall={true} >{smallTitle}</StepH>
-        <StepLine fullOpacity={fullOpacity}/>
-    </StepTitleWrapper>
-);
-
-function continueOnClick(step, setStep) {
-    setStep(step + 1);
-}
-
-function backOnClick(step, setStep) {
-    setStep(step - 1);
+const FormComponent = ({ clickedOption, formData }) => {
+    const [step, setStep] = React.useState(1);
+    const [user, setUser] = React.useState({
+        numRides: 1,
+        frequency: "One-Time",
+        name: "",
+        emailAddress: "",
+        phoneNum: "",
+        message: "",
+        pickUpAddress: "",
+        dropOffAddress: "",
+        tentativeDate: "",
+        startTime: "",
+        endTime: ""
+    });
+    const [requestError, setRequestError] = React.useState(false);
+    return <CircleDiv>
+            <FormWrapper>
+                <FormTitleWrapper>
+                    <FormTitle>{formData.title}</FormTitle>
+                    <SubtitleWrapper>
+                        <Subtitle>{formData.overarchingDescription}</Subtitle>
+                    </SubtitleWrapper>
+                </FormTitleWrapper>
+                <StepTitleGroup shouldDisplay={step != 4}>
+                    <StepTitle title={"1. " + formData.step1.stepTitle} smallTitle="1" fullOpacity={step >= 1}/>
+                    <StepTitle title={"2. " + formData.step2.stepTitle} smallTitle="2" fullOpacity={step >= 2}/>
+                    <StepTitle title={"3. " + formData.step3.stepTitle} smallTitle="3" fullOpacity={step >= 3}/>
+                </StepTitleGroup>
+                {renderStep(formData, step, setStep, user, setUser, clickedOption, requestError, setRequestError)}  
+        </FormWrapper>
+      </CircleDiv>
 }
 
 function renderStep(formData, step, setStep, user, setUser, clickedOption, requestError, setRequestError) {
@@ -67,38 +85,21 @@ function renderStep(formData, step, setStep, user, setUser, clickedOption, reque
     }
 }
 
-const FormComponent = ({ clickedOption, formData }) => {
-    const [step, setStep] = React.useState(1);
-    const [user, setUser] = React.useState({
-        numRides: 1,
-        frequency: "One-Time",
-        name: "",
-        emailAddress: "",
-        phoneNum: "",
-        message: "",
-        pickUpAddress: "",
-        dropOffAddress: "",
-        tentativeDate: "",
-        startTime: "",
-        endTime: ""
-    });
-    const [requestError, setRequestError] = React.useState(false);
-    return <CircleDiv>
-            <FormWrapper>
-                <FormTitleWrapper>
-                    <FormTitle>{formData.title}</FormTitle>
-                    <SubtitleWrapper>
-                        <Subtitle>{formData.overarchingDescription}</Subtitle>
-                    </SubtitleWrapper>
-                </FormTitleWrapper>
-                <StepTitleGroup shouldDisplay={step != 4}>
-                    <StepTitle title={"1. " + formData.step1.stepTitle} smallTitle="1" fullOpacity={step >= 1}/>
-                    <StepTitle title={"2. " + formData.step2.stepTitle} smallTitle="2" fullOpacity={step >= 2}/>
-                    <StepTitle title={"3. " + formData.step3.stepTitle} smallTitle="3" fullOpacity={step >= 3}/>
-                </StepTitleGroup>
-                {renderStep(formData, step, setStep, user, setUser, clickedOption, requestError, setRequestError)}  
-        </FormWrapper>
-      </CircleDiv>
+function continueOnClick(step, setStep) {
+    setStep(step + 1);
 }
+
+function backOnClick(step, setStep) {
+    setStep(step - 1);
+}
+
+// Title for each individual step
+const StepTitle = ({ title, smallTitle, fullOpacity }) => (
+    <StepTitleWrapper fullOpacity={fullOpacity}>
+        <StepH fullOpacity={fullOpacity} isSmall={false} >{title}</StepH>
+        <StepH fullOpacity={fullOpacity} isSmall={true} >{smallTitle}</StepH>
+        <StepLine fullOpacity={fullOpacity}/>
+    </StepTitleWrapper>
+);
 
 export default FormComponent

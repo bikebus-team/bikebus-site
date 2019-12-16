@@ -28,48 +28,6 @@ import {
     TitleWrapper, StepTitle } from "../FormComponent/FormBaseComponents/formbasecomponentsstyles";
 import { BBh3 } from "../Base/fonts";
 
-function handleSelectChange(event, user, setUser, option, setOption) {
-    const value = event.target.value;
-    let newUser = {...user};
-    if (value.localeCompare("option1") || value.localeCompare("custom")) {
-        newUser.numRides = 1;
-    } else if (value.localeCompare("option2")) {
-        newUser.numRides = 2;
-    } else if (value.localeCompare("option3")) {
-        newUser.numRides = 4;
-    }
-    setUser(newUser);
-    setOption(value);
-}
-
-function clickSwitch(e, user, setUser) {
-    let newUser = {...user};
-    if (!user.frequency.localeCompare("One-Time")) {
-        newUser.frequency = "Monthly";
-    } else {
-        newUser.frequency = "One-Time";
-    }
-    setUser(newUser);
-}
-
-const Switch = ({ user, setUser }) => {
-    const onLeft = !user.frequency.localeCompare("One-Time");
-    return <SwitchInnerWrapper>
-        <SwitchInput type="checkbox" />
-        <SwitchLabel onClick={e => clickSwitch(e, user, setUser)} >
-            <SwitchSpan left={onLeft} />
-        </SwitchLabel>
-    </SwitchInnerWrapper>
-}
-
-function updateNumRides(newNum, user, setUser) {
-    if (newNum > 0) {
-        let newUser = {...user};
-        newUser.numRides = newNum;
-        setUser(newUser);
-    }
-}
-
 const FormStep1 = ({ continueOnClick, user, setUser, clickedOption, stepData }) => {
     const index = clickedOption ? clickedOption + 1 : 1;
     const selectedOption = "option" + index;
@@ -81,86 +39,180 @@ const FormStep1 = ({ continueOnClick, user, setUser, clickedOption, stepData }) 
             <Subtitle >{stepData.title}</Subtitle>
         </TitleWrapper>
         <Wrapper>
-            <Item>
-                <RadioButton
-                type="radio"
-                name="radio"
-                value="option1"
-                checked={!option.localeCompare("option1")}
-                onChange={event => handleSelectChange(event, user, setUser, option, setOption)}
+            <PackageItem 
+                optionName="option1" 
+                title={stepData.rideOption1.title} 
+                description={stepData.rideOption1.description} 
+                option={option}
+                setOption={setOption}
+                user={user}
+                setUser={setUser}
                 />
-                <RadioButtonLabel />
-                <PackageSelection clicked={!option.localeCompare("option1")}>
-                    <BBh3>{stepData.rideOption1.title}</BBh3>
-                    <PriceText>{stepData.rideOption1.description}</PriceText>
-                </PackageSelection>
-            </Item>
-            <Item>
-                <RadioButton
-                type="radio"
-                name="radio"
-                value="option2"
-                checked={!option.localeCompare("option2")}
-                onChange={event => handleSelectChange(event, user, setUser, option, setOption)}
+            <PackageItem 
+                optionName="option2" 
+                title={stepData.rideOption2.title} 
+                description={stepData.rideOption2.description} 
+                option={option}
+                setOption={setOption}
+                user={user}
+                setUser={setUser}
                 />
-                <RadioButtonLabel />
-                <PackageSelection clicked={!option.localeCompare("option2")}>
-                    <BBh3>{stepData.rideOption2.title}</BBh3>
-                    <PriceText>{stepData.rideOption2.description}</PriceText>
-                </PackageSelection>
-            </Item>
-            <Item>
-                <RadioButton
-                type="radio"
-                name="radio"
-                value="option3"
-                checked={!option.localeCompare("option3")}
-                onChange={event => handleSelectChange(event, user, setUser, option, setOption)}
+            <PackageItem 
+                optionName="option3" 
+                title={stepData.rideOption3.title} 
+                description={stepData.rideOption3.description} 
+                option={option}
+                setOption={setOption}
+                user={user}
+                setUser={setUser}
                 />
-                <RadioButtonLabel />
-                <PackageSelection clicked={!option.localeCompare("option3")}>
-                    <BBh3>{stepData.rideOption3.title}</BBh3>
-                    <PriceText>{stepData.rideOption3.description}</PriceText>
-                </PackageSelection>
-            </Item>
-            <Item>
-                <RadioButton
-                type="radio"
-                name="radio"
-                value="custom"
-                checked={!option.localeCompare("custom")}
-                onChange={event => handleSelectChange(event, user, setUser, option, setOption)}
+            <PackageItem 
+                optionName="custom" 
+                title={stepData.customRides.title} 
+                description={stepData.customRides.description} 
+                option={option}
+                setOption={setOption}
+                user={user}
+                setUser={setUser}
                 />
-                <RadioButtonLabel />
-                <PackageSelection clicked={!option.localeCompare("custom")}>
-                    <BBh3>{stepData.customRides.title}</BBh3>
-                    <PriceText>{stepData.customRides.description}</PriceText>
-                </PackageSelection>
-            </Item>
         </Wrapper>
-        <CustomCounterWrapper show={!option.localeCompare("custom")}>
-            <Subtitle>{stepData.rideNumberTitle}</Subtitle>
-            <CustomButtonWrapper>
-                <CustomButton onClick={e => updateNumRides(parseInt(user.numRides - 1), user, setUser)}>-</CustomButton>
-            </CustomButtonWrapper>
-            <CustomInput type="number" value={user.numRides} onChange={e => updateNumRides(e.target.value, user, setUser)} />
-            <CustomButtonWrapper>
-                <CustomButton onClick={e => updateNumRides(parseInt(user.numRides) + 1, user, setUser)}>+</CustomButton>
-            </CustomButtonWrapper>
-        </CustomCounterWrapper>
+        <CustomCounter 
+            title={stepData.rideNumberTitle}
+            option={option}
+            user={user}
+            setUser={setUser}
+            />
         <ConditionWrapper>
             <ConditionText>{stepData.disclaimer}</ConditionText>
         </ConditionWrapper>
-        <SwitchWrapper>
-            <SwitchText>One-Time</SwitchText>
-            <Switch user={user} setUser={setUser}/>
-            <SwitchText>Monthly</SwitchText>
-        </SwitchWrapper>
+        <Switch user={user} setUser={setUser}/>
         <ButtonWrapperStep1>
             <ButtonStep1 onClick={continueOnClick}>Continue</ButtonStep1>
         </ButtonWrapperStep1>
     </FormStep1Wrapper>
 };
+
+// Each individual package 
+const PackageItem = ({ optionName, title, description, option, setOption, user, setUser }) => {
+    return <Item>
+        <RadioButton
+            type="radio"
+            name="radio"
+            value={optionName}
+            checked={option === optionName}
+            onChange={event => handleSelectChange(event.target.value, user, setUser, setOption)}
+        />
+        <RadioButtonLabel />
+        <PackageSelection 
+            clicked={option === optionName} 
+            tabIndex="0"
+            aria-label={title}
+            onKeyPress={event => packageOnKey(event, optionName, user, setUser, setOption)}>
+            <BBh3>{title}</BBh3>
+            <PriceText>{description}</PriceText>
+        </PackageSelection>
+    </Item>
+}
+
+function handleSelectChange(value, user, setUser, setOption) {
+    let newUser = {...user};
+    if (value === "option1" || value === "custom") {
+        newUser.numRides = 1;
+    } else if (value === "option2") {
+        newUser.numRides = 2;
+    } else if (value === "option3") {
+        newUser.numRides = 4;
+    }
+    setUser(newUser);
+    setOption(value);
+}
+
+function packageOnKey(e, value, user, setUser, setOption) {
+    if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        handleSelectChange(value, user, setUser, setOption);
+    }
+}
+
+// Switch at the bottom between monthly and one-time 
+const Switch = ({ user, setUser }) => {
+    const onLeft = (user.frequency === "One-Time");
+    return <SwitchWrapper>
+        <SwitchText>One-Time</SwitchText>
+            <SwitchInnerWrapper>
+                <SwitchInput type="checkbox" />
+                <SwitchLabel 
+                    tabIndex="0" 
+                    role="switch" 
+                    aria-checked={user.frequency === "One-Time"}
+                    onClick={() => clickSwitch(user, setUser)}
+                    onKeyPress={e => onSwitchKey(e, user, setUser)}
+                    >
+                <SwitchSpan left={onLeft} />
+                </SwitchLabel>
+            </SwitchInnerWrapper>
+        <SwitchText>Monthly</SwitchText>
+    </SwitchWrapper>
+}
+
+function clickSwitch(user, setUser) {
+    let newUser = {...user};
+    if (user.frequency === "One-Time") {
+        newUser.frequency = "Monthly";
+    } else {
+        newUser.frequency = "One-Time";
+    }
+    setUser(newUser);
+}
+
+function onSwitchKey(e, user, setUser) {
+    if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        clickSwitch(user, setUser);
+    }
+}
+
+// Counter that appears only for custom packages
+const CustomCounter = ({ title, option, user, setUser, }) => {
+    return <CustomCounterWrapper show={option === "custom"}>
+        <Subtitle>{title}</Subtitle>
+        <CustomButtonWrapper>
+            <CustomButton onClick={() => updateNumRides(parseInt(user.numRides) - 1, user, setUser)}>
+                -
+            </CustomButton>
+        </CustomButtonWrapper>
+        <CustomInput 
+            type="number"
+            min={1}
+            max={99}
+            value={user.numRides}
+            onKeyDown={e => (e.key === "e" || e.key === "." || e.key === "+" || e.key === "-") && e.preventDefault()}
+            onChange={e => updateNumRides(e.target.value, user, setUser)}
+            onBlur={() => checkEmpty(user, setUser)} />
+        <CustomButtonWrapper>
+            <CustomButton onClick={e => updateNumRides(parseInt(user.numRides) + 1, user, setUser)}>
+                +
+            </CustomButton>
+        </CustomButtonWrapper>
+    </CustomCounterWrapper>
+}
+
+function updateNumRides(newVal, user, setUser) {
+    const numberRegex = /^[1-9][0-9]?$|^99$/;
+    if (newVal === "" || numberRegex.test(newVal)) {
+        let newUser = {...user};
+        newUser.numRides = newVal;
+        setUser(newUser);
+    }
+}
+
+function checkEmpty(user, setUser) {
+    if (user.numRides === "") {
+        let newUser = {...user};
+        newUser.numRides = 1;
+        setUser(newUser);
+    }
+}
 
 FormStep1.propTypes = {
 }

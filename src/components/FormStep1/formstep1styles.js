@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { darkGreen, offWhite, teal } from "../Base/colors";
-import { ActiveButton } from "../FormComponent/formcomponentstyles";
-import { ButtonWrapper } from "../FormComponent/FormBaseComponents/formbasecomponentsstyles";
+import { ActiveButton, ButtonWrapper } from "../FormComponent/FormBaseComponents/formbasecomponentsstyles";
 import { BBh5, BBp } from "../Base/fonts";
 
 
@@ -19,7 +18,8 @@ export const Wrapper = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 10px
+  align-items: center;
+  margin-top: 10px;
 `;
 
 export const Item = styled.div`
@@ -44,6 +44,7 @@ export const RadioButtonLabel = styled.label`
   background: white;
   border: solid 2px #8b8b8b;
   margin: 10px;
+  cursor: pointer;
 `;
 
 export const RadioButton = styled.input`
@@ -52,6 +53,7 @@ export const RadioButton = styled.input`
   z-index: 1;
   width: 245px;
   height: 160px;
+  cursor: pointer;
   
   @media (max-width: 420px) {
     width: 100%;
@@ -97,6 +99,7 @@ export const PackageSelection = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+  cursor: pointer;
 `;
 
 export const PriceText = styled(BBp)`
