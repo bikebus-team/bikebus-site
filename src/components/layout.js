@@ -21,11 +21,65 @@ const Layout = ({ children }) => {
           title
         }
       }
+      takeshape {
+        getFooter {
+          _id
+          about {
+            links {
+              link {
+                title
+                url
+              }
+            }
+            sectionTitle
+          }
+          basicInformation {
+            copyrightInformation
+            facebookLink
+            instagramLink
+            linkedinLink
+            logo {
+              _id
+              caption
+              credit
+              description
+              filename
+              mimeType
+              path
+              sourceUrl
+              title
+              uploadStatus
+            }
+            twitterLink
+          }
+          company {
+            links {
+              link {
+                title
+                url
+              }
+            }
+            sectionTitle
+          }
+          rides {
+            links {
+              link {
+                title
+                url
+              }
+            }
+            sectionTitle
+          }
+        }
+      }
     }
   `)
 
+  console.log(data)
   return (
-    <>
+    (!data ? 
+      <p>Loading</p> :
+      <>
       <Header siteTitle={data.site.siteMetadata.title} />
 
       <div
@@ -36,10 +90,10 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <Footer
-          SocialList={null}
-          AboutListItems={null}
-          CompanyListItems={null}
-          RideListItems={null}
+          Info={data.takeshape.getFooter.basicInformation}
+          AboutListItems={data.takeshape.getFooter.about}
+          CompanyListItems={data.takeshape.getFooter.company}
+          RideListItems={data.takeshape.getFooter.rides}
         />
         {/* <footer>
           © {new Date().getFullYear()}, Built with
@@ -47,7 +101,7 @@ const Layout = ({ children }) => {
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer> */}
       </div>
-    </>
+    </>)
   )
 }
 
@@ -56,3 +110,4 @@ Layout.propTypes = {
 }
 
 export default Layout
+

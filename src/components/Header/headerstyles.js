@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { ComponentWrapper, Link, Button, PaddedComponentWrapper } from "../Base/basecomponents"
 import { BBh4, BBh2 } from "../Base/fonts"
-import { teal } from "../Base/colors"
+import { richBlack } from "../Base/colors"
 
 export const HeaderWrapper = styled.header`
   display: flex;
@@ -53,24 +53,34 @@ export const HamburgerMenuContainer = styled.div`
 export const HeaderLinkGroup = styled.div`
   display: flex;
   align-items: center;
-  width: 700px;
+  width: 55%;
   justify-content: space-between;
   margin-right: 25px;
 
   @media (max-width: 975px) {
     display: none
   }
-  
+
+  @media (max-width: 1200px) {
+    width: 700px;
+  }
+
 `
 
 export const HeaderLink = styled(Link)`
   text-decoration: none;
-  color: black;
+  color: ${richBlack};
   border-bottom: 4px solid rgba(56, 206, 194, 0);
+  margin: 0 7px 0 7px;
   
   :hover {
     border-bottom: 4px solid rgba(56, 206, 194, 1);
   }
+
+`
+
+export const BtnHeaderLink = styled(Link)`
+  text-decoration: none;
 
 `
 

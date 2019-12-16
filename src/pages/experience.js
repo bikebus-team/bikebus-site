@@ -16,12 +16,10 @@ const Experience = ({ data }) => {
     <Layout>
       <SEO title="Experience" />
       <SplitHero
-        tagline={expdata.hero.title}
-        subtitle={expdata.hero.description}
+        tagline= {expdata.hero.title}
+        imgSrc={expdata.hero.backgroundImage.path}
+        description={expdata.hero.description}
       />
-      {/* {expdata.checkerboardSection.map((cb, index) => (
-        <div>hello</div>
-      ))} */}
       {expdata.checkerboardSection.map((cb, index) => (
         <Checkerboard
           key={index}
@@ -52,10 +50,16 @@ export const query = graphql`
           checkerboard {
             description
             image {
+              _id
+              caption
+              credit
+              description
+              filename
+              mimeType
               path
               sourceUrl
               title
-              caption
+              uploadStatus
             }
             title
           }
@@ -63,14 +67,33 @@ export const query = graphql`
         community {
           images {
             image {
+              _id
+              caption
+              credit
+              description
+              filename
+              mimeType
               path
               sourceUrl
-              caption
+              title
+              uploadStatus
             }
           }
           title
         }
         hero {
+          backgroundImage {
+            _id
+            caption
+            credit
+            description
+            filename
+            mimeType
+            path
+            sourceUrl
+            title
+            uploadStatus
+          }
           description
           title
         }

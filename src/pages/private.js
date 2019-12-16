@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SplitHero from "../components/SplitHero/SplitHero"
+import Steps from "../components/Steps/Steps"
 import QuoteBlock from "../components/QuoteBlock/QuoteBlock"
 import Sock from "../components/Sock/Sock"
 import Checkerboard from "../components/Checkerboard/checkerboard"
@@ -34,6 +35,10 @@ const Private = ({ data }) => {
           hasButton={false}
         />
       ))}
+      <Steps
+      heading={pedata.howToBook.title}
+      steps={pedata.howToBook.bookingSteps}
+      />
       <Sock
         title={pedata.sock.sock.title}
         text={pedata.sock.sock.description}
@@ -75,15 +80,18 @@ export const query = graphql`
           subtitle
           title
         }
-        process {
-          step {
-            description
-            icon {
+        howToBook {
+          title
+          bookingSteps {
+            step {
               description
-              path
-              sourceUrl
+              icon {
+                caption
+                path
+                sourceUrl
+              }
+              title
             }
-            title
           }
         }
         quote {

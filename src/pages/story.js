@@ -26,10 +26,13 @@ const Story = ({ data }) => {
       {/* TODO: pull from CMS instructor data
         Use: storydata.instructorSection.instructor
         You can pull normalHeadshot, funHeadshot, name, and title from ^that object */}
-      <InstructorsPanel
+      {(storydata.instructorSection.instructors.length > 0
+      && storydata.instructorSection.showSection ?
+        <InstructorsPanel
         title={storydata.instructorSection.title}
         instructors={storydata.instructorSection.instructors}
-      />
+      /> :
+      null)}
     </Layout>
   )
 }
@@ -41,12 +44,13 @@ export const query = graphql`
     takeshape {
       getStory {
         _id
-        checkerboardSection {
+       checkerboardSection {
           checkerboard {
             description
             image {
-              caption
               path
+              sourceUrl
+              title
             }
             title
           }
@@ -59,17 +63,20 @@ export const query = graphql`
             instructor {
               funHeadShot {
                 caption
+                sourceUrl
                 path
               }
               name
               normalHeadShot {
                 caption
+                sourceUrl
                 path
               }
               title
             }
           }
           title
+          showSection
         }
         mission {
           missionStatement

@@ -47,27 +47,31 @@ const PaddedWrapper = styled(PaddedComponentWrapper)`
 `
 
 const ContentWrapper = styled.div`
-  max-width: 759px;
+  max-width: ${({ fullWidth }) => !fullWidth && "759px"};
   margin: 100px auto;
   width: 100%;
 
   @media (max-width: ${SIZES.BREAK_TABLET}) {
-    max-width: 627px;
+    max-width: ${({ fullWidth }) => !fullWidth && "627px"};
     margin: 80px auto;
   }
 
   @media (max-width: ${SIZES.BREAK_MOBILE}) {
     margin: 60px auto;
   }
+
+  @media (min-width: 1400px) {
+    max-width: 1400px;
+  }
 `
 
-const ExtraPageLayout = ({ header, children }) => (
+const ExtraPageLayout = ({ header, children, fullWidth = false }) => (
   <>
     <BannerHero>
       <BannerHeroTitle isOnDark={true}>{header}</BannerHeroTitle>
     </BannerHero>
     <PaddedWrapper>
-      <ContentWrapper>{children}</ContentWrapper>
+      <ContentWrapper fullWidth={fullWidth}>{children}</ContentWrapper>
     </PaddedWrapper>
   </>
 )

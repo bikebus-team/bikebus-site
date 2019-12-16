@@ -11,7 +11,8 @@ import {
   HeaderContainer,
   HeaderPage,
   LogoWrapper,
-  HamburgerMenuContainer
+  HamburgerMenuContainer,
+  BtnHeaderLink
 } from "./headerstyles"
 import * as logo from "../../images/bikebus_logo.png";
 import Hamburger from "../Hamburger/Hamburger";
@@ -32,7 +33,7 @@ const Header = ({ siteTitle }) => (
         <HeaderLink to="/corporate/" activeStyle={{borderBottom: "4px solid rgba(56, 206, 194, 1)"}}><HeaderPage>Corporate</HeaderPage></HeaderLink>
         <HeaderLink to="/private/" activeStyle={{borderBottom: "4px solid rgba(56, 206, 194, 1)"}}><HeaderPage>Private Groups</HeaderPage></HeaderLink>
         <HeaderLink to="/story/" activeStyle={{borderBottom: "4px solid rgba(56, 206, 194, 1)"}}><HeaderPage>Our Story</HeaderPage></HeaderLink>
-        <HeaderButton to="/">Request a Quote</HeaderButton>
+        <BtnHeaderLink to="/form/"><HeaderButton>Request a Quote</HeaderButton></BtnHeaderLink>
       </HeaderLinkGroup>
     </HeaderWrapper>
   </HeaderContainer>

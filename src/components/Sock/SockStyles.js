@@ -56,9 +56,10 @@ export const SockButton = styled(Button)`
 `
 
 export const SockTitle = styled(BBh2)`
-
+  color: white;
 `
 
 
 export const SockText = styled(BBp)`
+  color: white;
 `

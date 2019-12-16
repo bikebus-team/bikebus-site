@@ -42,8 +42,8 @@ const Corporate = ({ data }) => {
         packages={corpdata.pricing.options}
       />
       <Steps
-        heading={corpdata.differentiatorSection.title}
-        steps={corpdata.differentiatorSection.differentiatorRepeater}
+        heading={corpdata.howToBook.title}
+        steps={corpdata.howToBook.bookingSteps}
       />
       <QuoteBlock quote={corpdata.quote.content} />
       <Companies
