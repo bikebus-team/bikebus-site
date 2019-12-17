@@ -75,7 +75,6 @@ const Layout = ({ children }) => {
     }
   `)
 
-  console.log(data)
   return (
     (!data ? 
       <p>Loading</p> :
