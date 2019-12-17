@@ -32,10 +32,14 @@ function singleInstructor(instructor, index) {
     );
 }
 
-/* InstructorsPanel.propTypes = {
+InstructorsPanel.propTypes = {
+    title: PropTypes.string,
+    instructors: PropTypes.array,
 }
 
 InstructorsPanel.defaultProps = {
-} */
+    title: "",
+    instructors: [],
+}
 
 export default InstructorsPanel

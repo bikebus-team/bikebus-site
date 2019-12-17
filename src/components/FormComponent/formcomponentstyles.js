@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { darkGreen, offWhite, teal } from '../Base/colors';
+import { darkGreen, offWhite } from '../Base/colors';
 import { PaddedComponentWrapper } from '../Base/basecomponents';
 import * as circlesMagenta from "../../images/circlesMagenta.svg";
 import * as circlesTeal from "../../images/circlesTeal.svg";

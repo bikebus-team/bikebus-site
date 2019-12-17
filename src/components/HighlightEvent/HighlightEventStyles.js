@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Button } from "../Base/basecomponents"
-import { BBh1, BBh2, BBp } from "../Base/fonts"
+import { BBh1, BBp } from "../Base/fonts"
 import { offWhite, darkGreen, onDark } from '../Base/colors';
 import * as circlesTeal from "../../images/circlesTeal.svg"
 

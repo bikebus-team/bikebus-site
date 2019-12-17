@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import { BBh1, BBh2, BBh3, BBp } from "../Base/fonts"
+import { BBh1, BBh3, BBp } from "../Base/fonts"
 import { darkGreen, onDark, offWhite } from "../Base/colors"
-import { Button, PaddedComponentWrapper } from "../Base/basecomponents"
+import { Button } from "../Base/basecomponents"
 import * as circlesTeal from "../../images/circlesTeal.svg"
 
 export const SplitHeroContainer = styled.div`

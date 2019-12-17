@@ -153,9 +153,6 @@ export const ActiveButton = styled(Button)`
     width: auto;
     text-transform: uppercase;
     border: 2px solid ${darkGreen};
-    &:focus {
-        outline-color: ${teal};
-    }
 `;
 
 export const BackButton = styled(Button)`
@@ -166,7 +163,4 @@ export const BackButton = styled(Button)`
     background: ${offWhite};
     color: ${darkGreen};
     border: 2px solid ${darkGreen};
-    &:focus {
-        outline-color: ${teal};
-    }
 `;

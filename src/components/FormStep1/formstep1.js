@@ -215,9 +215,15 @@ function checkEmpty(user, setUser) {
 }
 
 FormStep1.propTypes = {
+    continueOnClick: PropTypes.func,
+    user: PropTypes.object,
+    setUser: PropTypes.func,
+    clickedOption: PropTypes.number,
+    stepData: PropTypes.object,
 }
 
 FormStep1.defaultProps = {
+    clickedOption: 0,
 }
 
 export default FormStep1

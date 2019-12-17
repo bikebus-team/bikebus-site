@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { darkGreen, offWhite, richBlack } from "../Base/colors"
 
 export const FormStep2Wrapper = styled.div`
     display: flex;

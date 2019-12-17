@@ -1,6 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
-
+import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import SplitHero from "../components/SplitHero/SplitHero"
 import QuoteBlock from "../components/QuoteBlock/QuoteBlock"
@@ -14,7 +13,6 @@ import Packages from "../components/Packages/Packages"
 const Corporate = ({ data }) => {
   // The `what to expect` page
   const corpdata = data.takeshape.getCorporate
-  console.log(corpdata)
   return (
     <Layout>
       <SEO title="Corporate" />

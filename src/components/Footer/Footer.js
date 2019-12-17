@@ -18,7 +18,7 @@ import {
     Item
     }
   from "./FooterStyles"
-import { Link } from "gatsby";
+import { OutsideLink } from "../Base/basecomponents"
 import * as insta from "../../images/instagram.svg"
 import * as twitter from "../../images/twitter.svg"
 import * as linkedin from "../../images/linkedin.svg"
@@ -32,10 +32,10 @@ const Footer = ({ Info, AboutListItems, RideListItems, CompanyListItems }) => (
             <FooterLogo src={getImageUrl(Info.logo.path)}></FooterLogo>
             <FooterCopyright>{Info.copyrightInformation}</FooterCopyright>
             <FooterSocialContainer>
-                {Info.instagramLink && <a href={Info.instagramLink}><SocialLogo src={insta} /></a>}
-                {Info.twitterLink && <a href={Info.twitterLink} ><SocialLogo src={twitter} /></a>}
-                {Info.linkedinLink && <a href={Info.linkedinLink}><SocialLogo src={linkedin} /></a>}
-                {Info.facebookLink && <a href={Info.facebookLink}><SocialLogo src={fb} /></a>}
+                {Info.instagramLink && <OutsideLink href={Info.instagramLink}><SocialLogo src={insta} /></OutsideLink>}
+                {Info.twitterLink && <OutsideLink href={Info.twitterLink} ><SocialLogo src={twitter} /></OutsideLink>}
+                {Info.linkedinLink && <OutsideLink href={Info.linkedinLink}><SocialLogo src={linkedin} /></OutsideLink>}
+                {Info.facebookLink && <OutsideLink href={Info.facebookLink}><SocialLogo src={fb} /></OutsideLink>}
             </FooterSocialContainer>
             <ScoutLink href="https://web.northeastern.edu/scout/" target="_blank"><ScoutTag>Made with ♥ by Scout</ScoutTag></ScoutLink>
         </FooterCompanyInfoContainer>

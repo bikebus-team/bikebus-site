@@ -13,7 +13,7 @@ import {
 } from "./formbasecomponentsstyles";
 import * as errorTriangle from "../../../images/alert-triangle-error.svg";
 
-export const FormField = ({ title, editFn, currVal, placeholderVal, inputType, isRed, isOptional, errorText }) => {
+export const FormField = ({ title, editFn, currVal, placeholderVal, inputType, isRed, isOptional, errorText, blurFn }) => {
     let error = errorText || "This field is required.";
     return <FieldWrapper>
         <TextWrapper>
@@ -26,7 +26,8 @@ export const FormField = ({ title, editFn, currVal, placeholderVal, inputType, i
                 value = {currVal} 
                 placeholder={placeholderVal} 
                 input={inputType} 
-                isRed={isRed} />
+                isRed={isRed}
+                onBlur={blurFn} />
             <ErrorTriangle isRed={isRed} src={errorTriangle} />
         </InputWrapper>
         <ErrorText isRed={isRed}>{error}</ErrorText>

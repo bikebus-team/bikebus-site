@@ -1,5 +1,5 @@
 import React from "react"
-import { Button, Link } from "../Base/basecomponents"
+import { Link } from "../Base/basecomponents"
 import { getImageUrl } from "takeshape-routing"
 import {
   SplitHeroContainer,

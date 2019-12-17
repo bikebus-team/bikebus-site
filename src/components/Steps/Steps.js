@@ -32,7 +32,7 @@ function singleStep(step, index) {
     return (
         <SingleStepWrapper key={index}>
             <StepIconContainer>
-                <img src={getImageUrl(iconPath)} style={{ width: `100%`}} />
+                <img src={getImageUrl(iconPath)} style={{ width: `100%`}} alt={stepTitle}/>
             </StepIconContainer>
             <StepTextContainer>
                 <StepTitle>{stepTitle}</StepTitle> 

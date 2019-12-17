@@ -1,5 +1,5 @@
 import React from "react"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import AnimateHeight from "react-animate-height"
 import { BBh3, BBp } from "../Base/fonts"
 import { darkGreen } from "../Base/colors"

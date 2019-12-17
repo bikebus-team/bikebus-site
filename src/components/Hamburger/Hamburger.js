@@ -17,21 +17,18 @@ const Hamburger = () => {
     const toggle = () => setIsOpen(!isOpen);
     return <HamburgerContainer onClick={toggle}>
         {renderStep(isOpen)}
-    </HamburgerContainer>
-    
-  
+    </HamburgerContainer>  
 }
 
 function renderStep(isOpen) {
-    switch(isOpen) {
-        case false:
-            return <HamburgerMenu>
+    if (!isOpen) {
+        return <HamburgerMenu>
             <Bar></Bar>
             <Bar></Bar>
             <Bar></Bar>
         </HamburgerMenu>
-        case true:
-            return <MenuContainer>
+    } else {
+        return <MenuContainer>
             <HamburgerMenu>
                 <Bar1></Bar1>
                 <Bar2></Bar2>
@@ -45,7 +42,7 @@ function renderStep(isOpen) {
                 <HambHeaderLink to="/"activeStyle={{color: "white"}} ><HambHeaderPage>Request a Quote</HambHeaderPage></HambHeaderLink>
               </HambLinkContainer>
             </MenuContentContainer>
-          </MenuContainer>
+        </MenuContainer>
     }
 }
 

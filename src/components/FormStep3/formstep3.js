@@ -30,17 +30,20 @@ const FormStep3 = ({ user, setUser, continueOnClick, backOnClick, setRequestErro
                     currVal={user.pickUpAddress} 
                     isRed={errors.pickUpAddress} 
                     isOptional={false}
+                    blurFn={() => trimSpaces(user, setUser, "pickUpAddress")}
                     />
                 <FormField title="Dropoff Address" 
                     editFn={e => updateUser(e, user, setUser, submitCount, errors, setErrors, "dropOffAddress")} 
                     currVal={user.dropOffAddress}
                     isOptional={true}
+                    blurFn={() => trimSpaces(user, setUser, "dropOffAddress")}
                     />
                 <FormField title="Tentative Date" 
                     editFn={e => updateUser(e, user, setUser, submitCount, errors, setErrors, "tentativeDate")} 
                     currVal={user.tentativeDate}
                     placeholderVal="MM / DD / YYYY"
                     isOptional={true}
+                    blurFn={() => trimSpaces(user, setUser, "tentativeDate")}
                     />
                     <DateText>{stepData.dateDisclaimer}</DateText>
                 
@@ -50,12 +53,14 @@ const FormStep3 = ({ user, setUser, continueOnClick, backOnClick, setRequestErro
                         currVal={user.startTime} 
                         placeholderVal="--:-- --"
                         isOptional={true}
+                        blurFn={() => trimSpaces(user, setUser, "startTime")}
                         />
                     <SmallFormField title="End Time" 
                         editFn={e => updateUser(e, user, setUser, submitCount, errors, setErrors, "endTime")} 
                         currVal={user.endTime}
                         placeholderVal="--:-- --" 
                         isOptional={true}
+                        blurFn={() => trimSpaces(user, setUser, "endTime")}
                         />
                 </TimesWrapper>
             </FormContents>
@@ -71,23 +76,29 @@ const FormStep3 = ({ user, setUser, continueOnClick, backOnClick, setRequestErro
     </FormStep3Wrapper>
 };
 
-const SmallFormField = ({ title, editFn, currVal, placeholderVal, isOptional }) => {
+const SmallFormField = ({ title, editFn, currVal, placeholderVal, isOptional, blurFn }) => {
     return <SmallInputWrapper>
         <TextWrapper>
             <Label>{title}</Label>
             <OptionalText optional={isOptional} >(Optional)</OptionalText>
         </TextWrapper>
-        <SmallInput onChange = {editFn} value = {currVal} placeholder={placeholderVal} />
+        <SmallInput onChange = {editFn} value = {currVal} placeholder={placeholderVal} onBlur={blurFn} />
     </SmallInputWrapper>
 }
 
 function updateUser(event, user, setUser, submitCount, errors, setErrors, field) {
     let newUser = {...user};
-    newUser[field] = event.target.value.trim();
+    newUser[field] = event.target.value;
     setUser(newUser);
     if (submitCount > 0) {
         checkErrors(newUser, errors, setErrors);
     }
+}
+
+function trimSpaces(user, setUser, field) {
+    let newUser = {...user};
+    newUser[field] = newUser[field].trim();
+    setUser(newUser);
 }
 
 function submitFn(user, errors, setErrors, continueOnClick, submitCount, setSubmitCount, setRequestError) {
@@ -108,7 +119,7 @@ function submitRequest(user, continueOnClick, setRequestError) {
     const name = user.name;
     const email = user.emailAddress;
     const subject = `BikeBus Quote - ${name}`;
-    const body = `Name: ${user.name}%0APhone Number: ${user.phoneNum}%0ANumber of Rides Requested: ${user.numRides}%0AFrequency: ${user.frequency}%0APickup Address: ${user.pickUpAddress}%0ADropoff Address: ${user.dropOffAddress}%0ATentative Date: ${user.tentativeDate}%0AStart Time: ${user.startTime}%0AEnd Time: ${user.endTime}%0A%0AMessage: ${user.message}%0A`;
+    const body = `Name: ${user.name}%0AEmail: ${user.emailAddress}%0APhone Number: ${user.phoneNum}%0ANumber of Rides Requested: ${user.numRides}%0AFrequency: ${user.frequency}%0APickup Address: ${user.pickUpAddress}%0ADropoff Address: ${user.dropOffAddress}%0ATentative Date: ${user.tentativeDate}%0AStart Time: ${user.startTime}%0AEnd Time: ${user.endTime}%0A%0AMessage: ${user.message}%0A`;
     const request = `${emailEndpoint}?name=${name}&email=${email}&subject=${subject}&body=${body}`;
     axios.post(proxyurl + request)
     .then(response => {
@@ -120,9 +131,12 @@ function submitRequest(user, continueOnClick, setRequestError) {
 }
 
 FormStep3.propTypes = {
-}
-
-FormStep3.defaultProps = {
+    user: PropTypes.object,
+    setUser: PropTypes.func,
+    continueOnClick: PropTypes.func,
+    backOnClick: PropTypes.func,
+    setRequestError: PropTypes.func,
+    stepData: PropTypes.object,
 }
 
 export default FormStep3

@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import { ComponentWrapper, Link, Button, PaddedComponentWrapper } from "../Base/basecomponents"
+import { Link } from "../Base/basecomponents"
 import { BBh2 } from "../Base/fonts"
-import { teal, richBlack } from "../Base/colors"
+import { richBlack } from "../Base/colors"
 
 export const HamburgerContainer = styled.div`
     display: inline-block;

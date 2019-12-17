@@ -30,27 +30,31 @@ const FormStep2 = ({ user, setUser, continueOnClick, backOnClick, stepData }) =>
                     currVal={user.name}
                     inputType={"text"} 
                     isRed={errors.name}
-                    isOptional={false} />
+                    isOptional={false}
+                    blurFn={() => trimSpaces(user, setUser, "name")} />
                 <FormField title="Email Address" 
                     editFn={e => updateUser(e, user, setUser, submitCount, errors, setErrors, "emailAddress")} 
                     currVal={user.emailAddress}
                     inputType={"email"}
                     isRed={errors.emailAddress}
                     isOptional={false} 
-                    errorText={"A valid email address is required"} />
+                    errorText={"A valid email address is required"}
+                    blurFn={() => trimSpaces(user, setUser, "emailAddress")} />
                 <FormField title ="Phone Number"
                     editFn={e => updateUser(e, user, setUser, submitCount, errors, setErrors, "phoneNum")} 
                     currVal={user.phoneNum} 
                     placeholderVal="123-456-7890"
                     inputType={"tel"}
                     isRed={false}
-                    isOptional={true} />
+                    isOptional={true}
+                    blurFn={() => trimSpaces(user, setUser, "phoneNum")} />
                 <MessageField title="Message" 
                     editFn={e => updateUser(e, user, setUser, submitCount, errors, setErrors, "message")} 
                     currVal={user.message} 
                     placeholderVal={stepData.messageHelpText} 
                     isRed={errors.message}
-                    isOptional={false} />
+                    isOptional={false}
+                    blurFn={() => trimSpaces(user, setUser, "message")} />
             </FormContents>
         </Form>
         <SizeWrapper>
@@ -64,7 +68,7 @@ const FormStep2 = ({ user, setUser, continueOnClick, backOnClick, stepData }) =>
 
 function updateUser(event, user, setUser, submitCount, errors, setErrors, field) {
     let newUser = {...user};
-    newUser[field] = event.target.value.trim();
+    newUser[field] = event.target.value;
     setUser(newUser);
     if (submitCount > 0) {
         let newErrors = {...errors};
@@ -75,6 +79,12 @@ function updateUser(event, user, setUser, submitCount, errors, setErrors, field)
         }
         setErrors(newErrors);
     }
+}
+
+function trimSpaces(user, setUser, field) {
+    let newUser = {...user};
+    newUser[field] = newUser[field].trim();
+    setUser(newUser);
 }
 
 function submitFn(user, errors, setErrors, continueOnClick, submitCount, setSubmitCount) {
@@ -94,9 +104,11 @@ function checkErrors(user, errors, setErrors) {
 }
 
 FormStep2.propTypes = {
-}
-
-FormStep2.defaultProps = {
+    user: PropTypes.object,
+    setUser: PropTypes.func,
+    continueOnClick: PropTypes.func,
+    backOnClick: PropTypes.func,
+    stepData: PropTypes.object,
 }
 
 export default FormStep2

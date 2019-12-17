@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import { darkGreen } from "../Base/colors"
 import { Button, Link, PaddedComponentWrapper } from "../Base/basecomponents"
-import * as circlesMagenta from "../../images/circlesMagenta.svg"
 
 export const CheckerboardWrapper = styled(PaddedComponentWrapper)`
   display: inline-flex;

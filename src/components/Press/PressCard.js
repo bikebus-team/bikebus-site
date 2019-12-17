@@ -52,11 +52,11 @@ const Logo = styled.img`
   max-width: 100%;
 `
 
-const PressCard_Content = styled.div`
+const PressCardContent = styled.div`
   padding: 24px;
 `
 
-const PressCard_Title = styled(BBp)`
+const PressCardTitle = styled(BBp)`
   font-size: 1.25em;
   font-family: "Noto Sans Semicondensed", sans-serif;
   font-weight: bold;
@@ -64,14 +64,14 @@ const PressCard_Title = styled(BBp)`
   margin-top: 0;
 `
 
-const PressCard_Date = styled(BBp)`
+const PressCardDate = styled(BBp)`
   font-style: italic;
   font-weight: 400;
   margin-bottom: 16px;
   margin-top: 0;
 `
 
-const PressCard_Description = styled(BBp)`
+const PressCardDescription = styled(BBp)`
   margin: 0;
 `
 
@@ -80,11 +80,11 @@ const PressCard = ({ title, link, logo, date, body }) => (
     <LogoContainer>
       <Logo src={getImageUrl(logo.path)} />
     </LogoContainer>
-    <PressCard_Content>
-      <PressCard_Title>{title}</PressCard_Title>
-      <PressCard_Date>{date}</PressCard_Date>
-      <PressCard_Description>{body}</PressCard_Description>
-    </PressCard_Content>
+    <PressCardContent>
+      <PressCardTitle>{title}</PressCardTitle>
+      <PressCardDate>{date}</PressCardDate>
+      <PressCardDescription>{body}</PressCardDescription>
+    </PressCardContent>
   </Wrapper>
 )
 

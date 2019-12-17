@@ -4,7 +4,7 @@ import {
     Title,
     TextWrapper
 } from "./formfinalstyles";
-import { BackButton } from "../FormComponent/formcomponentstyles";
+import { BackButton } from "../FormComponent/FormBaseComponents/formbasecomponentsstyles";
 import { BBp } from "../Base/fonts"
 
 const FormFinal = ({ requestError, backOnClick }) => {

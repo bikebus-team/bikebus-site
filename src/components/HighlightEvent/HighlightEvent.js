@@ -1,5 +1,4 @@
 import React from "react"
-import { Button, ButtonSecondary, Link } from "../Base/basecomponents"
 import { getImageUrl } from "takeshape-routing"
 import {
   HighlightEventContainer,
@@ -11,6 +10,7 @@ import {
   HECta,
   HEImage,
 } from "./HighlightEventStyles"
+import { OutsideLink } from "../Base/basecomponents"
 
 const HighlightEvent = ({ title, description, ctaLink, ctaText, image }) => (
   <HighlightEventContainer>
@@ -18,9 +18,9 @@ const HighlightEvent = ({ title, description, ctaLink, ctaText, image }) => (
       <HELeftContentContainer>
         <HETitle>{title}</HETitle>
         <HEDesc>{description}</HEDesc>
-        <a href={ctaLink} target="_blank" rel="noreferrer">
+        <OutsideLink href={ctaLink} target="_blank" rel="noopener noreferrer">
           <HECta>{ctaText}</HECta>
-        </a>
+        </OutsideLink>
       </HELeftContentContainer>
     </HELeftContainer>
     <HEImageContainer>

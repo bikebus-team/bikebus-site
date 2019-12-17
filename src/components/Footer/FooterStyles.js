@@ -1,8 +1,6 @@
 import styled from "styled-components"
-import { BBh1, BBh2, BBp } from "../Base/fonts"
-import { PaddedComponentWrapper} from "../Base/basecomponents"
-import { Link } from "gatsby";
-
+import { BBp } from "../Base/fonts"
+import { PaddedComponentWrapper, Link, OutsideLink } from "../Base/basecomponents"
 
 export const FooterContainer = styled.footer`
     background-color: black;
@@ -85,14 +83,13 @@ export const FooterList = styled.ul`
 `
 
 export const FooterItem = styled.li`
-    
 `
 
 export const FooterLink = styled(Link)`
     text-decoration: none;
 `
 
-export const ScoutLink = styled.a`
+export const ScoutLink = styled(OutsideLink)`
     text-decoration: none;
 `
 
