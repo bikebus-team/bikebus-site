@@ -1,4 +1,3 @@
-import React from "react"
 import styled from "styled-components"
 import { BBh1 } from "../Base/fonts"
 import { Link, PaddedComponentWrapper } from "../Base/basecomponents"
