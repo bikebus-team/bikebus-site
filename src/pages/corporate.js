@@ -13,7 +13,6 @@ import Packages from "../components/Packages/Packages"
 const Corporate = ({ data }) => {
   // The `what to expect` page
   const corpdata = data.takeshape.getCorporate
-  console.log(corpdata)
   return (
     <Layout>
       <SEO title="Corporate" />
