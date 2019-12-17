@@ -1,5 +1,5 @@
 import React from "react"
-
+import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import SplitHero from "../components/SplitHero/SplitHero"
 import Checkerboard from "../components/Checkerboard/checkerboard"
