@@ -10,6 +10,7 @@ import {
   HECta,
   HEImage,
 } from "./HighlightEventStyles"
+import { OutsideLink } from "../Base/basecomponents"
 
 const HighlightEvent = ({ title, description, ctaLink, ctaText, image }) => (
   <HighlightEventContainer>
@@ -17,9 +18,9 @@ const HighlightEvent = ({ title, description, ctaLink, ctaText, image }) => (
       <HELeftContentContainer>
         <HETitle>{title}</HETitle>
         <HEDesc>{description}</HEDesc>
-        <a href={ctaLink} target="_blank" rel="noopener noreferrer">
+        <OutsideLink href={ctaLink} target="_blank" rel="noopener noreferrer">
           <HECta>{ctaText}</HECta>
-        </a>
+        </OutsideLink>
       </HELeftContentContainer>
     </HELeftContainer>
     <HEImageContainer>

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { linkColor, offWhite, darkGreen, richBlack } from "./colors"
+import { linkColor, offWhite, darkGreen, richBlack, teal } from "./colors"
 import GatsbyLink from "gatsby-link"
 
 export const ComponentWrapper = styled.div`
@@ -47,6 +47,9 @@ export const Button = styled.button`
     background-color: ${offWhite};
     color: ${darkGreen};
   }
+  &:focus {
+    outline-color: ${teal};
+  }
 `
 
 export const ButtonSecondary = styled(Button)`
@@ -86,4 +89,12 @@ export const PaddedComponentWrapper = styled.div`
 
 export const Link = styled(GatsbyLink)`
   color: ${linkColor};
+  &:focus {
+    outline-color: ${teal};
+  }
 `
+export const OutsideLink = styled.a`
+  &:focus {
+    outline-color: ${teal};
+  }
+`;

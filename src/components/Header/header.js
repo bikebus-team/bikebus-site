@@ -1,7 +1,5 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-// import { Link } from 'react-router-dom';
 import {
   HeaderWrapper,
   HeaderLinkGroup,
@@ -14,6 +12,7 @@ import {
   HamburgerMenuContainer,
   BtnHeaderLink
 } from "./headerstyles"
+import { Link } from "../Base/basecomponents"
 import * as logo from "../../images/bikebus_logo.png";
 import Hamburger from "../Hamburger/Hamburger";
 
