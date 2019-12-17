@@ -1,5 +1,4 @@
 import React from "react"
-import { Button, Link } from "../Base/basecomponents"
 import {
   QuoteBlockContainer,
   QuoteBlockContentContainer,

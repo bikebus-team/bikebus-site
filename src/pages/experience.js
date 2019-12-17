@@ -1,10 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SplitHero from "../components/SplitHero/SplitHero"
-import QuoteBlock from "../components/QuoteBlock/QuoteBlock"
-import Sock from "../components/Sock/Sock"
 import Checkerboard from "../components/Checkerboard/checkerboard"
 import SEO from "../components/seo"
 import ExperienceCommunity from "../components/ExperienceCommunity/ExperienceCommunity"

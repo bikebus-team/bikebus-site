@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 import ExtraPageLayout from "../components/ExtraPageLayout"
 
 import Accordion from "../components/FAQ/Accordion"
-import { BBh2, BBp } from "../components/Base/fonts"
+import { BBh2 } from "../components/Base/fonts"
 import { SIZES } from "../tokens"
 
 const FAQSection = styled.div`

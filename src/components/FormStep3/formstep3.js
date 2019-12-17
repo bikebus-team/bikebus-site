@@ -120,9 +120,12 @@ function submitRequest(user, continueOnClick, setRequestError) {
 }
 
 FormStep3.propTypes = {
-}
-
-FormStep3.defaultProps = {
+    user: PropTypes.object,
+    setUser: PropTypes.func,
+    continueOnClick: PropTypes.func,
+    backOnClick: PropTypes.func,
+    setRequestError: PropTypes.func,
+    stepData: PropTypes.object,
 }
 
 export default FormStep3

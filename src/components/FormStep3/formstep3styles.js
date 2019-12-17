@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { darkGreen, offWhite } from "../Base/colors"
+import { darkGreen } from "../Base/colors"
 import { Input } from "../FormComponent/FormBaseComponents/formbasecomponentsstyles";
 import { BBp } from "../Base/fonts";
 

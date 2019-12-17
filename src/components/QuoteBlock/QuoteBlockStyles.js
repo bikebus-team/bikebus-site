@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { ComponentWrapper } from "../Base/basecomponents"
 import {BBh1, BBp} from "../Base/fonts"
 import {teal, richBlack, onDark} from "../Base/colors"
 

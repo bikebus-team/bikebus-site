@@ -18,7 +18,6 @@ import {
     Item
     }
   from "./FooterStyles"
-import { Link } from "gatsby";
 import * as insta from "../../images/instagram.svg"
 import * as twitter from "../../images/twitter.svg"
 import * as linkedin from "../../images/linkedin.svg"

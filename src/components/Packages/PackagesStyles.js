@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { BBh1, BBh2, BBh3, BBh4, BBp, BBsmallp} from "../Base/fonts"
+import { BBh1, BBh2, BBh4, BBp, BBsmallp} from "../Base/fonts"
 import { PaddedComponentWrapper, Button } from "../Base/basecomponents"
 import { darkGreen } from "../Base/colors"
 

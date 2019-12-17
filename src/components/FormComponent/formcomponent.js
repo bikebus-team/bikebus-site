@@ -31,7 +31,7 @@ const FormComponent = ({ clickedOption, formData }) => {
                         <Subtitle>{formData.overarchingDescription}</Subtitle>
                     </SubtitleWrapper>
                 </FormTitleWrapper>
-                <StepTitleGroup shouldDisplay={step != 4}>
+                <StepTitleGroup shouldDisplay={step !== 4}>
                     <StepTitle title={"1. " + formData.step1.stepTitle} smallTitle="1" fullOpacity={step >= 1}/>
                     <StepTitle title={"2. " + formData.step2.stepTitle} smallTitle="2" fullOpacity={step >= 2}/>
                     <StepTitle title={"3. " + formData.step3.stepTitle} smallTitle="3" fullOpacity={step >= 3}/>

@@ -1,6 +1,5 @@
 import React from "react"
-import { getImageUrl } from "takeshape-routing"
-import { darkGreen, offWhite } from "../Base/colors"
+import { darkGreen } from "../Base/colors"
 import { Button, Link } from "../Base/basecomponents"
 import {
     PackagesContainer,

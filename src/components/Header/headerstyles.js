@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import { ComponentWrapper, Link, Button, PaddedComponentWrapper } from "../Base/basecomponents"
-import { BBh4, BBh2 } from "../Base/fonts"
+import { Link, Button } from "../Base/basecomponents"
+import { BBh4 } from "../Base/fonts"
 import { richBlack } from "../Base/colors"
 
 export const HeaderWrapper = styled.header`

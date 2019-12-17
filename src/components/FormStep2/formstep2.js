@@ -94,9 +94,11 @@ function checkErrors(user, errors, setErrors) {
 }
 
 FormStep2.propTypes = {
-}
-
-FormStep2.defaultProps = {
+    user: PropTypes.object,
+    setUser: PropTypes.func,
+    continueOnClick: PropTypes.func,
+    backOnClick: PropTypes.func,
+    stepData: PropTypes.object,
 }
 
 export default FormStep2

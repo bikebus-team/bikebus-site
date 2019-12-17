@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { BBh1, BBh2, BBp } from "../Base/fonts"
+import { BBp } from "../Base/fonts"
 import { PaddedComponentWrapper} from "../Base/basecomponents"
 import { Link } from "gatsby";
 
