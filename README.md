@@ -11,7 +11,7 @@ This marketing site is made to compliment the new branding assets. It is made wi
 1. Clone the repository:
 
 ```bash
-git clone git@github.com:Scout-NU/bikebus-site.git
+git clone git@github.com:bikebus-team/bikebus-site.git
 ```
 
 2. Change directories:
