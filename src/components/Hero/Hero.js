@@ -31,9 +31,11 @@ const Hero = ({
         <Link to={ctaButtonLink}>
           <Button>{ctaButtonText}</Button>
         </Link>
+        { ctaSecondaryLink && ctaSecondaryText ?
         <Link to={ctaSecondaryLink}>
           <ButtonSecondary>{ctaSecondaryText}</ButtonSecondary>
-        </Link>
+        </Link> : null
+        }
       </HeroButtonContainer>
     </HeroContentContainer>
   </HeroContainer>

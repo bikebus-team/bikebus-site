@@ -18,10 +18,10 @@ const IndexPage = ({ data }) => {
       <Hero
         tagline={hpdata.hero.headline}
         subtitle={hpdata.hero.description}
-        ctaButtonLink={"/form"}
-        ctaButtonText={"Click me!"}
-        ctaSecondaryLink={"/form"}
-        ctaSecondaryText={"click me too"}
+        ctaButtonLink={hpdata.hero.button.linkDestination}
+        ctaButtonText={hpdata.hero.button.title}
+        ctaSecondaryLink={hpdata.hero.secondaryButton ? hpdata.hero.secondaryButton.linkDestination : null}
+        ctaSecondaryText={hpdata.hero.secondaryButton ? hpdata.hero.secondaryButton.title : null}
         imageSrc={hpdata.hero.backgroundImage.path}
       />
       <Checkerboard
@@ -31,6 +31,7 @@ const IndexPage = ({ data }) => {
         image={hpdata.checkerboard1.image}
         hasButton={true}
         buttonLink={hpdata.checkerboard1.button.linkDestination}
+        buttonText={hpdata.checkerboard1.button.title}
       />
       <Checkerboard
         imageLeft={1 % 2 === 1}
@@ -39,6 +40,7 @@ const IndexPage = ({ data }) => {
         image={hpdata.checkerboard2.image}
         hasButton={true}
         buttonLink={hpdata.checkerboard2.button.linkDestination}
+        buttonText={hpdata.checkerboard2.button.title}
       />
       <HighlightEvent
         title={hpdata.specialEvent.title}
