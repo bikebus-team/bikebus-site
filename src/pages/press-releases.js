@@ -47,7 +47,7 @@ const PressPage = ({ data }) => {
               <SectionTitle>{title}</SectionTitle>
               <PressCardContainer>
                 {list.map(({ releaseItem }, indexJ) => {
-                  const { title, companyLogo, link, excerpt } = releaseItem
+                  const { title, companyLogo, link, excerpt } = releaseItem || '';
                   const date = new Date(releaseItem.date)
                   return (
                     <PressCard
