@@ -32,10 +32,10 @@ const Footer = ({ Info, AboutListItems, RideListItems, CompanyListItems }) => (
             <FooterLogo src={getImageUrl(Info.logo.path)}></FooterLogo>
             <FooterCopyright>{Info.copyrightInformation}</FooterCopyright>
             <FooterSocialContainer>
-                {Info.instagramLink && <OutsideLink href={Info.instagramLink}><SocialLogo src={insta} /></OutsideLink>}
-                {Info.twitterLink && <OutsideLink href={Info.twitterLink} ><SocialLogo src={twitter} /></OutsideLink>}
-                {Info.linkedinLink && <OutsideLink href={Info.linkedinLink}><SocialLogo src={linkedin} /></OutsideLink>}
-                {Info.facebookLink && <OutsideLink href={Info.facebookLink}><SocialLogo src={fb} /></OutsideLink>}
+                {Info.instagramLink && <OutsideLink target="_blank" href={Info.instagramLink}><SocialLogo src={insta} /></OutsideLink>}
+                {Info.twitterLink && <OutsideLink target="_blank" href={Info.twitterLink} ><SocialLogo src={twitter} /></OutsideLink>}
+                {Info.linkedinLink && <OutsideLink target="_blank" href={Info.linkedinLink}><SocialLogo src={linkedin} /></OutsideLink>}
+                {Info.facebookLink && <OutsideLink target="_blank" href={Info.facebookLink}><SocialLogo src={fb} /></OutsideLink>}
             </FooterSocialContainer>
             <ScoutLink href="https://web.northeastern.edu/scout/" target="_blank"><ScoutTag>Made with ♥ by Scout</ScoutTag></ScoutLink>
         </FooterCompanyInfoContainer>
