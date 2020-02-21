@@ -39,7 +39,7 @@ function renderStep(isOpen) {
                 <HambHeaderLink to="/corporate/" activeStyle={{color: "white"}}><HambHeaderPage>Corporate</HambHeaderPage></HambHeaderLink>
                 <HambHeaderLink to="/private/" activeStyle={{color: "white"}}><HambHeaderPage>Private Groups</HambHeaderPage></HambHeaderLink>
                 <HambHeaderLink to="/story/" activeStyle={{color: "white"}}><HambHeaderPage>Our Story</HambHeaderPage></HambHeaderLink>
-                <HambHeaderLink to="/"activeStyle={{color: "white"}} ><HambHeaderPage>Request a Quote</HambHeaderPage></HambHeaderLink>
+                <HambHeaderLink to="/form/"activeStyle={{color: "white"}} ><HambHeaderPage>Request a Quote</HambHeaderPage></HambHeaderLink>
               </HambLinkContainer>
             </MenuContentContainer>
         </MenuContainer>

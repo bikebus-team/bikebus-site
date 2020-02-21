@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Button } from "../Base/basecomponents"
-import { BBh1, BBp } from "../Base/fonts"
+import { BBh2, BBp } from "../Base/fonts"
 import { offWhite, darkGreen, onDark } from '../Base/colors';
 import * as circlesTeal from "../../images/circlesTeal.svg"
 
@@ -28,7 +28,6 @@ export const HighlightEventContainer = styled.div`
 `
 
 export const HELeftContainer = styled.div`
-  width: 50%;
   background-color: ${darkGreen};
   height: 100%;
   display: flex;
@@ -45,6 +44,10 @@ export const HELeftContainer = styled.div`
   @media (min-width: 768px) {
     width: 50%;
     padding-bottom: 0;
+  }
+
+  @media (min-width: 1200px) {
+    width: ${(({ hasImage }) => hasImage ? `50%` : '100%' )};
   }
 
   &:before {
@@ -92,7 +95,7 @@ export const HELeftContentContainer = styled.div`
   }
 `
 
-export const HETitle = styled(BBh1)`
+export const HETitle = styled(BBh2)`
   text-transform: uppercase;
   color: ${offWhite};
   margin: 0;

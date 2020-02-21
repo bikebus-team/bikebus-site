@@ -121,12 +121,14 @@ export const PackageButton = styled(Button)`
 export const PackageHeader = styled(BBh2)`
     text-transform: uppercase;
     margin: 0 0;
+    color: ${darkGreen};
 `
 
 export const PackageSubtitle = styled(BBp)`
     text-transform: uppercase;
     margin-top: 0;
     text-weight: 100;
+    color: ${darkGreen};
 `
 
 export const PackagePriceContainer = styled.div`
@@ -137,10 +139,12 @@ export const PackagePriceContainer = styled.div`
 
 export const PackageText = styled(BBp)`
     text-transform: uppercase;
+    color: ${darkGreen};
 `
 
 export const PackagePrice = styled(BBh1)`
     margin:0;
+    color: ${darkGreen};
     
     @media (max-width: 1275px) {
         color: white;
@@ -154,7 +158,7 @@ export const PackageFinePrintContainer = styled.div`
 `
 
 export const PackageFinePrint = styled(BBsmallp)`
-
+    color: ${darkGreen};
 `
 
 export const PackagesHeading = styled(BBh2)`

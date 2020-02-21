@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { BBp } from "../Base/fonts"
 import { PaddedComponentWrapper, Link, OutsideLink } from "../Base/basecomponents"
+import { onDark, pureWhite } from "../Base/colors"
 
 export const FooterContainer = styled.footer`
     background-color: black;
@@ -87,6 +88,11 @@ export const FooterItem = styled.li`
 
 export const FooterLink = styled(Link)`
     text-decoration: none;
+    color: ${onDark};
+    transition: 250ms ease-in-out color;
+    &:hover {
+        color: ${pureWhite};
+    }
 `
 
 export const ScoutLink = styled(OutsideLink)`
