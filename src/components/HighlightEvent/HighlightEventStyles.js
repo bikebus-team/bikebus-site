@@ -1,8 +1,9 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { Button } from "../Base/basecomponents"
 import { BBh2, BBp } from "../Base/fonts"
 import { offWhite, darkGreen, onDark } from '../Base/colors';
 import * as circlesTeal from "../../images/circlesTeal.svg"
+import { SIZES } from "../../tokens"
 
 export const HighlightEventContainer = styled.div`
   padding: 0 0 120px 0;
@@ -27,6 +28,23 @@ export const HighlightEventContainer = styled.div`
 
 `
 
+export const HELeftContentContainer = styled.div`
+  text-align: left;
+  max-width: 430px;
+  width: 70%;
+  z-index: 100;
+  
+  @media (min-width: 0px) {
+    padding: 40px 0;
+    margin: 0 auto;
+    max-width: unset;
+  }
+
+  @media (min-width: 768px) {
+    padding: 0 80px;
+  }
+`
+
 export const HELeftContainer = styled.div`
   background-color: ${darkGreen};
   height: 100%;
@@ -46,8 +64,17 @@ export const HELeftContainer = styled.div`
     padding-bottom: 0;
   }
 
-  @media (min-width: 1200px) {
-    width: ${(({ hasImage }) => hasImage ? `50%` : '100%' )};
+  ${ ({ hasImage }) => !hasImage && 
+    css`
+      && {
+        width: 100%;
+      }
+      @media (min-width: ${SIZES.BREAK_MD}) {
+        & > ${HELeftContentContainer} {
+          text-align: center;
+        }
+      }
+    `
   }
 
   &:before {
@@ -75,23 +102,6 @@ export const HELeftContainer = styled.div`
     width: 300px;
     top: -150px;
     right: -150px;
-  }
-`
-
-export const HELeftContentContainer = styled.div`
-  text-align: left;
-  max-width: 430px;
-  width: 70%;
-  z-index: 100;
-  
-  @media (min-width: 0px) {
-    padding: 40px 0;
-    margin: 0 auto;
-    max-width: unset;
-  }
-
-  @media (min-width: 768px) {
-    padding: 0 80px;
   }
 `
 
