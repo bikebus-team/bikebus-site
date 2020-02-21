@@ -41,7 +41,7 @@ const Footer = ({ Info, AboutListItems, RideListItems, CompanyListItems }) => (
         </FooterCompanyInfoContainer>
         <FooterNavContainer>
             <FooterListContainer>
-                <ListTitle>About BikeBus</ListTitle>
+                <ListTitle>About Bikebus</ListTitle>
                 <FooterList>
                     {AboutListItems.links && 
                         AboutListItems.links.map((AboutListItem, index) =>
