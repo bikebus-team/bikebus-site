@@ -18,9 +18,8 @@ const Corporate = ({ data }) => {
       <SEO title="Corporate" />
       <SplitHero
         tagline={corpdata.hero.title}
-        subtitle={corpdata.hero.subtitle}
         imgSrc={corpdata.hero.backgroundImage.path}
-        description={corpdata.hero.description}
+        description={corpdata.hero.subtitle}
         ctaButtonLink={corpdata.hero.button.linkDestination}
         ctaButtonText={corpdata.hero.button.title}
       />

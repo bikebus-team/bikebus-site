@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { BBh2, BBh3, BBh4, BBp, } from "../Base/fonts"
 import { PaddedComponentWrapper } from "../Base/basecomponents"
+import { SIZES } from "../../tokens"
 
 export const StepsContainer = styled(PaddedComponentWrapper)`
     text-align: center;
@@ -19,18 +20,35 @@ export const StepsContentContainer = styled.div`
     flex-direction: row;
     width: 100%;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${SIZES.BREAK_TABLET}) {
         flex-direction: column;
         justify-content: space-around;
     }
 `
 
 export const SingleStepWrapper = styled.div`
-    margin: 0 20px 0 20px;
+    width: 100%;
 
-    @media (max-width: 768px) {
-        margin-bottom: 50px;
-        align-self:center;
+    &:not(:last-child) {
+        margin-right: 40px;
+    }
+
+    @media (max-width: ${SIZES.BREAK_TABLET}) {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 300px;
+        &:not(:last-child) {
+            margin-right: auto;
+            margin-bottom: 60px;
+        }
+    }
+
+    @media (max-width: ${SIZES.BREAK_SM}) {
+        margin-left: 0;
+        &:not(:last-child) {
+            margin-right: 0;
+            margin-bottom: 50px;
+        }
     }
 
 `
@@ -39,14 +57,28 @@ export const StepIconContainer = styled.div`
     width: 44px;
     height: 44px;
     margin-bottom: 25px;
+    @media (max-width: ${SIZES.BREAK_TABLET}) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (max-width: ${SIZES.BREAK_SM}) {
+        margin-left: 0;
+    }
 `
 
 export const StepTextContainer = styled.div`
     overflow-wrap: break-word;
-    max-width: 200px;
 `
 
 export const StepTitle = styled(BBh3)`
+    @media (max-width: ${SIZES.BREAK_TABLET}) {
+        text-align: center;
+    }
+
+    @media (max-width: ${SIZES.BREAK_SM}) {
+        text-align: left;
+    }
 `
 export const StepDescription = styled(BBp)`
 `

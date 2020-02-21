@@ -27,9 +27,13 @@ const FormComponent = ({ clickedOption, formData }) => {
                 <FormContentWrapper>
                 <FormTitleWrapper>
                     <FormTitle>{formData.title}</FormTitle>
-                    <SubtitleWrapper>
-                        <Subtitle>{formData.overarchingDescription}</Subtitle>
-                    </SubtitleWrapper>
+                    {step !== 4 && 
+                        (
+                            <SubtitleWrapper>
+                                <Subtitle>{formData.overarchingDescription}</Subtitle>
+                            </SubtitleWrapper>
+                        )
+                    }
                 </FormTitleWrapper>
                 <StepTitleGroup shouldDisplay={step !== 4}>
                     <StepTitle title={"1. " + formData.step1.stepTitle} smallTitle="1" fullOpacity={step >= 1}/>

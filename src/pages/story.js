@@ -5,14 +5,31 @@ import SEO from "../components/seo"
 import Checkerboard from "../components/Checkerboard/checkerboard"
 import PageTitle from "../components/PageTitle/pagetitle"
 import InstructorsPanel from "../components/InstructorsPanel/instructorspanel"
+import HighlightEvent from "../components/HighlightEvent/HighlightEvent"
+import styled from 'styled-components'
+import { SIZES } from '../tokens';
+
+const MissionStatement = styled(HighlightEvent)`
+  margin-top: 128px;
+  
+  @media (max-width: ${SIZES.BREAK_TABLET}) {
+    margin-top: 52px;
+  }
+`
 
 const Story = ({ data }) => {
   const storydata = data.takeshape.getStory
   // The `what to expect` page
+  
+  const missionStatement = storydata.mission && storydata.mission.missionStatement;
   return (
     <Layout>
       <PageTitle title={storydata.header.title} />
       <SEO title="Story" />
+      <MissionStatement 
+        title="Our Mission Statement"
+        description={missionStatement}
+      />
       {storydata.checkerboardSection.map((cb, index) => (
         <Checkerboard
           key={index}

@@ -41,7 +41,7 @@ const Footer = ({ Info, AboutListItems, RideListItems, CompanyListItems }) => (
         </FooterCompanyInfoContainer>
         <FooterNavContainer>
             <FooterListContainer>
-                <ListTitle>About BikeBus</ListTitle>
+                <ListTitle>About Bikebus</ListTitle>
                 <FooterList>
                     {AboutListItems.links && 
                         AboutListItems.links.map((AboutListItem, index) =>
@@ -76,7 +76,7 @@ function singleItem(ListItem, index) {
     const destLink = ListItem.link.url;
     const name = ListItem.link.title;
     return (
-        <FooterItem key={index}><FooterLink to={destLink}><Item>{name}</Item></FooterLink></FooterItem>
+        <FooterItem key={index}><Item><FooterLink to={destLink}>{name}</FooterLink></Item></FooterItem>
     );
 }
 export default Footer

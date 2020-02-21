@@ -128,6 +128,7 @@ export const FormWrapper = styled(PaddedComponentWrapper)`
     width: 500px;
     height: 100%;
     right: -125px;
+    z-index: 0;
     
     @media (min-width: 0px) {
         width: 300px;
@@ -168,6 +169,7 @@ export const CircleDiv = styled.div`
         height: 100%;
         right: -125px;
         display: block;
+        z-index: 0;
     
         @media (max-width: 420px) {
             display: none;
@@ -194,10 +196,10 @@ export const CircleDiv = styled.div`
 export const FormContentWrapper = styled.div`
   max-width: 1500px;
   width: 100%;
-  background: ${offWhite};
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 `;
 
 export const FormStepWrapper = styled.div`

@@ -12,24 +12,28 @@ import {
 } from "./HighlightEventStyles"
 import { OutsideLink } from "../Base/basecomponents"
 
-const HighlightEvent = ({ title, description, ctaLink, ctaText, image }) => (
-  <HighlightEventContainer>
-    <HELeftContainer>
+const HighlightEvent = ({ title, description, ctaLink, ctaText, image, ...rest }) => (
+  <HighlightEventContainer {...rest}>
+    <HELeftContainer hasImage={image != null}>
       <HELeftContentContainer>
         <HETitle>{title}</HETitle>
         <HEDesc>{description}</HEDesc>
-        <OutsideLink href={ctaLink} target="_blank" rel="noopener noreferrer">
-          <HECta>{ctaText}</HECta>
-        </OutsideLink>
+        {ctaLink && ctaText && 
+          <OutsideLink href={ctaLink} target="_blank" rel="noopener noreferrer">
+            <HECta>{ctaText}</HECta>
+          </OutsideLink>
+        }
       </HELeftContentContainer>
     </HELeftContainer>
-    <HEImageContainer>
-      <HEImage
-        imgUrl={getImageUrl(image.path)}
-        aria-label={image.caption && image.caption.blocks[0].text}
-        role="img"
-      />
-    </HEImageContainer>
+    {image && 
+      <HEImageContainer>
+        <HEImage
+          imgUrl={getImageUrl(image.path)}
+          aria-label={image.caption && image.caption.blocks[0].text}
+          role="img"
+        />
+      </HEImageContainer>
+    }
   </HighlightEventContainer>
 )
 

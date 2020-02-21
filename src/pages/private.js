@@ -16,7 +16,6 @@ const Private = ({ data }) => {
       <SEO title="Private Groups" />
       <SplitHero
         tagline={pedata.hero.title}
-        subtitle={pedata.hero.subtitle}
         imgSrc={pedata.hero.backgroundImage.path}
         description={pedata.hero.description}
         ctaButtonLink={pedata.hero.button.linkDestination}

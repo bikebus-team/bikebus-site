@@ -25,7 +25,6 @@ const SplitHero = ({
     <SplitHeroContentContainer>
       <SplitHeroContent>
         <SplitHeroTagline isOnDark={true}>{tagline}</SplitHeroTagline>
-        <SplitHeroSubtitle>{subtitle}</SplitHeroSubtitle>
         <SplitHeroDescription>{description}</SplitHeroDescription>
         {ctaButtonLink && (
           <Link to={ctaButtonLink}>
