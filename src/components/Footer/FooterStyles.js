@@ -33,7 +33,7 @@ export const FooterCompanyInfoContainer = styled.div`
 export const FooterLogo = styled.img`
     height: 50px;
     width: 250px;
-
+    max-width: 100%;
 `
 
 export const FooterCopyright = styled(BBp)`
@@ -90,6 +90,10 @@ export const FooterListContainer = styled.div`
             margin-right: 0;
             margin-bottom: 40px;
         }
+    }
+    @media (max-width: 340px) {
+        flex-basis: 100%;
+        padding-right: 0px;
     }
 `
 
