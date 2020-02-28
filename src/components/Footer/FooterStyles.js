@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { BBp } from "../Base/fonts"
 import { PaddedComponentWrapper, Link, OutsideLink } from "../Base/basecomponents"
 import { onDark, pureWhite } from "../Base/colors"
+import { SIZES } from '../../tokens';
 
 export const FooterContainer = styled.footer`
     background-color: black;
@@ -14,7 +15,7 @@ export const FooterContentContainer = styled(PaddedComponentWrapper)`
     justify-content: space-between;
     width: inherit;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${SIZES.BREAK_TABLET}) {
         flex-direction: column;
         justify-content: space-around;
     }
@@ -24,8 +25,8 @@ export const FooterContentContainer = styled(PaddedComponentWrapper)`
 export const FooterCompanyInfoContainer = styled.div`
     display: block;
 
-    @media (max-width: 768px) {
-        margin-bottom: 25px;
+    @media (max-width: ${SIZES.BREAK_TABLET}) {
+        margin-bottom: 56px;
     }
 `
 
@@ -43,8 +44,16 @@ export const FooterCopyright = styled(BBp)`
 export const FooterSocialContainer = styled.div`
     display: flex;
     justify-content: space-between;
-    margin: 35px 0 35px 0;
+    margin: 36px 0 0 0;
     width: 200px;
+
+    @media (max-width: ${SIZES.BREAK_TABLET}) {
+        margin-top: 56px;
+    }
+
+    @media (max-width: ${SIZES.BREAK_SM}) {
+        margin-top: 40px;
+    }
 `
 
 export const SocialLogo = styled.img`
@@ -60,22 +69,35 @@ export const ScoutTag = styled(BBp)`
 
 export const FooterNavContainer = styled.div`
     display: flex;
-    justify-content: space-between;
-    width: 50%;
 
-    @media (max-width: 768px) {
-        width: 100%;
+    @media (max-width: ${SIZES.BREAK_SM}) {
+        flex-wrap: wrap;
     }
 `
 
 export const FooterListContainer = styled.div`
-    margin: 0 25px 0 25px;
+    &:not(:last-child) {
+        margin-right: 100px;
+        @media (max-width: ${SIZES.BREAK_LG}) {
+            margin-right: 50px;
+        }
+    }
+    @media (max-width: ${SIZES.BREAK_SM}) {
+        flex-basis: 50%;
+        padding-right: 12px;
+        box-sizing: border-box;
+        &:not(:last-child) {
+            margin-right: 0;
+            margin-bottom: 40px;
+        }
+    }
 `
 
 export const ListTitle = styled(BBp)`
     text-transform: uppercase;
     font-weight: bold;
     color: white;
+    margin-top: 0px;
 `
 
 export const FooterList = styled.ul`

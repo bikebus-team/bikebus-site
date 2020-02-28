@@ -24,13 +24,24 @@ import * as twitter from "../../images/twitter.svg"
 import * as linkedin from "../../images/linkedin.svg"
 import * as fb from "../../images/facebook.svg"
 import { getImageUrl } from "takeshape-routing";
+import styled from "styled-components"
+import { SIZES } from '../../tokens';
 
-const Footer = ({ Info, AboutListItems, RideListItems, CompanyListItems }) => (
-  <FooterContainer>
-    <FooterContentContainer>
-        <FooterCompanyInfoContainer>
-            <FooterLogo src={getImageUrl(Info.logo.path)}></FooterLogo>
-            <FooterCopyright>{Info.copyrightInformation}</FooterCopyright>
+const ShowSmallOnly = styled.div`
+    @media (min-width: ${parseInt(SIZES.BREAK_TABLET, 10) + 1}px) {
+        display: none;
+    }
+`;
+
+const ShowLargeOnly = styled.div`
+    @media (max-width: ${SIZES.BREAK_TABLET}) {
+        display: none;
+    }
+`
+
+const SocialAndScout = ({ Info }) => {
+    return (
+        <>
             <FooterSocialContainer>
                 {Info.instagramLink && <OutsideLink target="_blank" href={Info.instagramLink}><SocialLogo src={insta} /></OutsideLink>}
                 {Info.twitterLink && <OutsideLink target="_blank" href={Info.twitterLink} ><SocialLogo src={twitter} /></OutsideLink>}
@@ -38,6 +49,19 @@ const Footer = ({ Info, AboutListItems, RideListItems, CompanyListItems }) => (
                 {Info.facebookLink && <OutsideLink target="_blank" href={Info.facebookLink}><SocialLogo src={fb} /></OutsideLink>}
             </FooterSocialContainer>
             <ScoutLink href="https://web.northeastern.edu/scout/" target="_blank"><ScoutTag>Made with ♥ by Scout</ScoutTag></ScoutLink>
+        </>
+    )
+};
+
+const Footer = ({ Info, AboutListItems, RideListItems, CompanyListItems }) => (
+  <FooterContainer>
+    <FooterContentContainer>
+        <FooterCompanyInfoContainer>
+            <FooterLogo src={getImageUrl(Info.logo.path)}></FooterLogo>
+            <FooterCopyright>{Info.copyrightInformation}</FooterCopyright>
+            <ShowLargeOnly>
+                <SocialAndScout Info={Info} />
+            </ShowLargeOnly>
         </FooterCompanyInfoContainer>
         <FooterNavContainer>
             <FooterListContainer>
@@ -68,6 +92,9 @@ const Footer = ({ Info, AboutListItems, RideListItems, CompanyListItems }) => (
                 </FooterList>
             </FooterListContainer>
         </FooterNavContainer>
+        <ShowSmallOnly>
+            <SocialAndScout Info={Info} />
+        </ShowSmallOnly>
     </FooterContentContainer>
   </FooterContainer>
 )

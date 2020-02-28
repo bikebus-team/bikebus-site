@@ -8,7 +8,6 @@ import {
   SplitHeroImage,
   SplitHeroContent,
   SplitHeroTagline,
-  SplitHeroSubtitle,
   SplitHeroDescription,
   WhiteButton,
 } from "./SplitHeroStyles"
