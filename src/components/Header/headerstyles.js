@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { Link, Button } from "../Base/basecomponents"
 import { BBh4 } from "../Base/fonts"
 import { richBlack } from "../Base/colors"
+import { SIZES } from '../../tokens';
 
 export const HeaderWrapper = styled.header`
   display: flex;
@@ -37,28 +38,28 @@ export const HamburgerMenuContainer = styled.div`
 export const HeaderLinkGroup = styled.div`
   display: flex;
   align-items: center;
-  width: 55%;
   justify-content: space-between;
   margin-right: 50px;
 
   @media (max-width: 975px) {
     display: none
   }
-
-  @media (max-width: 1200px) {
-    width: 700px;
-  }
-
 `
 
 export const HeaderLink = styled(Link)`
   text-decoration: none;
   color: ${richBlack};
   border-bottom: 4px solid rgba(56, 206, 194, 0);
-  margin: 0 7px 0 7px;
+  margin: 0px;
   padding-bottom: 15px;
-
   
+  &:not(:last-child) {
+    margin-right: 40px;
+
+    @media (max-width: ${SIZES.BREAK_LG}) {
+      margin-right: 24px;
+    }
+  }
   
   :hover {
     border-bottom: 4px solid rgba(56, 206, 194, 1);
