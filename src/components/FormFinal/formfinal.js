@@ -16,7 +16,7 @@ const FormFinal = ({ requestError, backOnClick }) => {
 function renderFinal(requestError, backOnClick) {
     if (!requestError) {
         return <div>
-            <Title>Request Recieved!</Title>
+            <Title>Request Received!</Title>
             <TextWrapper>
                 <BBp>Thanks for taking the time to fill out the quote, now it's our turn! We'll look through your request and get back to you as quickly as possible.</BBp>
                 <BBp>Make sure to check your email for new messages from us - we are so excited to have you try the Bikebus experience!</BBp>
